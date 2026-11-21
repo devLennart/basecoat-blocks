@@ -1,0 +1,68 @@
+<main class="mx-auto max-w-[1160px] px-4 pt-6 pb-12 sm:px-5 sm:pt-8 sm:pb-16">
+  <header class="mb-7 flex flex-wrap items-end justify-between gap-4">
+    <div>
+      <p class="text-[13px] font-semibold tracking-[.09em] text-muted-foreground uppercase">Acme / Overview</p>
+      <h1 class="mt-1 text-3xl leading-tight font-semibold tracking-tight md:text-[38px]">Revenue at a glance</h1>
+      <p class="mt-2 text-muted-foreground">A clear picture of your subscription business.</p>
+    </div>
+    <span class="badge" data-variant="outline">October 2026 snapshot</span>
+  </header>
+
+  <section class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" aria-label="Key performance indicators">
+    <article class="card">
+      <header><h2>Monthly recurring revenue</h2><p>Current run rate</p></header>
+      <section><p class="text-[34px] leading-tight font-semibold tracking-tight tabular-nums">$84,320</p><p class="mt-2.5 text-[13px] text-muted-foreground"><strong class="font-semibold text-foreground">+12.4%</strong> versus September</p></section>
+    </article>
+    <article class="card">
+      <header><h2>Active workspaces</h2><p>Paying organizations</p></header>
+      <section><p class="text-[34px] leading-tight font-semibold tracking-tight tabular-nums">1,284</p><p class="mt-2.5 text-[13px] text-muted-foreground"><strong class="font-semibold text-foreground">+8.1%</strong> versus September</p></section>
+    </article>
+    <article class="card">
+      <header><h2>Seats in use</h2><p>Across all plans</p></header>
+      <section><p class="text-[34px] leading-tight font-semibold tracking-tight tabular-nums">9,462</p><p class="mt-2.5 text-[13px] text-muted-foreground"><strong class="font-semibold text-foreground">+4.6%</strong> versus September</p></section>
+    </article>
+    <article class="card">
+      <header><h2>Monthly churn</h2><p>Lost recurring revenue</p></header>
+      <section><p class="text-[34px] leading-tight font-semibold tracking-tight tabular-nums">1.8%</p><p class="mt-2.5 text-[13px] text-muted-foreground"><strong class="font-semibold text-foreground">−0.3 points</strong> versus September</p></section>
+    </article>
+  </section>
+
+  <div class="mt-4 grid items-start gap-4 lg:grid-cols-[2fr_3fr]">
+    <section class="card" aria-labelledby="dashboard-01-target">
+      <header><h2 id="dashboard-01-target">Growth targets</h2><p>October progress toward team goals</p></header>
+      <section>
+        <div class="mb-5 last:mb-0">
+          <div class="mb-2 flex justify-between gap-3 text-sm"><span>New recurring revenue</span><strong class="tabular-nums">$19,200 / $25,000</strong></div>
+          <div class="progress" role="progressbar" aria-label="New recurring revenue target" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"><span style="width: 77%"></span></div>
+        </div>
+        <div class="mb-5 last:mb-0">
+          <div class="mb-2 flex justify-between gap-3 text-sm"><span>Expansion revenue</span><strong class="tabular-nums">$6,800 / $10,000</strong></div>
+          <div class="progress" role="progressbar" aria-label="Expansion revenue target" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100"><span style="width: 68%"></span></div>
+        </div>
+        <div class="mb-5 last:mb-0">
+          <div class="mb-2 flex justify-between gap-3 text-sm"><span>New workspaces</span><strong class="tabular-nums">142 / 180</strong></div>
+          <div class="progress" role="progressbar" aria-label="New workspace target" aria-valuenow="79" aria-valuemin="0" aria-valuemax="100"><span style="width: 79%"></span></div>
+        </div>
+        <p class="mt-5 border-t pt-4 text-[13px]/normal text-muted-foreground">Revenue goals measure new and expanded subscriptions booked this month. Values are illustrative snapshot data.</p>
+      </section>
+    </section>
+
+    <section class="card" aria-labelledby="dashboard-01-invoices">
+      <header><h2 id="dashboard-01-invoices">Recent invoices</h2><p>Latest subscription payments</p></header>
+      <section>
+        <div class="table-container">
+          <table class="table min-w-[550px] tabular-nums [&_td:last-child]:text-right [&_th:last-child]:text-right">
+            <caption>Four recent example invoices; scroll horizontally on small screens.</caption>
+            <thead><tr><th scope="col">Workspace</th><th scope="col">Invoice</th><th scope="col">Status</th><th scope="col">Amount</th></tr></thead>
+            <tbody>
+              <tr><td>Globex Corp.</td><td>INV-1048</td><td><span class="badge" data-variant="secondary">Paid</span></td><td>$499.00</td></tr>
+              <tr><td>Atlas Labs</td><td>INV-1047</td><td><span class="badge" data-variant="secondary">Paid</span></td><td>$249.00</td></tr>
+              <tr><td>Fieldwork Co.</td><td>INV-1046</td><td><span class="badge" data-variant="outline">Pending</span></td><td>$129.00</td></tr>
+              <tr><td>Pinecone Health</td><td>INV-1045</td><td><span class="badge" data-variant="secondary">Paid</span></td><td>$399.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </div>
+</main>

@@ -1,0 +1,58 @@
+<main class="mx-auto max-w-[1100px] px-4 pt-7 pb-13 sm:px-5 sm:pt-11 sm:pb-18">
+  <header class="mb-7">
+    <h1 class="mb-2 text-3xl leading-tight font-semibold tracking-tight md:text-[40px]">Billing</h1>
+    <p class="max-w-[65ch] text-muted-foreground">Plan, payment details, and invoice history for the fictional Acme Inc. workspace. All amounts and dates below are illustrative.</p>
+  </header>
+
+  <div class="mb-4 grid gap-4 md:grid-cols-[1.4fr_1fr]">
+    <section class="card" aria-labelledby="billing-01-plan-title">
+      <header><h2 id="billing-01-plan-title">Current plan</h2><p>A sample monthly subscription</p></header>
+      <section>
+        <p class="mb-3 text-[28px] leading-tight font-semibold tracking-tight">Team <span class="badge ml-2 align-middle" data-variant="secondary">Illustrative</span></p>
+        <p class="text-4xl leading-tight font-semibold tracking-tight tabular-nums">$48.00 <small class="text-sm font-normal tracking-normal text-muted-foreground">USD / month, before tax</small></p>
+        <p class="mt-3">6 seats included in this example plan.</p>
+      </section>
+      <footer><a class="btn" data-variant="outline" href="#billing-01-integration">How to connect plan changes</a></footer>
+    </section>
+    <section class="card" aria-labelledby="billing-01-next-title">
+      <header><h2 id="billing-01-next-title">Next charge</h2><p>Illustrative billing cycle</p></header>
+      <section>
+        <p class="text-2xl font-semibold tabular-nums"><time datetime="2026-11-15">November 15, 2026</time></p>
+        <p class="mt-3">Estimated $48.00 USD before tax. The actual total may differ.</p>
+      </section>
+    </section>
+  </div>
+
+  <div class="mb-4 grid gap-4 md:grid-cols-[.65fr_1.75fr]">
+    <section class="card" aria-labelledby="billing-01-method-title">
+      <header><h2 id="billing-01-method-title">Payment method</h2><p>Sample card details only</p></header>
+      <section>
+        <p class="text-lg font-semibold">Visa ending in <span class="tabular-nums">4242</span></p>
+        <p class="text-muted-foreground">Example expiration 12/2028. No card is stored or charged by this block.</p>
+      </section>
+      <footer><a class="btn" data-variant="outline" href="#billing-01-integration">How to connect payment updates</a></footer>
+    </section>
+    <section class="card" aria-labelledby="billing-01-invoices-title">
+      <header><h2 id="billing-01-invoices-title">Invoice history</h2><p>Three illustrative monthly invoices · USD</p></header>
+      <section>
+        <div class="table-container">
+          <table class="table min-w-[620px] [&_td:first-child]:font-semibold [&_td:first-child]:tabular-nums [&_td:last-child]:text-right [&_td:last-child]:tabular-nums [&_th:last-child]:text-right">
+            <caption>Sample invoices; scroll horizontally on narrow screens. No downloads are provided.</caption>
+            <thead><tr><th scope="col">Invoice</th><th scope="col">Date</th><th scope="col">Status</th><th scope="col">Amount</th></tr></thead>
+            <tbody>
+              <tr><td>INV-2026-010</td><td><time datetime="2026-10-15">Oct 15, 2026</time></td><td><span class="badge" data-variant="secondary">Paid (sample)</span></td><td>$48.00</td></tr>
+              <tr><td>INV-2026-009</td><td><time datetime="2026-09-15">Sep 15, 2026</time></td><td><span class="badge" data-variant="secondary">Paid (sample)</span></td><td>$48.00</td></tr>
+              <tr><td>INV-2026-008</td><td><time datetime="2026-08-15">Aug 15, 2026</time></td><td><span class="badge" data-variant="secondary">Paid (sample)</span></td><td>$48.00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <footer class="text-[13px] text-muted-foreground">These entries are static examples, not payment records.</footer>
+    </section>
+  </div>
+
+  <aside class="border-t pt-5" id="billing-01-integration" aria-labelledby="billing-01-integration-title">
+    <h2 id="billing-01-integration-title" class="mb-1.5 text-[17px] font-semibold">Billing actions need an integration</h2>
+    <p class="max-w-[75ch] text-muted-foreground">This preview cannot change a plan, update a card, or retrieve invoices. In your application, replace the two guidance links above with authenticated billing-portal routes and populate this screen from your billing provider.</p>
+  </aside>
+</main>

@@ -1,0 +1,18 @@
+{
+  "name": "basecoat-blocks",
+  "private": true,
+  "type": "module",
+  "description": "Preview, catalog and screenshot tooling only. Using a block needs no install from this repo.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/preview.mjs",
+    "screenshots": "node scripts/screenshot.mjs",
+    "screenshots:install": "playwright install chromium"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.3.4",
+    "basecoat-css": "1.2.1",
+    "playwright": "1.65.1",
+    "tailwindcss": "4.3.4"
+  }
+}

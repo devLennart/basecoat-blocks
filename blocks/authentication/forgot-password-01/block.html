@@ -1,0 +1,28 @@
+<main class="grid min-h-svh grid-rows-[auto_1fr] bg-background px-5 pt-6 pb-12 text-foreground">
+  <header class="mx-auto flex w-full max-w-6xl items-center justify-between gap-4">
+    <a class="inline-flex items-center gap-2.5 font-semibold tracking-tight" href="/"><svg class="size-[1.4rem]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 21 20H3Z"/><path d="M8 14.5h8"/></svg>Acme</a>
+    <a class="btn" data-variant="ghost" data-size="sm" href="/support">Contact support</a>
+  </header>
+  <div class="grid place-items-center">
+    <div class="grid w-full max-w-sm gap-7">
+      <span class="grid size-11 place-items-center rounded-xl border shadow-xs" aria-hidden="true"><svg class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z"/><circle cx="16.5" cy="7.5" r=".5" fill="currentColor"/></svg></span>
+      <header>
+        <h1 class="mb-2 text-[1.75rem] leading-tight font-semibold tracking-tight">Forgot your password?</h1>
+        <p class="text-muted-foreground">Enter the email on your Acme account and we'll send you a link to choose a new one.</p>
+      </header>
+      <div class="alert">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        <h2>The link is valid for 30 minutes</h2>
+        <section>For your security we never tell you whether an address has an account.</section>
+      </div>
+      <form class="grid gap-5" action="/password/forgot" method="post">
+        <div role="group" class="field">
+          <label for="forgot-01-email">Email address</label>
+          <input class="input w-full" id="forgot-01-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+        </div>
+        <button class="btn w-full" type="submit">Send reset link</button>
+        <a class="btn" data-variant="ghost" href="/login"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>Back to sign in</a>
+      </form>
+    </div>
+  </div>
+</main>

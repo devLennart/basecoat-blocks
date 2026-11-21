@@ -1,0 +1,41 @@
+<main class="mx-auto max-w-[1000px] px-4 pt-7.5 pb-13 sm:px-6 sm:pt-13 sm:pb-19">
+  <header>
+    <h1 class="mb-3 text-3xl leading-tight font-semibold tracking-tight md:text-[42px]">Choose files to share.</h1>
+    <p class="mb-6 max-w-[62ch] leading-relaxed text-muted-foreground sm:mb-8">Select documents or images from your device to share in the Acme Inc. workspace. This preview lets you choose files, but it does not store or send them without an application upload endpoint.</p>
+  </header>
+
+  <div class="grid items-start gap-7 md:grid-cols-[1.65fr_minmax(230px,.85fr)]">
+    <form class="card" action="/api/files" method="post" enctype="multipart/form-data" aria-labelledby="bc-file-upload-form-title">
+      <header>
+        <h2 id="bc-file-upload-form-title" class="text-xl">Add files</h2>
+        <p class="leading-normal">Choose one or more files, then submit them to your application’s upload endpoint.</p>
+      </header>
+      <section class="grid gap-5.5">
+        <div class="rounded-xl bg-muted p-5.5">
+          <label class="mb-2 block font-semibold" for="bc-file-upload-files">Files to upload</label>
+          <input class="block w-full max-w-full text-foreground file:mr-3 file:cursor-pointer file:rounded-lg file:border file:bg-background file:px-3 file:py-2 file:font-semibold file:text-foreground hover:file:bg-accent focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring" id="bc-file-upload-files" name="files" type="file" multiple required accept=".pdf,.png,.jpg,.jpeg,application/pdf,image/png,image/jpeg" aria-describedby="bc-file-upload-help">
+          <p class="mt-2.5 text-[13px]/normal text-muted-foreground" id="bc-file-upload-help">PDF, PNG, or JPG files. At least one file is required; your browser shows the selected file names.</p>
+        </div>
+        <div role="group" class="field">
+          <label for="bc-file-upload-note">Note for your team <span aria-hidden="true">(optional)</span></label>
+          <input class="input w-full" id="bc-file-upload-note" name="note" type="text" maxlength="160" placeholder="e.g. Draft illustrations for review" aria-describedby="bc-file-upload-note-help">
+          <p class="text-[13px]/normal text-muted-foreground" id="bc-file-upload-note-help">A short description to send along with the files.</p>
+        </div>
+      </section>
+      <footer class="flex flex-wrap items-center justify-between gap-4">
+        <p class="max-w-[31ch] text-[13px]/normal text-muted-foreground">Illustrative upload form · a backend is required to receive files.</p>
+        <button class="btn" type="submit">Submit selected files</button>
+      </footer>
+    </form>
+
+    <aside class="border-t-2 border-foreground pt-4.5" aria-labelledby="bc-file-upload-guide-title">
+      <h2 id="bc-file-upload-guide-title" class="mb-3 text-lg font-semibold">Before you send</h2>
+      <p class="text-sm/normal text-muted-foreground">Only the native file picker runs in this standalone preview. These format hints help you choose files; they are not server-side validation.</p>
+      <dl class="mt-5 [&_dd]:mt-0.5 [&_dd]:text-[13px]/normal [&_dd]:text-muted-foreground [&_div]:border-t [&_div]:py-3 [&_dt]:text-[13px] [&_dt]:font-semibold">
+        <div><dt>Documents</dt><dd>PDF (.pdf)</dd></div>
+        <div><dt>Images</dt><dd>PNG (.png) and JPEG (.jpg, .jpeg)</dd></div>
+        <div><dt>Multiple files</dt><dd>Select several files at once from the picker.</dd></div>
+      </dl>
+    </aside>
+  </div>
+</main>

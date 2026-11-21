@@ -1,0 +1,41 @@
+<main class="mx-auto max-w-[1040px] px-4 pt-7.5 pb-13 sm:px-6 sm:pt-14 sm:pb-20">
+  <header class="mb-6 max-w-[700px] sm:mb-8.5">
+    <h1 class="mb-3 text-3xl leading-tight font-semibold tracking-tight md:text-[44px]">Make room for your work.</h1>
+    <p class="leading-relaxed text-muted-foreground">Set up your first Acme workspace for your team. This example collects the workspace details in one step; the remaining checklist items are guidance, not an interactive wizard.</p>
+  </header>
+
+  <div class="grid items-start gap-6 md:grid-cols-[1.65fr_minmax(250px,1fr)]">
+    <form class="card" action="/api/workspaces" method="post" aria-labelledby="bc-onboarding-form-title">
+      <header>
+        <h2 id="bc-onboarding-form-title" class="text-xl">Create a workspace</h2>
+        <p class="leading-normal">Choose a name your team will recognize. You can adapt the details later in your own application.</p>
+      </header>
+      <section class="grid gap-5.5">
+        <div role="group" class="field">
+          <label for="bc-onboarding-name">Workspace name</label>
+          <input class="input w-full" id="bc-onboarding-name" name="workspace_name" type="text" autocomplete="organization" placeholder="e.g. Cedar &amp; Co." maxlength="80" required aria-describedby="bc-onboarding-name-help">
+          <p id="bc-onboarding-name-help" class="leading-snug text-muted-foreground">This name will identify the workspace to your team.</p>
+        </div>
+        <div role="group" class="field">
+          <label for="bc-onboarding-email">Your work email</label>
+          <input class="input w-full" id="bc-onboarding-email" name="owner_email" type="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="bc-onboarding-email-help">
+          <p id="bc-onboarding-email-help" class="leading-snug text-muted-foreground">Used by your application to associate you with the workspace.</p>
+        </div>
+      </section>
+      <footer class="flex flex-wrap items-center justify-between gap-3.5">
+        <p class="max-w-[32ch] text-[13px] text-muted-foreground">Illustrative form. Connect the POST route before using it in an application.</p>
+        <button class="btn" type="submit">Create workspace</button>
+      </footer>
+    </form>
+
+    <aside class="rounded-[14px] border px-6 py-6" aria-labelledby="bc-onboarding-checklist-title">
+      <h2 id="bc-onboarding-checklist-title" class="mb-2 text-[17px] font-semibold">Your setup checklist</h2>
+      <p class="mb-5 text-[13px]/normal text-muted-foreground">A view of what comes next; this example only submits the first item.</p>
+      <ol class="list-none">
+        <li class="group grid grid-cols-[28px_1fr] gap-2.5 border-t py-3.5" aria-current="step"><span class="grid size-6.5 place-items-center rounded-full border text-xs text-muted-foreground tabular-nums group-aria-[current=step]:border-primary group-aria-[current=step]:bg-primary group-aria-[current=step]:text-primary-foreground" aria-hidden="true">1</span><span><span class="block text-sm font-semibold">Create workspace</span><span class="mt-0.5 block text-xs/snug text-muted-foreground">Current · fill in the form</span></span></li>
+        <li class="group grid grid-cols-[28px_1fr] gap-2.5 border-t py-3.5"><span class="grid size-6.5 place-items-center rounded-full border text-xs text-muted-foreground tabular-nums group-aria-[current=step]:border-primary group-aria-[current=step]:bg-primary group-aria-[current=step]:text-primary-foreground" aria-hidden="true">2</span><span><span class="block text-sm font-semibold">Invite your team</span><span class="mt-0.5 block text-xs/snug text-muted-foreground">Later · add an invitation flow</span></span></li>
+        <li class="group grid grid-cols-[28px_1fr] gap-2.5 border-t py-3.5"><span class="grid size-6.5 place-items-center rounded-full border text-xs text-muted-foreground tabular-nums group-aria-[current=step]:border-primary group-aria-[current=step]:bg-primary group-aria-[current=step]:text-primary-foreground" aria-hidden="true">3</span><span><span class="block text-sm font-semibold">Add your first file</span><span class="mt-0.5 block text-xs/snug text-muted-foreground">Later · connect a file library</span></span></li>
+      </ol>
+    </aside>
+  </div>
+</main>

@@ -1,0 +1,85 @@
+<main class="grid min-h-svh grid-rows-[auto_1fr_auto] bg-background text-foreground">
+  <header class="flex items-center justify-between gap-4 border-b px-5 py-3">
+    <div class="flex items-center gap-3">
+      <span class="grid size-8 flex-none place-items-center rounded-lg bg-primary text-primary-foreground" aria-hidden="true"><svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 21 20H3Z"/><path d="M8 14.5h8"/></svg></span>
+      <div><h1 class="text-[.95rem] font-semibold">Acme Assistant</h1><p class="text-[.8rem] text-muted-foreground">Q4 launch planning</p></div>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="badge hidden sm:inline-flex" data-variant="outline">Workspace context on</span>
+      <button type="button" class="btn" data-variant="outline" data-size="sm">New chat</button>
+    </div>
+  </header>
+
+  <section class="mx-auto w-full max-w-[46rem] px-5 py-5 sm:py-8" aria-label="Conversation">
+    <ol class="flex list-none flex-col gap-6" role="list">
+      <li class="message" data-align="end">
+        <span class="avatar" aria-hidden="true"><span>MC</span></span>
+        <div>
+          <span class="sr-only">Maya Chen</span>
+          <div class="bubble">
+            <p>Summarise the launch risks from this week's notes and draft a status update for the team.</p>
+          </div>
+          <div class="attachment">
+            <figure aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></figure>
+            <section><p dir="auto">launch-notes-week-42.md</p><p>Markdown · 18 KB</p></section>
+          </div>
+        </div>
+      </li>
+
+      <li><div class="marker">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <span>Read 3 documents and 12 tasks in Acme Inc.</span>
+      </div></li>
+
+      <li class="message">
+        <span class="avatar" aria-hidden="true"><span>AI</span></span>
+        <div class="[&>ol]:mb-3 [&>ol]:list-decimal [&>ol]:ps-5 [&>ol]:leading-relaxed [&>p]:mb-3 [&>p]:leading-relaxed">
+          <span class="sr-only">Acme Assistant</span>
+          <p>Three risks stand out this week:</p>
+          <ol>
+            <li><strong>Billing migration</strong>: the invoice export is two days behind and blocks the pricing page.</li>
+            <li><strong>Docs freeze</strong>: 4 of 11 guides still need review before Friday.</li>
+            <li><strong>Support coverage</strong>: no one is on call for the EU launch window.</li>
+          </ol>
+          <p>I drafted the update as a document you can edit before sharing:</p>
+          <div class="attachment mt-1">
+            <figure aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg></figure>
+            <section><p dir="auto">Launch status: week 42</p><p>Draft · 214 words</p></section>
+            <div><a class="btn" data-variant="outline" data-size="sm" href="#chat-01-draft">Open</a></div>
+          </div>
+          <div class="mt-2 flex gap-1 [&_svg]:size-4" role="group" aria-label="Answer actions">
+            <button type="button" class="btn" data-variant="ghost" data-size="icon-sm" aria-label="Copy answer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg></button>
+            <button type="button" class="btn" data-variant="ghost" data-size="icon-sm" aria-label="Good answer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg></button>
+            <button type="button" class="btn" data-variant="ghost" data-size="icon-sm" aria-label="Regenerate answer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></button>
+          </div>
+        </div>
+      </li>
+
+      <li class="message" data-align="end">
+        <span class="avatar" aria-hidden="true"><span>MC</span></span>
+        <div>
+          <span class="sr-only">Maya Chen</span>
+          <div class="bubble"><p>Assign the support gap to Jonah and add it to the update.</p></div>
+        </div>
+      </li>
+
+      <li><p class="marker" role="status"><span class="shimmer">Updating the draft…</span></p></li>
+    </ol>
+  </section>
+
+  <div class="sticky bottom-0 mx-auto w-full max-w-[46rem] bg-linear-to-b from-transparent to-background to-[1.25rem] px-5 pt-3 pb-5">
+    <!-- Example endpoint: replace with your own chat route. This preview does not send messages. -->
+    <form action="/assistant/messages" method="post">
+      <div class="input-group w-full [&_svg]:size-4" data-orientation="vertical">
+        <label for="chat-01-prompt" class="sr-only">Message Acme Assistant</label>
+        <textarea class="min-h-14 resize-none" id="chat-01-prompt" name="message" rows="2" placeholder="Ask about your workspace…"></textarea>
+        <footer class="flex items-center gap-2" data-align="end">
+          <button type="button" class="btn" data-variant="ghost" data-size="icon-sm" aria-label="Attach a file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></button>
+          <span class="badge" data-variant="secondary">Acme Inc. workspace</span>
+          <button type="submit" class="btn ms-auto" data-size="icon-sm" aria-label="Send message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></button>
+        </footer>
+      </div>
+    </form>
+    <p class="mt-2.5 text-center text-xs text-muted-foreground">Answers can be wrong. Check important details before you share them.</p>
+  </div>
+</main>

@@ -1,0 +1,72 @@
+<main class="mx-auto max-w-[1120px] px-4 pt-6 pb-12 sm:px-5 sm:pt-11 sm:pb-18" id="bc-access-review-02">
+  <header class="mb-7.5 flex flex-wrap items-end justify-between gap-5">
+    <div>
+      <h1 class="mb-2 text-3xl leading-tight font-semibold tracking-tight md:text-[38px]">Access review</h1>
+      <p class="max-w-[58ch] text-muted-foreground">Find the right account before the next permissions check. This is illustrative data for the fictional Acme workspace.</p>
+    </div>
+    <span class="badge" data-variant="outline">October review cycle · example</span>
+  </header>
+
+  <section class="card" aria-labelledby="bc-review-board-title">
+    <header><div><h2 id="bc-review-board-title">Accounts to review</h2><p class="text-sm text-muted-foreground">Search by person, email, or team; narrow by review status.</p></div></header>
+    <section>
+      <div class="flex flex-wrap items-end gap-3.5 pb-5" role="group" aria-label="Filter accounts">
+        <div class="field flex-[1_1_260px]">
+          <label class="mb-1.5 block text-[13px] font-semibold" for="bc-review-search-02">Search accounts</label>
+          <input class="input w-full" id="bc-review-search-02" type="search" placeholder="Name, email, or team" autocomplete="off">
+        </div>
+        <div class="field flex-[1_1_200px] sm:flex-[0_1_200px]">
+          <label class="mb-1.5 block text-[13px] font-semibold" for="bc-review-status-02">Review status</label>
+          <select class="select w-full" id="bc-review-status-02">
+            <option value="all">All statuses</option>
+            <option value="due">Due for review</option>
+            <option value="reviewed">Reviewed</option>
+            <option value="paused">Paused</option>
+          </select>
+        </div>
+      </div>
+      <div class="table-container">
+        <table class="table min-w-[770px] [&_td:last-child]:text-right [&_th:last-child]:text-right">
+          <caption>Six illustrative Acme accounts and their access review status; scroll horizontally on narrow screens.</caption>
+          <thead><tr><th scope="col">Account</th><th scope="col">Team</th><th scope="col">Access</th><th scope="col">Review status</th><th scope="col">Next check</th></tr></thead>
+          <tbody>
+            <tr data-status="due"><td><strong class="block font-semibold">Imani Brooks</strong><small class="mt-0.5 block text-xs text-muted-foreground">imani.brooks@example.com</small></td><td>Finance</td><td>Admin</td><td><span class="badge" data-variant="outline">Due for review</span></td><td class="whitespace-nowrap tabular-nums">Oct 29, 2026</td></tr>
+            <tr data-status="due"><td><strong class="block font-semibold">Owen Price</strong><small class="mt-0.5 block text-xs text-muted-foreground">owen.price@example.com</small></td><td>Support</td><td>Editor</td><td><span class="badge" data-variant="outline">Due for review</span></td><td class="whitespace-nowrap tabular-nums">Oct 31, 2026</td></tr>
+            <tr data-status="reviewed"><td><strong class="block font-semibold">Leila Haddad</strong><small class="mt-0.5 block text-xs text-muted-foreground">leila.haddad@example.com</small></td><td>Product</td><td>Owner</td><td><span class="badge" data-variant="secondary">Reviewed</span></td><td class="whitespace-nowrap tabular-nums">Jan 14, 2027</td></tr>
+            <tr data-status="reviewed"><td><strong class="block font-semibold">Rafi Singh</strong><small class="mt-0.5 block text-xs text-muted-foreground">rafi.singh@example.com</small></td><td>Engineering</td><td>Editor</td><td><span class="badge" data-variant="secondary">Reviewed</span></td><td class="whitespace-nowrap tabular-nums">Jan 18, 2027</td></tr>
+            <tr data-status="paused"><td><strong class="block font-semibold">Elena Soto</strong><small class="mt-0.5 block text-xs text-muted-foreground">elena.soto@example.com</small></td><td>Partners</td><td>Viewer</td><td><span class="badge" data-variant="destructive">Paused</span></td><td class="whitespace-nowrap tabular-nums">—</td></tr>
+            <tr data-status="due"><td><strong class="block font-semibold">Micah Vale</strong><small class="mt-0.5 block text-xs text-muted-foreground">micah.vale@example.com</small></td><td>Operations</td><td>Viewer</td><td><span class="badge" data-variant="outline">Due for review</span></td><td class="whitespace-nowrap tabular-nums">Nov 2, 2026</td></tr>
+            <tr id="bc-review-empty-02" hidden><td class="p-6 text-center text-muted-foreground" colspan="5">No accounts match these filters. Try another search or status.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <footer class="text-[13px] text-muted-foreground"><span id="bc-review-count-02" role="status" aria-live="polite">Showing 6 of 6 example accounts</span></footer>
+  </section>
+</main>
+<script>
+  (() => {
+    const root = document.getElementById('bc-access-review-02');
+    const search = root.querySelector('#bc-review-search-02');
+    const status = root.querySelector('#bc-review-status-02');
+    const rows = Array.from(root.querySelectorAll('tbody tr[data-status]'), row => ({
+      element: row,
+      text: row.textContent.toLocaleLowerCase()
+    }));
+    const empty = root.querySelector('#bc-review-empty-02');
+    const count = root.querySelector('#bc-review-count-02');
+    function filterAccounts() {
+      const query = search.value.trim().toLocaleLowerCase();
+      let shown = 0;
+      for (const row of rows) {
+        const visible = (status.value === 'all' || row.element.dataset.status === status.value) && row.text.includes(query);
+        row.element.hidden = !visible;
+        if (visible) shown++;
+      }
+      empty.hidden = shown !== 0;
+      count.textContent = `Showing ${shown} of ${rows.length} example accounts`;
+    }
+    search.addEventListener('input', filterAccounts);
+    status.addEventListener('change', filterAccounts);
+  })();
+</script>

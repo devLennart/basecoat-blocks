@@ -1,0 +1,90 @@
+<!-- Requires Basecoat JavaScript (all.min.js). -->
+<main class="mx-auto max-w-[1180px] px-4 pt-6 pb-12 text-foreground sm:px-5 sm:pt-10 sm:pb-18">
+  <header class="mb-7 flex flex-wrap items-end justify-between gap-4">
+    <div>
+      <p class="text-[13px] font-semibold tracking-[.09em] text-muted-foreground uppercase">Acme / Deployments / acme-web</p>
+      <h1 class="mt-1.5 mb-2 flex flex-wrap items-center gap-2.5 text-[26px] leading-tight font-semibold tracking-tight md:text-[34px]">Run #1842 <span class="badge" data-variant="destructive">Failed</span></h1>
+      <p class="text-muted-foreground">Production deploy of <code>main@4f2a9c1</code>, started by Jonah Lee 6 minutes ago.</p>
+    </div>
+    <div class="flex gap-2">
+      <a class="btn" data-variant="outline" href="#run-01-logs">View raw logs</a>
+      <button type="button" class="btn">Retry run</button>
+    </div>
+  </header>
+
+  <div class="grid items-start gap-5 lg:grid-cols-[1.75fr_minmax(260px,1fr)]">
+    <div class="min-w-0">
+      <section aria-labelledby="run-01-steps">
+        <h2 id="run-01-steps" class="mb-3 text-[15px] font-semibold">Steps</h2>
+        <ol role="list" aria-label="Run steps" class="trace mb-7">
+          <li>
+            <details class="transition-details">
+              <summary class="trace-line [&>time]:ms-auto [&>time]:text-xs [&>time]:text-muted-foreground [&>time]:tabular-nums"><span>Checked out main@4f2a9c1</span><time datetime="PT2S">2s</time></summary>
+              <div><p class="text-sm/normal text-muted-foreground">Fetched 1 commit: "Move pricing copy into the CMS".</p></div>
+            </details>
+          </li>
+          <li>
+            <details class="transition-details">
+              <summary class="trace-line [&>time]:ms-auto [&>time]:text-xs [&>time]:text-muted-foreground [&>time]:tabular-nums"><span>Installed 412 packages</span><time datetime="PT38S">38s</time></summary>
+              <div><div class="code-block [&_pre]:max-h-[260px]" data-size="sm"><pre tabindex="0" class="scrollbar" aria-label="Install output"><code>$ pnpm install --frozen-lockfile
+Packages: +412
+Done in 37.8s</code></pre></div></div>
+            </details>
+          </li>
+          <li>
+            <details class="transition-details">
+              <summary class="trace-line [&>time]:ms-auto [&>time]:text-xs [&>time]:text-muted-foreground [&>time]:tabular-nums"><span>Ran 186 tests</span><time datetime="PT1M12S">1m 12s</time></summary>
+              <div><p class="text-sm/normal text-muted-foreground">186 passed, 0 failed. Coverage 84.2% (+0.3).</p></div>
+            </details>
+          </li>
+          <li>
+            <details class="transition-details" open>
+              <summary class="trace-line text-destructive [&>time]:ms-auto [&>time]:text-xs [&>time]:text-muted-foreground [&>time]:tabular-nums"><span>Build failed: missing environment variable</span><time datetime="PT21S">21s</time></summary>
+              <div><div class="code-block [&_pre]:max-h-[260px]" data-size="sm" data-variant="destructive"><pre tabindex="0" class="scrollbar" aria-label="Build error" data-wrap><code>Error: CMS_API_TOKEN is not set for the production environment.
+    at loadPricing (src/lib/cms.ts:14:11)
+    at build (scripts/build.ts:42:3)</code></pre></div></div>
+            </details>
+          </li>
+          <li>
+            <details class="transition-details">
+              <summary class="trace-line [&>time]:ms-auto [&>time]:text-xs [&>time]:text-muted-foreground [&>time]:tabular-nums"><span>Skipped deploy and smoke tests</span></summary>
+              <div><p class="text-sm/normal text-muted-foreground">Later steps run only after a successful build.</p></div>
+            </details>
+          </li>
+        </ol>
+      </section>
+
+      <section id="run-01-logs" aria-labelledby="run-01-logs-title">
+        <h2 id="run-01-logs-title" class="mb-3 text-[15px] font-semibold">Suggested fix</h2>
+        <div class="code-block [&_pre]:max-h-[260px]">
+          <header>
+            <span>Terminal</span>
+            <div><button type="button" class="btn" data-variant="ghost" data-size="xs" data-copy>Copy</button></div>
+          </header>
+          <pre class="scrollbar" tabindex="0" aria-label="Suggested commands"><code>acme env set CMS_API_TOKEN --env production
+acme deploy retry 1842</code></pre>
+        </div>
+      </section>
+    </div>
+
+    <aside class="grid gap-5">
+      <section class="card">
+        <header><h2>Run details</h2><p>Illustrative data for the acme-web project.</p></header>
+        <section>
+          <dl class="grid gap-3.5 text-sm [&_dd]:text-end [&_dd]:font-medium [&_div]:flex [&_div]:justify-between [&_div]:gap-3 [&_dt]:text-muted-foreground">
+            <div><dt>Environment</dt><dd>Production</dd></div>
+            <div><dt>Branch</dt><dd>main</dd></div>
+            <div><dt>Trigger</dt><dd>Push by Jonah Lee</dd></div>
+            <div><dt>Duration</dt><dd>2m 13s</dd></div>
+            <div><dt>Region</dt><dd>eu-central-1</dd></div>
+          </dl>
+        </section>
+      </section>
+      <div class="alert">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+        <h2>Production is unaffected</h2>
+        <section>Run #1839 is still serving traffic. Nothing changes until a run succeeds.</section>
+      </div>
+    </aside>
+  </div>
+</main>

@@ -1,0 +1,70 @@
+<main class="mx-auto max-w-[1120px] px-4 pt-6 pb-12 sm:px-5 sm:pt-10 sm:pb-18">
+  <header class="mb-7.5">
+    <p class="text-[13px] font-semibold tracking-[.09em] text-muted-foreground uppercase">Acme / Personal account</p>
+    <h1 class="mt-1 mb-2 text-3xl leading-tight font-semibold tracking-tight md:text-[38px]">Account settings</h1>
+    <p class="text-muted-foreground">Manage how your profile appears and what reaches your inbox.</p>
+  </header>
+
+  <div class="grid items-start gap-5 md:grid-cols-[1.7fr_minmax(280px,1fr)]">
+    <!-- Example endpoint: replace with your own server route and CSRF protection before use. -->
+    <form class="card" action="/replace-with-your-profile-endpoint" method="post">
+      <header><h2>Profile details</h2><p>Visible to teammates in your workspace.</p></header>
+      <section>
+        <div class="grid gap-5 sm:grid-cols-2">
+          <div role="group" class="field">
+            <label for="bc-settings-name">Full name</label>
+            <input id="bc-settings-name" name="full_name" type="text" value="Maya Chen" autocomplete="name" required>
+          </div>
+          <div role="group" class="field">
+            <label for="bc-settings-display">Display name</label>
+            <input id="bc-settings-display" name="display_name" type="text" value="Maya" autocomplete="nickname" required>
+          </div>
+          <div role="group" class="field sm:col-span-2">
+            <label for="bc-settings-email">Email address</label>
+            <input id="bc-settings-email" name="email" type="email" value="maya.chen@example.com" autocomplete="email" aria-describedby="bc-settings-email-hint" required>
+            <p id="bc-settings-email-hint">Used for account notices and recovery.</p>
+          </div>
+          <div role="group" class="field sm:col-span-2">
+            <label for="bc-settings-timezone">Time zone</label>
+            <select id="bc-settings-timezone" class="select" name="timezone" aria-describedby="bc-settings-timezone-hint">
+              <option value="America/Los_Angeles">Pacific Time (Los Angeles)</option>
+              <option value="America/New_York" selected>Eastern Time (New York)</option>
+              <option value="Europe/London">United Kingdom (London)</option>
+              <option value="Europe/Berlin">Central European Time (Berlin)</option>
+            </select>
+            <p id="bc-settings-timezone-hint">Dates in reports and email digests use this time zone.</p>
+          </div>
+        </div>
+      </section>
+      <footer class="justify-end"><button class="btn" type="submit">Save profile</button></footer>
+    </form>
+
+    <aside class="grid gap-5" aria-label="More account settings">
+      <!-- Example endpoint: replace with your own server route and CSRF protection before use. -->
+      <form class="card" action="/replace-with-your-notifications-endpoint" method="post">
+        <header><h2>Email preferences</h2><p>Choose which updates to receive.</p></header>
+        <section>
+          <div class="flex items-center justify-between gap-5 border-t py-3.5 first:border-t-0">
+            <div><label class="block cursor-pointer text-sm font-semibold" for="bc-settings-digest">Weekly digest</label><p id="bc-settings-digest-description" class="mt-0.5 text-[13px]/snug text-muted-foreground">A Monday summary of workspace activity.</p></div>
+            <input id="bc-settings-digest" name="weekly_digest" type="checkbox" role="switch" class="input" aria-describedby="bc-settings-digest-description" checked>
+          </div>
+          <div class="flex items-center justify-between gap-5 border-t py-3.5 first:border-t-0">
+            <div><label class="block cursor-pointer text-sm font-semibold" for="bc-settings-product">Product news</label><p id="bc-settings-product-description" class="mt-0.5 text-[13px]/snug text-muted-foreground">Occasional releases and feature notes.</p></div>
+            <input id="bc-settings-product" name="product_news" type="checkbox" role="switch" class="input" aria-describedby="bc-settings-product-description">
+          </div>
+        </section>
+        <footer class="justify-end"><button class="btn" data-variant="outline" type="submit">Save preferences</button></footer>
+      </form>
+
+      <section class="card" aria-labelledby="bc-settings-security">
+        <header><h2 id="bc-settings-security">Security</h2><p>Review your account protection.</p></header>
+        <section>
+          <div class="mb-2.5 flex items-center justify-between gap-3"><strong class="text-sm">Two-step verification</strong><span class="badge" data-variant="outline">Not enabled</span></div>
+          <p class="text-[13px]/normal text-muted-foreground">This is example status only. Connect security settings to your own authentication provider.</p>
+          <div class="my-5.5 h-px bg-border" role="presentation"></div>
+          <div class="mb-2.5 flex items-center justify-between gap-3"><strong class="text-sm">Last password update</strong><span class="text-[13px]/normal text-muted-foreground">September 12, 2026</span></div>
+        </section>
+      </section>
+    </aside>
+  </div>
+</main>

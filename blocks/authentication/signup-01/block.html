@@ -1,0 +1,45 @@
+<main class="bg-background text-foreground md:min-h-svh">
+  <div class="mx-auto grid max-w-[74rem] items-center gap-10 p-6 md:min-h-svh md:grid-cols-[1fr_28rem] md:gap-16 md:p-12 lg:gap-32 lg:p-16">
+    <div class="flex flex-col justify-between gap-8 self-stretch md:gap-16">
+      <p class="text-sm font-extrabold tracking-tight">ACME / WORKSPACES</p>
+      <header>
+        <h1 class="max-w-[18ch] text-[2.4rem] leading-[1.05] font-semibold tracking-tight md:max-w-[12ch] md:text-6xl lg:text-7xl">Make room for the work ahead.</h1>
+        <p class="mt-5 max-w-[30rem] text-lg/relaxed text-muted-foreground">Bring people, projects, and decisions into one calm place. Start with your own account, then invite your team when you're ready.</p>
+      </header>
+      <ol class="hidden list-decimal border-t pt-6 pl-5 leading-loose text-muted-foreground md:block">
+        <li class="pl-1">Create your personal account</li>
+        <li class="pl-1">Set up a workspace</li>
+        <li class="pl-1">Invite the people you work with</li>
+      </ol>
+    </div>
+    <section class="card w-full max-w-[30rem]" aria-labelledby="signup-01-title">
+      <header>
+        <h2 id="signup-01-title" class="text-[1.6rem] tracking-tight">Create your account</h2>
+        <p>Start with a name and your work email.</p>
+      </header>
+      <section>
+        <form class="grid gap-5" action="/signup" method="post">
+          <div role="group" class="field">
+            <label for="signup-01-name">Full name</label>
+            <input class="input w-full" id="signup-01-name" name="name" type="text" autocomplete="name" placeholder="Alex Morgan" required>
+          </div>
+          <div role="group" class="field">
+            <label for="signup-01-email">Work email</label>
+            <input class="input w-full" id="signup-01-email" name="email" type="email" autocomplete="email" placeholder="alex@company.com" required>
+          </div>
+          <div role="group" class="field">
+            <label for="signup-01-password">Password</label>
+            <input class="input w-full" id="signup-01-password" name="password" type="password" autocomplete="new-password" minlength="12" aria-describedby="signup-01-password-help" required>
+            <p class="text-sm/normal text-muted-foreground" id="signup-01-password-help">Use at least 12 characters.</p>
+          </div>
+          <div role="group" class="field" data-orientation="horizontal">
+            <input class="input" id="signup-01-updates" name="updates" type="checkbox" value="yes">
+            <label for="signup-01-updates">Email me occasional product updates</label>
+          </div>
+          <button class="btn w-full" type="submit">Create account</button>
+        </form>
+      </section>
+      <footer class="block text-center text-sm/normal text-muted-foreground">Already have an account? <a class="text-foreground underline underline-offset-4" href="/login">Sign in</a></footer>
+    </section>
+  </div>
+</main>

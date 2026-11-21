@@ -1,0 +1,71 @@
+<!-- Requires Basecoat JavaScript (all.min.js). -->
+<main class="mx-auto max-w-[960px] px-4 pt-6 pb-12 text-foreground sm:px-5 sm:pt-10 sm:pb-18">
+  <header class="mb-6">
+    <p class="text-[13px] font-semibold tracking-[.09em] text-muted-foreground uppercase">Acme / Workspace settings</p>
+    <h1 class="mt-1.5 mb-2 text-[26px] leading-tight font-semibold tracking-tight md:text-[34px]">Settings</h1>
+    <p class="text-muted-foreground">Manage the Acme Inc. workspace, how it looks, and who gets notified.</p>
+  </header>
+
+  <div class="tabs" id="settings-02-tabs">
+    <nav class="mb-5 overflow-x-auto" role="tablist" aria-orientation="horizontal">
+      <button type="button" role="tab" id="settings-02-tab-general" aria-controls="settings-02-panel-general" aria-selected="true" tabindex="0">General</button>
+      <button type="button" role="tab" id="settings-02-tab-notifications" aria-controls="settings-02-panel-notifications" aria-selected="false" tabindex="-1">Notifications</button>
+      <button type="button" role="tab" id="settings-02-tab-billing" aria-controls="settings-02-panel-billing" aria-selected="false" tabindex="-1">Billing</button>
+    </nav>
+
+    <div class="grid gap-5" role="tabpanel" id="settings-02-panel-general" aria-labelledby="settings-02-tab-general" tabindex="-1">
+      <!-- Example endpoint: replace with your own route and CSRF protection. -->
+      <form class="card" action="/settings/general" method="post">
+        <header><h2>Workspace</h2><p>Visible to everyone in Acme Inc.</p></header>
+        <section>
+          <div class="grid items-start gap-x-8 gap-y-3 border-t py-4.5 first:border-t-0 first:pt-0 last:pb-0 sm:grid-cols-[1fr_1.4fr]">
+            <div><h3 class="text-sm font-semibold"><label for="settings-02-name">Workspace name</label></h3><p class="mt-1 text-[13px]/normal text-muted-foreground">Shown in the sidebar and in emails.</p></div>
+            <input class="input w-full" id="settings-02-name" name="name" value="Acme Inc." required>
+          </div>
+          <div class="grid items-start gap-x-8 gap-y-3 border-t py-4.5 first:border-t-0 first:pt-0 last:pb-0 sm:grid-cols-[1fr_1.4fr]">
+            <div><h3 class="text-sm font-semibold"><label for="settings-02-url">Workspace URL</label></h3><p class="mt-1 text-[13px]/normal text-muted-foreground">Changing it breaks old links.</p></div>
+            <div class="input-group w-full"><input id="settings-02-url" name="slug" value="acme-inc" required><span data-align="start">acme.app/</span></div>
+          </div>
+          <div class="grid items-start gap-x-8 gap-y-3 border-t py-4.5 first:border-t-0 first:pt-0 last:pb-0 sm:grid-cols-[1fr_1.4fr]">
+            <div><h3 id="settings-02-theme" class="text-sm font-semibold">Theme</h3><p class="mt-1 text-[13px]/normal text-muted-foreground">Applies to you only, on this device.</p></div>
+            <fieldset class="flex min-w-0 flex-wrap gap-2 [&_label]:cursor-pointer [&_label]:gap-2" aria-labelledby="settings-02-theme">
+              <label class="btn" data-variant="outline"><input type="radio" name="theme" value="light"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2m-7.07-14.07 1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>Light</label>
+              <label class="btn" data-variant="outline"><input type="radio" name="theme" value="dark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>Dark</label>
+              <label class="btn" data-variant="outline"><input type="radio" name="theme" value="system" checked><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><path d="M8 21h8M12 17v4"/></svg>System</label>
+            </fieldset>
+          </div>
+          <div class="grid items-start gap-x-8 gap-y-3 border-t py-4.5 first:border-t-0 first:pt-0 last:pb-0 sm:grid-cols-[1fr_1.4fr]">
+            <div><h3 class="text-sm font-semibold"><label for="settings-02-week">Week starts on</label></h3><p class="mt-1 text-[13px]/normal text-muted-foreground">Used by calendars and reports.</p></div>
+            <select class="select w-full" id="settings-02-week" name="week_start"><option value="monday" selected>Monday</option><option value="sunday">Sunday</option></select>
+          </div>
+        </section>
+        <footer class="justify-end"><button type="reset" class="btn" data-variant="ghost">Cancel</button><button type="submit" class="btn">Save changes</button></footer>
+      </form>
+
+      <section class="card border-[color-mix(in_oklab,var(--destructive)_45%,var(--border))]" aria-labelledby="settings-02-danger">
+        <section class="flex flex-wrap items-center justify-between gap-4">
+          <div><h2 id="settings-02-danger" class="text-[15px] font-semibold">Delete workspace</h2><p class="mt-1 text-[13px] text-muted-foreground">Permanently removes all projects, files, and members.</p></div>
+          <button type="button" class="btn" data-variant="destructive">Delete workspace</button>
+        </section>
+      </section>
+    </div>
+
+    <div class="grid gap-5" role="tabpanel" id="settings-02-panel-notifications" aria-labelledby="settings-02-tab-notifications" tabindex="-1" hidden>
+      <form class="card" action="/settings/notifications" method="post">
+        <header><h2>Notifications</h2><p>Choose what reaches your inbox.</p></header>
+        <section>
+          <div class="flex items-center justify-between gap-4 [&+&]:mt-3.5"><label for="settings-02-mentions">Mentions and replies</label><input class="input" type="checkbox" role="switch" id="settings-02-mentions" name="mentions" checked></div>
+          <div class="flex items-center justify-between gap-4 [&+&]:mt-3.5"><label for="settings-02-digest">Weekly digest</label><input class="input" type="checkbox" role="switch" id="settings-02-digest" name="digest"></div>
+        </section>
+        <footer class="justify-end"><button type="submit" class="btn">Save preferences</button></footer>
+      </form>
+    </div>
+
+    <div class="grid gap-5" role="tabpanel" id="settings-02-panel-billing" aria-labelledby="settings-02-tab-billing" tabindex="-1" hidden>
+      <section class="card">
+        <header><h2>Billing</h2><p>Acme Inc. is on the Team plan, billed monthly.</p></header>
+        <footer class="justify-end"><a class="btn" data-variant="outline" href="/settings/billing">Open billing</a></footer>
+      </section>
+    </div>
+  </div>
+</main>

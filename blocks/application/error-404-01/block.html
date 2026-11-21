@@ -1,0 +1,32 @@
+<main class="grid min-h-svh grid-rows-[auto_1fr_auto] bg-background px-5 py-6 text-foreground">
+  <header class="mx-auto flex w-full max-w-[1120px] items-center justify-between gap-4">
+    <a class="inline-flex items-center gap-2 font-semibold tracking-tight" href="/"><svg class="size-[22px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 21 20H3Z"/><path d="M8 14.5h8"/></svg>Acme</a>
+    <a class="btn" data-variant="outline" data-size="sm" href="/login">Sign in</a>
+  </header>
+  <div class="grid place-items-center py-12">
+    <section class="empty w-full max-w-[34rem]" aria-labelledby="error-404-01-heading">
+      <header>
+        <p class="mb-1 text-[72px] leading-none font-bold tracking-[-.06em] text-muted-foreground opacity-35 md:text-[128px]" aria-hidden="true">404</p>
+        <h1 id="error-404-01-heading" class="text-[22px] font-semibold tracking-tight md:text-[28px]">We couldn't find that page</h1>
+        <p>The link may be broken, or the page may have moved. Search Acme or head back to somewhere familiar.</p>
+      </header>
+      <footer>
+        <form class="w-full max-w-sm" action="/search" method="get" role="search">
+          <div class="input-group w-full">
+            <input type="search" name="q" aria-label="Search Acme" placeholder="Search docs, projects, and people">
+            <span data-align="start" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+            <span data-align="end"><kbd class="kbd">/</kbd></span>
+          </div>
+        </form>
+        <div class="flex flex-wrap justify-center gap-2">
+          <a class="btn" href="/">Go to dashboard</a>
+          <a class="btn" data-variant="ghost" href="/help">Visit help center</a>
+        </div>
+      </footer>
+    </section>
+  </div>
+  <footer class="mx-auto flex w-full max-w-[1120px] items-center justify-between gap-4 text-[13px] text-muted-foreground">
+    <span>Error reference: 404 · <code>/projects/q3-roadmap</code></span>
+    <a href="https://status.example.com">System status</a>
+  </footer>
+</main>

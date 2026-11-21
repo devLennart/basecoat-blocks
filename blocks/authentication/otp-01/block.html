@@ -1,0 +1,32 @@
+<!-- Requires Basecoat JavaScript (all.min.js). -->
+<main class="grid min-h-svh place-items-center bg-muted px-5 py-12 text-foreground">
+  <div class="grid w-full max-w-[25rem] justify-items-center gap-6">
+    <div class="inline-flex items-center gap-2.5 font-semibold tracking-tight"><span class="grid size-8 place-items-center rounded-lg bg-primary text-primary-foreground" aria-hidden="true"><svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 21 20H3Z"/><path d="M8 14.5h8"/></svg></span><span>Acme Inc.</span></div>
+    <section class="card w-full" aria-labelledby="otp-01-heading">
+      <header class="justify-items-center text-center">
+        <span class="mb-2 grid size-12 place-items-center rounded-full bg-muted text-foreground" aria-hidden="true"><svg class="size-[1.35rem]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+        <h1 id="otp-01-heading" class="text-[1.35rem] font-semibold tracking-tight">Check your email</h1>
+        <p>We sent a 6-digit code to <strong>maya.chen@example.com</strong>. It expires in 10 minutes.</p>
+      </header>
+      <section>
+        <form class="grid justify-items-center gap-5" action="/verify" method="post">
+          <div role="group" class="field justify-items-center text-center">
+            <label for="otp-01-code" class="sr-only">Verification code</label>
+            <div class="input-otp" id="otp-01-input">
+              <input class="input" id="otp-01-code" type="text" name="code" inputmode="numeric" autocomplete="one-time-code" spellcheck="false" pattern="[0-9]+" minlength="6" maxlength="6" data-filter required dir="ltr">
+              <div aria-hidden="true">
+                <div><span></span><span></span><span></span></div>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/></svg>
+                <div><span></span><span></span><span></span></div>
+              </div>
+            </div>
+          </div>
+          <button class="btn w-full" type="submit">Verify email</button>
+          <p class="text-center text-sm text-muted-foreground">Didn't get it? <button class="cursor-pointer font-medium text-foreground underline underline-offset-4" type="submit" form="otp-01-resend">Send a new code</button></p>
+        </form>
+        <form id="otp-01-resend" action="/verify/resend" method="post" hidden></form>
+      </section>
+    </section>
+    <p class="text-sm text-muted-foreground"><a class="underline underline-offset-4" href="/login">Back to sign in</a></p>
+  </div>
+</main>

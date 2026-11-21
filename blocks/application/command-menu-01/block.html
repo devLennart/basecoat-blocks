@@ -1,0 +1,52 @@
+<!-- Requires Basecoat JavaScript (all.min.js). -->
+<main class="mx-auto max-w-[980px] px-4 pt-7 pb-12 sm:px-5 sm:pt-13 sm:pb-18" id="bc-command-menu-01">
+  <header>
+    <h1 class="mb-2.5 text-3xl leading-tight font-semibold tracking-tight md:text-[42px]">Jump to an example</h1>
+    <p class="max-w-[64ch] text-muted-foreground">A keyboard-first index for the Acme workspace. Every link is a placeholder route, not a live workspace.</p>
+  </header>
+  <div class="mt-8 grid items-start gap-3.5 sm:grid-cols-[1.55fr_minmax(220px,.7fr)] sm:gap-7">
+    <section class="overflow-hidden rounded-[14px] border bg-card" aria-labelledby="bc-jump-panel-title-01">
+      <header class="flex flex-wrap items-center justify-between gap-3 border-b px-5.5 py-5">
+        <h2 id="bc-jump-panel-title-01" class="text-[17px] font-semibold">Browse blocks</h2>
+        <button type="button" class="btn" data-variant="outline" data-size="sm" id="bc-jump-focus-01">Focus search</button>
+      </header>
+      <div class="command rounded-none border-0" aria-label="Browse block previews">
+        <header>
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input id="bc-jump-input-01" type="text" role="combobox" aria-label="Search block previews" aria-autocomplete="list" aria-expanded="true" aria-controls="bc-jump-menu-01" placeholder="Search examples…" autocomplete="off" autocorrect="off" spellcheck="false">
+        </header>
+        <div role="menu" id="bc-jump-menu-01" aria-orientation="vertical" data-empty="No matching examples. Try another search.">
+          <div role="group" aria-labelledby="bc-jump-group-people-01">
+            <span role="heading" id="bc-jump-group-people-01">People &amp; access</span>
+            <a role="menuitem" href="/access-review" data-filter="Access review" data-keywords="accounts status search permissions table">Access review table</a>
+            <a role="menuitem" href="/people" data-filter="People directory" data-keywords="users members team roles">People directory</a>
+          </div>
+          <hr role="separator">
+          <div role="group" aria-labelledby="bc-jump-group-workspace-01">
+            <span role="heading" id="bc-jump-group-workspace-01">Workspace</span>
+            <a role="menuitem" href="/settings" data-filter="Workspace settings" data-keywords="preferences profile configuration">Workspace settings</a>
+            <a role="menuitem" href="/dashboard" data-filter="Dashboard overview" data-keywords="metrics overview activity">Dashboard overview</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <aside class="px-0.5 py-2.5 sm:px-0 sm:py-5 [&_kbd]:inline-block [&_kbd]:rounded-[5px] [&_kbd]:border [&_kbd]:bg-muted [&_kbd]:px-1.5 [&_kbd]:text-xs [&_kbd]:text-foreground" aria-labelledby="bc-jump-guide-title-01">
+      <h2 id="bc-jump-guide-title-01" class="text-[17px] font-semibold">Navigate without a mouse</h2>
+      <p class="mt-3 leading-relaxed text-muted-foreground">Press <kbd>Ctrl</kbd> + <kbd>K</kbd> or <kbd>⌘</kbd> + <kbd>K</kbd> to focus search. Type to filter, use <kbd>↑</kbd> / <kbd>↓</kbd> to choose, then <kbd>Enter</kbd> to open a page.</p>
+      <p class="mt-5 border-t pt-4 leading-relaxed text-muted-foreground">These sample destinations are placeholder routes. Replace each link with a real route when integrating this menu into an application.</p>
+    </aside>
+  </div>
+</main>
+<script>
+  (() => {
+    const root = document.getElementById('bc-command-menu-01');
+    const input = root.querySelector('#bc-jump-input-01');
+    root.querySelector('#bc-jump-focus-01').addEventListener('click', () => input.focus());
+    document.addEventListener('keydown', event => {
+      if ((event.ctrlKey || event.metaKey) && !event.altKey && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        input.focus();
+      }
+    });
+  })();
+</script>

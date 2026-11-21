@@ -1,0 +1,87 @@
+<!-- Requires Basecoat JavaScript (all.min.js). -->
+<aside id="sidebar-03" class="sidebar" data-side="left">
+  <nav aria-label="Acme documentation navigation">
+    <header>
+      <div class="flex items-center justify-between gap-3">
+        <strong class="text-base">Acme Handbook</strong>
+        <button type="button" class="btn" data-variant="ghost" data-size="sm" onclick="document.getElementById('sidebar-03')?.close()" aria-controls="sidebar-03" aria-label="Close navigation">Close</button>
+      </div>
+    </header>
+    <section class="scrollbar scrollbar-thin">
+      <div role="group" aria-labelledby="sidebar-03-guide">
+        <h3 id="sidebar-03-guide">Documentation</h3>
+        <ul>
+          <li><a href="#introduction"><span>Introduction</span></a></li>
+          <li>
+            <details open id="sidebar-03-components">
+              <summary aria-controls="sidebar-03-components-content" data-active="true"><span>Components</span></summary>
+              <ul id="sidebar-03-components-content">
+                <li><a href="#layout"><span>Layout</span></a></li>
+                <li>
+                  <details open id="sidebar-03-navigation">
+                    <summary aria-controls="sidebar-03-navigation-content" data-active="true"><span>Navigation</span></summary>
+                    <ul id="sidebar-03-navigation-content">
+                      <li><a href="#sidebar-pattern" aria-current="page"><span>Sidebar</span></a></li>
+                      <li><a href="#breadcrumbs"><span>Breadcrumbs</span></a></li>
+                    </ul>
+                  </details>
+                </li>
+                <li><a href="#forms"><span>Forms</span></a></li>
+              </ul>
+            </details>
+          </li>
+          <li><a href="#accessibility"><span>Accessibility</span></a></li>
+        </ul>
+      </div>
+      <hr role="separator">
+      <div role="group" aria-labelledby="sidebar-03-more">
+        <h3 id="sidebar-03-more">More</h3>
+        <ul><li><a href="#release-notes"><span>Release notes</span></a></li></ul>
+      </div>
+    </section>
+    <footer><span class="badge" data-variant="outline">Handbook · 1.0</span></footer>
+  </nav>
+</aside>
+<main>
+  <article class="mx-auto max-w-[52rem] space-y-10 p-6 md:p-12">
+    <div class="flex items-center justify-between gap-3">
+      <button type="button" class="btn" data-variant="outline" data-size="sm" onclick="document.getElementById('sidebar-03')?.toggle()" aria-controls="sidebar-03">Toggle navigation</button>
+      <span class="badge" data-variant="secondary">Documentation</span>
+    </div>
+    <header id="sidebar-pattern" class="space-y-3">
+      <p class="text-muted-foreground">Components / Navigation / Sidebar</p>
+      <h1 class="text-4xl leading-tight font-semibold tracking-tight md:text-[3.25rem]">Navigation that stays in context.</h1>
+      <p class="text-muted-foreground">Keep large content libraries legible with named groups and native disclosures. Use the nested tree to jump between sections or collapse an entire branch.</p>
+    </header>
+    <section id="introduction" class="space-y-3">
+      <h2 class="text-[1.4rem] font-semibold">Introduction</h2>
+      <p>Give each part of your product a home. A top-level group maps the territory; deeper levels reveal only the detail a reader needs right now.</p>
+    </section>
+    <section id="layout" class="space-y-3">
+      <h2 class="text-[1.4rem] font-semibold">Layout</h2>
+      <p>The sidebar sits beside the document. On smaller screens, open it with the navigation button and dismiss it with the close control.</p>
+    </section>
+    <section id="breadcrumbs" class="space-y-3">
+      <h2 class="text-[1.4rem] font-semibold">Breadcrumbs</h2>
+      <p>Keep the path to the current page visible above the title, even when the navigation is closed.</p>
+    </section>
+    <section id="forms" class="space-y-3">
+      <h2 class="text-[1.4rem] font-semibold">Forms</h2>
+      <p>Put related controls under one heading, and make every input's purpose clear to the person using it.</p>
+    </section>
+    <section id="accessibility" class="space-y-3">
+      <h2 class="text-[1.4rem] font-semibold">Accessibility</h2>
+      <p>Native disclosure buttons work with keyboard navigation. Mark the current link with <code>aria-current="page"</code> and leave inactive branches free to close.</p>
+      <pre class="overflow-x-auto rounded-lg border bg-muted p-5 text-foreground"><code>&lt;details open&gt;
+  &lt;summary&gt;Navigation&lt;/summary&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a aria-current="page" href="#sidebar-pattern"&gt;Sidebar&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/details&gt;</code></pre>
+    </section>
+    <section id="release-notes" class="space-y-3">
+      <h2 class="text-[1.4rem] font-semibold">Release notes</h2>
+      <p>Version 1.0 brings a simpler path through the handbook.</p>
+    </section>
+  </article>
+</main>

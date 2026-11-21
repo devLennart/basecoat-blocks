@@ -1,0 +1,41 @@
+<!-- Requires Basecoat JavaScript (all.min.js). -->
+<section class="bg-background px-5 py-14 text-foreground md:py-20 lg:py-28" aria-labelledby="faq-01-heading">
+  <div class="mx-auto grid max-w-[1120px] items-start gap-x-18 gap-y-10 lg:grid-cols-[.8fr_1.4fr]">
+    <header class="lg:sticky lg:top-8">
+      <span class="badge" data-variant="outline">FAQ</span>
+      <h2 id="faq-01-heading" class="mt-4 mb-3.5 text-[32px] leading-[1.05] font-semibold tracking-[-.045em] md:text-[44px] lg:text-[48px]">Questions, answered.</h2>
+      <p class="mb-6 leading-relaxed text-muted-foreground">Everything teams usually ask before moving to Acme. Still unsure? Our team replies within a business day.</p>
+      <div class="flex flex-wrap items-center gap-3 rounded-lg border p-4 min-[421px]:flex-nowrap">
+        <div class="avatar-group text-[11px] font-medium" aria-hidden="true">
+          <span class="avatar"><span>IB</span></span>
+          <span class="avatar"><span>OP</span></span>
+          <span class="avatar"><span>LH</span></span>
+        </div>
+        <p class="text-sm text-foreground">Talk to a person<span class="block text-[13px] text-muted-foreground">Mon–Fri, 9–18 CET</span></p>
+        <a class="btn w-full min-[421px]:ms-auto min-[421px]:w-auto" data-variant="outline" data-size="sm" href="/contact">Contact us</a>
+      </div>
+    </header>
+    <section class="accordion [&_section]:leading-relaxed [&_section]:text-muted-foreground [&_summary]:text-base" aria-label="Frequently asked questions">
+      <details class="transition-details" open>
+        <summary>Can I try Acme before paying?</summary>
+        <section>Yes. Every workspace starts with a 14-day trial of the Studio plan, with no card required. When the trial ends you can pick a plan or drop to the free Solo tier.</section>
+      </details>
+      <details class="transition-details">
+        <summary>How do you handle my data?</summary>
+        <section>Data is encrypted in transit and at rest, stored in the region you choose, and never used to train models. You can export or delete everything at any time.</section>
+      </details>
+      <details class="transition-details">
+        <summary>Can we move over from another tool?</summary>
+        <section>Importers bring over projects, tasks, comments, and attachments from the most common tools. Larger teams get a guided migration on the Scale plan.</section>
+      </details>
+      <details class="transition-details">
+        <summary>Do you offer discounts for non-profits and education?</summary>
+        <section>Registered non-profits and schools get 50% off any paid plan. Contact us with proof of status and we'll apply it to your workspace.</section>
+      </details>
+      <details class="transition-details">
+        <summary>What happens if we cancel?</summary>
+        <section>You keep access until the end of the billing period. After that the workspace becomes read-only for 30 days so you can export your work.</section>
+      </details>
+    </section>
+  </div>
+</section>

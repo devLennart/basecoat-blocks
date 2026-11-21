@@ -1,0 +1,31 @@
+<main class="grid min-h-svh place-items-center bg-muted px-4 py-8 text-foreground">
+  <div class="w-full max-w-[27rem]">
+    <div class="mb-6 flex items-center justify-center gap-2.5 font-bold tracking-tight"><span class="grid size-8 place-items-center rounded-lg bg-primary text-sm text-primary-foreground" aria-hidden="true"><svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 21 20H3Z"/><path d="M8 14.5h8"/></svg></span><span>Acme</span></div>
+    <div class="card">
+      <header>
+        <h1 class="text-[1.75rem] leading-tight tracking-tight">Welcome back</h1>
+        <p>Enter your details to sign in to your workspace.</p>
+      </header>
+      <section>
+        <form id="login-03-form" class="grid gap-5" action="/login" method="post">
+          <div role="group" class="field">
+            <label for="login-03-email">Email address</label>
+            <input class="input w-full" id="login-03-email" name="email" type="email" autocomplete="username" placeholder="you@company.com" required>
+          </div>
+          <div role="group" class="field">
+            <label for="login-03-password">Password</label>
+            <input class="input w-full" id="login-03-password" name="password" type="password" autocomplete="current-password" required>
+          </div>
+          <div role="group" class="field" data-orientation="horizontal">
+            <input class="input" id="login-03-remember" name="remember" type="checkbox" value="yes">
+            <label for="login-03-remember">Keep me signed in</label>
+          </div>
+          <button class="btn w-full" type="submit">Sign in</button>
+        </form>
+      </section>
+      <footer class="block">
+        <p class="text-center text-[.8125rem]/normal text-muted-foreground">Use your workspace credentials to continue.</p>
+      </footer>
+    </div>
+  </div>
+</main>

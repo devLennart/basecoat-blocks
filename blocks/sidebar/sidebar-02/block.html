@@ -1,0 +1,72 @@
+<!-- Requires Basecoat JavaScript (all.min.js). -->
+<aside id="sidebar-02" class="sidebar" data-side="left">
+  <nav aria-label="Acme workspace navigation">
+    <header>
+      <div class="flex items-center justify-between gap-3">
+        <div><strong class="block text-base">Acme Inc.</strong><span class="text-sm text-muted-foreground">Design workspace</span></div>
+        <button type="button" class="btn" data-variant="ghost" data-size="sm" onclick="document.getElementById('sidebar-02')?.close()" aria-controls="sidebar-02" aria-label="Close navigation">Close</button>
+      </div>
+    </header>
+    <section class="scrollbar scrollbar-thin">
+      <div role="group" aria-labelledby="sidebar-02-workspace">
+        <h3 id="sidebar-02-workspace">Workspace</h3>
+        <ul>
+          <li><a href="#projects" aria-current="page"><span>Projects</span></a></li>
+          <li><a href="#inbox"><span>Inbox</span><span class="badge" data-variant="secondary">3</span></a></li>
+          <li><a href="#team"><span>Team</span></a></li>
+          <li><a href="#reports"><span>Reports</span></a></li>
+        </ul>
+      </div>
+      <hr role="separator">
+      <div role="group" aria-labelledby="sidebar-02-shortcuts">
+        <h3 id="sidebar-02-shortcuts">Pinned projects</h3>
+        <ul>
+          <li><a href="#aurora"><span>Aurora launch</span></a></li>
+          <li><a href="#library"><span>Pattern library</span></a></li>
+        </ul>
+      </div>
+    </section>
+    <footer>
+      <a href="#account"><span>Jordan Lee · Account</span></a>
+    </footer>
+  </nav>
+</aside>
+<main>
+  <div class="mx-auto max-w-[74rem] space-y-8 p-6 md:p-10">
+    <div class="flex items-center justify-between gap-3">
+      <button type="button" class="btn" data-variant="outline" data-size="sm" onclick="document.getElementById('sidebar-02')?.toggle()" aria-controls="sidebar-02">Toggle navigation</button>
+      <span class="badge" data-variant="outline">Acme Inc.</span>
+    </div>
+    <header id="projects" class="space-y-2">
+      <p class="text-sm text-muted-foreground">Workspace / Projects</p>
+      <h1 class="text-4xl leading-tight font-semibold tracking-tight md:text-5xl">Good morning, Jordan.</h1>
+      <p class="text-sm text-muted-foreground">Your work, people, and updates in one place.</p>
+    </header>
+    <div class="grid gap-4 md:grid-cols-3">
+      <section id="aurora" class="card md:col-span-3">
+        <header><h2 class="text-xl">Aurora launch</h2><p>Featured project · This week</p></header>
+        <section><p>Bring the release plan together: a clear brief, an owner for each milestone, and room for the finishing touches.</p></section>
+      </section>
+      <section id="inbox" class="card">
+        <header><h2 class="text-xl">Inbox</h2><p>3 updates to review</p></header>
+        <section><p>New notes from the product and brand teams are ready for you.</p></section>
+      </section>
+      <section id="team" class="card">
+        <header><h2 class="text-xl">Team</h2><p>Working together</p></header>
+        <section><p>Keep conversations and project ownership easy to find.</p></section>
+      </section>
+      <section id="reports" class="card">
+        <header><h2 class="text-xl">Reports</h2><p>At a glance</p></header>
+        <section><p>See the decisions and progress behind each release.</p></section>
+      </section>
+      <section id="library" class="card">
+        <header><h2 class="text-xl">Pattern library</h2><p>Pinned project</p></header>
+        <section><p>A shared home for the patterns your team uses every day.</p></section>
+      </section>
+      <section id="account" class="card">
+        <header><h2 class="text-xl">Jordan Lee</h2><p>Workspace account</p></header>
+        <section><p>This example account area can be replaced with your own profile route.</p></section>
+      </section>
+    </div>
+  </div>
+</main>

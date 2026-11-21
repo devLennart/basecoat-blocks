@@ -1,0 +1,31 @@
+<main class="grid min-h-svh bg-background text-foreground md:grid-cols-2">
+  <aside class="flex flex-col justify-between gap-8 bg-primary p-6 text-primary-foreground md:gap-16 md:p-12 lg:p-20" aria-label="About Acme">
+    <div class="inline-flex items-center gap-3 text-xl font-bold tracking-tight"><span class="inline-grid size-9 place-items-center rounded-full border border-current text-base" aria-hidden="true"><svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 21 20H3Z"/><path d="M8 14.5h8"/></svg></span><span>acme.</span></div>
+    <div>
+      <p class="max-w-[20ch] text-[2rem] leading-[1.06] font-semibold tracking-tight md:max-w-[12ch] md:text-6xl lg:text-7xl">Good work happens together.</p>
+    </div>
+    <p class="hidden border-t border-current pt-6 text-sm opacity-80 md:block">One place for your people, plans, and next big idea.</p>
+  </aside>
+  <section class="grid place-items-center px-5 py-14 md:px-12 md:py-12 lg:px-20" aria-labelledby="login-02-heading">
+    <div class="w-full max-w-[25rem]">
+      <h1 id="login-02-heading" class="mb-2.5 text-4xl leading-tight font-bold tracking-tighter lg:text-[2.65rem]">Sign in to Acme</h1>
+      <p class="mb-10 text-muted-foreground">Your workspace is ready when you are.</p>
+      <form class="grid gap-5" action="/login" method="post">
+        <div role="group" class="field">
+          <label for="login-02-email">Email address</label>
+          <input class="input w-full" id="login-02-email" name="email" type="email" autocomplete="username" placeholder="name@company.com" required>
+        </div>
+        <div role="group" class="field">
+          <label for="login-02-password">Password</label>
+          <input class="input w-full" id="login-02-password" name="password" type="password" autocomplete="current-password" required>
+        </div>
+        <div role="group" class="field" data-orientation="horizontal">
+          <input class="input" id="login-02-remember" name="remember" type="checkbox" value="yes">
+          <label for="login-02-remember">Stay signed in</label>
+        </div>
+        <button class="btn w-full" type="submit">Continue to workspace</button>
+      </form>
+      <p class="mt-8 text-sm text-muted-foreground">Need an account? <a class="text-foreground underline underline-offset-4" href="/signup">Get started</a></p>
+    </div>
+  </section>
+</main>

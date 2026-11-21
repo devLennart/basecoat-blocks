@@ -1,0 +1,71 @@
+<main class="mx-auto max-w-[1180px] px-4 pt-6 pb-12 text-foreground sm:px-5 sm:pt-10 sm:pb-18">
+  <header class="mb-6 flex flex-wrap items-end justify-between gap-4">
+    <div>
+      <p class="text-[13px] font-semibold tracking-[.09em] text-muted-foreground uppercase">Acme / Commerce</p>
+      <h1 class="mt-1.5 mb-2 text-[26px] leading-tight font-semibold tracking-tight md:text-[34px]">Orders</h1>
+      <p class="text-muted-foreground">Every order placed in the Acme store this month. Illustrative data.</p>
+    </div>
+    <div class="flex gap-2">
+      <a class="btn" data-variant="outline" href="/orders.csv">Export CSV</a>
+      <a class="btn" href="/orders/new">New order</a>
+    </div>
+  </header>
+
+  <!-- Filters submit as GET query parameters; render the filtered page on your server. -->
+  <form class="mb-3.5 flex flex-wrap items-center gap-3" action="/orders" method="get" role="search" aria-label="Filter orders">
+    <div class="input-group flex-[1_1_260px] sm:max-w-[340px]">
+      <input type="search" name="q" aria-label="Search orders" placeholder="Search by order or customer">
+      <span data-align="start" aria-hidden="true"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+    </div>
+    <fieldset>
+      <legend class="sr-only">Status</legend>
+      <div class="button-group">
+        <label class="btn cursor-pointer" data-variant="outline" data-size="sm"><input type="radio" name="status" value="all" checked>All</label>
+        <label class="btn cursor-pointer" data-variant="outline" data-size="sm"><input type="radio" name="status" value="paid">Paid</label>
+        <label class="btn cursor-pointer" data-variant="outline" data-size="sm"><input type="radio" name="status" value="pending">Pending</label>
+        <label class="btn cursor-pointer" data-variant="outline" data-size="sm"><input type="radio" name="status" value="refunded">Refunded</label>
+      </div>
+    </fieldset>
+    <span class="flex-1"></span>
+    <button type="submit" class="btn" data-variant="secondary" data-size="sm">Apply filters</button>
+  </form>
+
+  <div class="overflow-hidden rounded-lg border">
+    <div class="table-container" role="region" aria-label="Orders" tabindex="0">
+      <table class="table min-w-[760px] [&_td:first-child]:w-11 [&_td:first-child]:ps-3.5 [&_th:first-child]:w-11 [&_th:first-child]:ps-3.5">
+        <caption class="sr-only">Orders, sorted by date, newest first</caption>
+        <thead>
+          <tr>
+            <th scope="col"><input type="checkbox" class="input" aria-label="Select all orders on this page"></th>
+            <th scope="col"><a class="btn -ms-2 inline-flex items-center gap-1.5" data-variant="ghost" data-size="sm" href="?sort=order">Order</a></th>
+            <th scope="col">Customer</th>
+            <th scope="col">Status</th>
+            <th scope="col" aria-sort="descending"><a class="btn -ms-2 inline-flex items-center gap-1.5" data-variant="ghost" data-size="sm" href="?sort=date&amp;dir=asc">Date <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></a></th>
+            <th scope="col" class="text-end"><a class="btn -ms-2 inline-flex items-center gap-1.5" data-variant="ghost" data-size="sm" href="?sort=total">Total</a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bg-muted" data-selected><td><input type="checkbox" class="input" name="order" value="4821" aria-label="Select order #4821" checked></td><td>#4821</td><td><strong class="block font-medium">Imani Brooks</strong><span class="text-[13px] text-muted-foreground">imani.brooks@example.com</span></td><td><span class="badge" data-variant="secondary">Paid</span></td><td><time datetime="2026-11-21">Nov 21, 2026</time></td><td class="text-end tabular-nums">$1,240.00</td></tr>
+          <tr class="bg-muted" data-selected><td><input type="checkbox" class="input" name="order" value="4820" aria-label="Select order #4820" checked></td><td>#4820</td><td><strong class="block font-medium">Owen Price</strong><span class="text-[13px] text-muted-foreground">owen.price@example.com</span></td><td><span class="badge" data-variant="outline">Pending</span></td><td><time datetime="2026-11-20">Nov 20, 2026</time></td><td class="text-end tabular-nums">$86.50</td></tr>
+          <tr><td><input type="checkbox" class="input" name="order" value="4819" aria-label="Select order #4819"></td><td>#4819</td><td><strong class="block font-medium">Leila Haddad</strong><span class="text-[13px] text-muted-foreground">leila.haddad@example.com</span></td><td><span class="badge" data-variant="secondary">Paid</span></td><td><time datetime="2026-11-20">Nov 20, 2026</time></td><td class="text-end tabular-nums">$412.00</td></tr>
+          <tr><td><input type="checkbox" class="input" name="order" value="4818" aria-label="Select order #4818"></td><td>#4818</td><td><strong class="block font-medium">Rafi Singh</strong><span class="text-[13px] text-muted-foreground">rafi.singh@example.com</span></td><td><span class="badge" data-variant="destructive">Refunded</span></td><td><time datetime="2026-11-19">Nov 19, 2026</time></td><td class="text-end tabular-nums">$59.00</td></tr>
+          <tr><td><input type="checkbox" class="input" name="order" value="4817" aria-label="Select order #4817"></td><td>#4817</td><td><strong class="block font-medium">Elena Soto</strong><span class="text-[13px] text-muted-foreground">elena.soto@example.com</span></td><td><span class="badge" data-variant="secondary">Paid</span></td><td><time datetime="2026-11-18">Nov 18, 2026</time></td><td class="text-end tabular-nums">$2,075.00</td></tr>
+          <tr><td><input type="checkbox" class="input" name="order" value="4816" aria-label="Select order #4816"></td><td>#4816</td><td><strong class="block font-medium">Micah Vale</strong><span class="text-[13px] text-muted-foreground">micah.vale@example.com</span></td><td><span class="badge" data-variant="outline">Pending</span></td><td><time datetime="2026-11-18">Nov 18, 2026</time></td><td class="text-end tabular-nums">$318.40</td></tr>
+          <tr><td><input type="checkbox" class="input" name="order" value="4815" aria-label="Select order #4815"></td><td>#4815</td><td><strong class="block font-medium">Noah Torres</strong><span class="text-[13px] text-muted-foreground">noah.torres@example.com</span></td><td><span class="badge" data-variant="secondary">Paid</span></td><td><time datetime="2026-11-17">Nov 17, 2026</time></td><td class="text-end tabular-nums">$149.99</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-3 border-t px-3.5 py-3 text-sm text-muted-foreground">
+      <span>2 of 48 orders selected</span>
+      <nav aria-label="Orders pages">
+        <ul class="flex list-none items-center gap-1">
+          <li><a class="btn" data-variant="ghost" data-size="sm" href="?page=1" aria-disabled="true">Previous</a></li>
+          <li><a class="btn" data-variant="outline" data-size="icon-sm" href="?page=1" aria-current="page">1</a></li>
+          <li><a class="btn" data-variant="ghost" data-size="icon-sm" href="?page=2">2</a></li>
+          <li><a class="btn" data-variant="ghost" data-size="icon-sm" href="?page=3">3</a></li>
+          <li><a class="btn" data-variant="ghost" data-size="sm" href="?page=2">Next</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</main>

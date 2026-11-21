@@ -1,0 +1,45 @@
+<main class="mx-auto max-w-[960px] px-4 pt-7 pb-12 sm:px-5 sm:pt-12 sm:pb-19">
+  <header class="mb-7">
+    <h1 class="mb-2.5 text-3xl leading-tight font-semibold tracking-tight md:text-[38px]">Notification preferences</h1>
+    <p class="max-w-[62ch] leading-normal text-muted-foreground">Choose which updates reach you by email or inside your workspace. These are illustrative preferences for a fictional Acme account.</p>
+  </header>
+
+  <!-- Example endpoint only: replace the action, load saved values and add CSRF protection before use. -->
+  <form class="card" action="/replace-with-your-notification-preferences-endpoint" method="post">
+    <header><h2>Updates to receive</h2><p>Choose each event separately for each channel.</p></header>
+    <section class="grid gap-7 sm:grid-cols-2 sm:gap-8">
+      <fieldset class="fieldset" aria-describedby="bc-notifications-email-help">
+        <legend class="text-[17px] font-semibold">Email</legend>
+        <p class="mt-0.5 mb-4.5 text-sm/normal text-muted-foreground" id="bc-notifications-email-help">Messages sent to your account email address.</p>
+        <div class="field items-start gap-3 border-t py-4 first-of-type:border-t-0" data-orientation="horizontal">
+          <input class="input mt-0.5" type="checkbox" id="bc-notifications-email-assignment" name="email_assignment" value="on" aria-describedby="bc-notifications-email-assignment-help" checked>
+          <div><label class="block cursor-pointer font-semibold" for="bc-notifications-email-assignment">Assignments</label><p id="bc-notifications-email-assignment-help" class="mt-0.5 text-[13px]/normal text-muted-foreground">When a task is assigned to you.</p></div>
+        </div>
+        <div class="field items-start gap-3 border-t py-4 first-of-type:border-t-0" data-orientation="horizontal">
+          <input class="input mt-0.5" type="checkbox" id="bc-notifications-email-comment" name="email_comment" value="on" aria-describedby="bc-notifications-email-comment-help" checked>
+          <div><label class="block cursor-pointer font-semibold" for="bc-notifications-email-comment">Comments</label><p id="bc-notifications-email-comment-help" class="mt-0.5 text-[13px]/normal text-muted-foreground">When someone comments on your task.</p></div>
+        </div>
+        <div class="field items-start gap-3 border-t py-4 first-of-type:border-t-0" data-orientation="horizontal">
+          <input class="input mt-0.5" type="checkbox" id="bc-notifications-email-roundup" name="email_weekly_roundup" value="on" aria-describedby="bc-notifications-email-roundup-help">
+          <div><label class="block cursor-pointer font-semibold" for="bc-notifications-email-roundup">Weekly roundup</label><p id="bc-notifications-email-roundup-help" class="mt-0.5 text-[13px]/normal text-muted-foreground">A summary of your workspace activity.</p></div>
+        </div>
+      </fieldset>
+      <fieldset class="fieldset" aria-describedby="bc-notifications-in-app-help">
+        <legend class="text-[17px] font-semibold">In-app</legend>
+        <p class="mt-0.5 mb-4.5 text-sm/normal text-muted-foreground" id="bc-notifications-in-app-help">Updates shown inside your workspace.</p>
+        <div class="field items-start gap-3 border-t py-4 first-of-type:border-t-0" data-orientation="horizontal">
+          <input class="input mt-0.5" type="checkbox" id="bc-notifications-app-assignment" name="in_app_assignment" value="on" aria-describedby="bc-notifications-app-assignment-help" checked>
+          <div><label class="block cursor-pointer font-semibold" for="bc-notifications-app-assignment">Assignments</label><p id="bc-notifications-app-assignment-help" class="mt-0.5 text-[13px]/normal text-muted-foreground">When a task is assigned to you.</p></div>
+        </div>
+        <div class="field items-start gap-3 border-t py-4 first-of-type:border-t-0" data-orientation="horizontal">
+          <input class="input mt-0.5" type="checkbox" id="bc-notifications-app-comment" name="in_app_comment" value="on" aria-describedby="bc-notifications-app-comment-help" checked>
+          <div><label class="block cursor-pointer font-semibold" for="bc-notifications-app-comment">Comments</label><p id="bc-notifications-app-comment-help" class="mt-0.5 text-[13px]/normal text-muted-foreground">When someone comments on your task.</p></div>
+        </div>
+      </fieldset>
+    </section>
+    <footer class="flex flex-wrap items-stretch justify-between gap-3.5 sm:items-center">
+      <p class="max-w-[48ch] text-[13px]/normal text-muted-foreground">Unchecked options are not included in the form submission; your server must treat missing options as off.</p>
+      <button class="btn w-full sm:w-auto" type="submit">Save preferences</button>
+    </footer>
+  </form>
+</main>

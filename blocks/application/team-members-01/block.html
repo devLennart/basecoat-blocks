@@ -1,0 +1,75 @@
+<main class="mx-auto max-w-[1120px] px-4 pt-6 pb-12 sm:px-5 sm:pt-10 sm:pb-18">
+  <header>
+    <p class="text-[13px] font-semibold tracking-[.09em] text-muted-foreground uppercase">Acme / Workspace access</p>
+    <h1 class="mt-1 mb-2 text-3xl leading-tight font-semibold tracking-tight md:text-[38px]">Team members</h1>
+    <p class="max-w-[65ch] text-muted-foreground">Invite collaborators to Acme Inc. and manage access by role. This is an illustrative screen; the forms need your own authenticated membership service.</p>
+  </header>
+
+  <div class="mt-7 grid items-start gap-5 md:grid-cols-[minmax(280px,340px)_1fr]">
+    <section class="card" aria-labelledby="bc-team-invite-title">
+      <header><h2 id="bc-team-invite-title">Invite a teammate</h2><p>Choose a role before sending an invitation.</p></header>
+      <section>
+        <form class="grid gap-4" action="/replace-with-your-team-invite-route" method="post">
+          <div class="field" role="group">
+            <label for="bc-team-invite-email">Email address</label>
+            <input class="input w-full" id="bc-team-invite-email" name="email" type="email" autocomplete="email" placeholder="colleague@example.com" required>
+          </div>
+          <div class="field" role="group">
+            <label for="bc-team-invite-role">Workspace role</label>
+            <select class="select w-full" id="bc-team-invite-role" name="role" required>
+              <option value="" selected disabled>Choose a role</option>
+              <option value="admin">Admin</option>
+              <option value="member">Member</option>
+              <option value="viewer">Viewer</option>
+            </select>
+          </div>
+          <p class="text-[13px]/normal text-muted-foreground">Example form only. Replace the route and connect invitation delivery before submitting; no email is sent by this preview.</p>
+          <button type="submit" class="btn">Send invitation</button>
+        </form>
+      </section>
+    </section>
+
+    <div class="grid gap-4.5">
+      <section class="card" aria-labelledby="bc-team-active-title">
+        <header><h2 id="bc-team-active-title">Active members <span class="badge" data-variant="secondary">3</span></h2><p>Role changes require an authorized server endpoint.</p></header>
+        <section>
+          <article class="flex flex-wrap items-start justify-between gap-3.5 border-t py-4 first:border-t-0 first:pt-0" aria-labelledby="bc-team-iris-name">
+            <div class="flex items-center gap-3"><span class="avatar" aria-hidden="true"><span>IB</span></span><div><h3 class="text-[15px] font-semibold" id="bc-team-iris-name">Iris Bell</h3><p class="text-[13px] break-all text-muted-foreground">iris.bell@example.com</p></div></div>
+            <div class="grid w-full justify-items-start gap-2 sm:w-auto sm:justify-items-end"><span class="badge" data-variant="secondary">Active</span><span class="text-[13px] text-muted-foreground">Owner · Role managed separately</span></div>
+          </article>
+          <article class="flex flex-wrap items-start justify-between gap-3.5 border-t py-4 first:border-t-0 first:pt-0" aria-labelledby="bc-team-owen-name">
+            <div class="flex items-center gap-3"><span class="avatar" aria-hidden="true"><span>OP</span></span><div><h3 class="text-[15px] font-semibold" id="bc-team-owen-name">Owen Price</h3><p class="text-[13px] break-all text-muted-foreground">owen.price@example.com</p></div></div>
+            <div class="grid w-full justify-items-start gap-2 sm:w-auto sm:justify-items-end">
+              <span class="badge" data-variant="secondary">Active</span>
+              <form class="flex w-full flex-wrap items-end gap-2 sm:w-auto" action="/replace-with-your-team-role-route" method="post">
+                <input type="hidden" name="membership_id" value="example-member-owen">
+                <div class="field min-w-[118px] flex-1 sm:flex-none" role="group"><label for="bc-team-owen-role">Owen's role</label><select class="select w-full" id="bc-team-owen-role" name="role"><option value="admin" selected>Admin</option><option value="member">Member</option><option value="viewer">Viewer</option></select></div>
+                <button type="submit" class="btn" data-variant="outline" data-size="sm">Save role</button>
+              </form>
+            </div>
+          </article>
+          <article class="flex flex-wrap items-start justify-between gap-3.5 border-t py-4 first:border-t-0 first:pt-0" aria-labelledby="bc-team-leila-name">
+            <div class="flex items-center gap-3"><span class="avatar" aria-hidden="true"><span>LM</span></span><div><h3 class="text-[15px] font-semibold" id="bc-team-leila-name">Leila Morgan</h3><p class="text-[13px] break-all text-muted-foreground">leila.morgan@example.com</p></div></div>
+            <div class="grid w-full justify-items-start gap-2 sm:w-auto sm:justify-items-end">
+              <span class="badge" data-variant="secondary">Active</span>
+              <form class="flex w-full flex-wrap items-end gap-2 sm:w-auto" action="/replace-with-your-team-role-route" method="post">
+                <input type="hidden" name="membership_id" value="example-member-leila">
+                <div class="field min-w-[118px] flex-1 sm:flex-none" role="group"><label for="bc-team-leila-role">Leila's role</label><select class="select w-full" id="bc-team-leila-role" name="role"><option value="admin">Admin</option><option value="member" selected>Member</option><option value="viewer">Viewer</option></select></div>
+                <button type="submit" class="btn" data-variant="outline" data-size="sm">Save role</button>
+              </form>
+            </div>
+          </article>
+        </section>
+      </section>
+      <section class="card" aria-labelledby="bc-team-pending-title">
+        <header><h2 id="bc-team-pending-title">Pending invitations <span class="badge" data-variant="outline">1</span></h2><p>Invitation recipients do not have access until they accept.</p></header>
+        <section>
+          <article class="flex flex-wrap items-start justify-between gap-3.5 border-t py-4 first:border-t-0 first:pt-0" aria-labelledby="bc-team-nico-name">
+            <div class="flex items-center gap-3"><span class="avatar" aria-hidden="true"><span>NS</span></span><div><h3 class="text-[15px] font-semibold" id="bc-team-nico-name">Nico Shah</h3><p class="text-[13px] break-all text-muted-foreground">nico.shah@example.com</p></div></div>
+            <div class="grid w-full justify-items-start gap-2 sm:w-auto sm:justify-items-end"><span class="badge" data-variant="outline">Pending</span><span class="text-[13px] text-muted-foreground">Viewer · Invited <time datetime="2026-10-21">Oct 21, 2026</time></span></div>
+          </article>
+        </section>
+      </section>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,64 @@
+<main class="mx-auto max-w-[1120px] px-4 pt-6 pb-12 sm:px-5 sm:pt-10 sm:pb-18">
+  <header class="mb-6.5 flex flex-wrap items-end justify-between gap-4">
+    <div>
+      <p class="text-[13px] font-semibold tracking-[.09em] text-muted-foreground uppercase">Acme / Workspace</p>
+      <h1 class="mt-1 mb-2 text-3xl leading-tight font-semibold tracking-tight md:text-[38px]">People</h1>
+      <p class="text-muted-foreground">See who has access to the Acme Inc. workspace.</p>
+    </div>
+    <span class="badge" data-variant="outline">Acme Inc. · Team plan</span>
+  </header>
+
+  <section class="mb-5 grid gap-3.5 sm:grid-cols-3" aria-label="Workspace membership summary">
+    <article class="card" data-size="sm">
+      <header><h2>Total members</h2></header>
+      <section><p class="text-[30px] leading-tight font-semibold tracking-tight tabular-nums">6</p><p class="mt-2 text-[13px] text-muted-foreground">Everyone with a workspace seat</p></section>
+    </article>
+    <article class="card" data-size="sm">
+      <header><h2>Active</h2></header>
+      <section><p class="text-[30px] leading-tight font-semibold tracking-tight tabular-nums">4</p><p class="mt-2 text-[13px] text-muted-foreground">Currently able to sign in</p></section>
+    </article>
+    <article class="card" data-size="sm">
+      <header><h2>Pending invite</h2></header>
+      <section><p class="text-[30px] leading-tight font-semibold tracking-tight tabular-nums">1</p><p class="mt-2 text-[13px] text-muted-foreground">Awaiting acceptance</p></section>
+    </article>
+  </section>
+
+  <section class="card" aria-labelledby="users-01-directory-title">
+    <header><h2 id="users-01-directory-title">Workspace directory</h2><p>Roles, teams, and access at a glance.</p></header>
+    <section>
+      <div class="table-container">
+        <table class="table min-w-[790px] [&_td:last-child]:text-right [&_th:last-child]:text-right">
+          <caption>Six example workspace members; scroll horizontally on narrow screens.</caption>
+          <thead><tr><th scope="col">Member</th><th scope="col">Role</th><th scope="col">Team</th><th scope="col">Status</th><th scope="col">Last active</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><div class="flex items-center gap-3"><span class="avatar" aria-hidden="true"><span>MC</span></span><span><strong class="block font-semibold">Maya Chen</strong><small class="mt-0.5 block text-xs text-muted-foreground">maya.chen@example.com</small></span></div></td>
+              <td>Owner</td><td>Leadership</td><td><span class="badge" data-variant="secondary">Active</span></td><td>Today</td>
+            </tr>
+            <tr>
+              <td><div class="flex items-center gap-3"><span class="avatar" aria-hidden="true"><span>JL</span></span><span><strong class="block font-semibold">Jonah Lee</strong><small class="mt-0.5 block text-xs text-muted-foreground">jonah.lee@example.com</small></span></div></td>
+              <td>Admin</td><td>Operations</td><td><span class="badge" data-variant="secondary">Active</span></td><td>Today</td>
+            </tr>
+            <tr>
+              <td><div class="flex items-center gap-3"><span class="avatar" aria-hidden="true"><span>AR</span></span><span><strong class="block font-semibold">Amara Reed</strong><small class="mt-0.5 block text-xs text-muted-foreground">amara.reed@example.com</small></span></div></td>
+              <td>Member</td><td>Design</td><td><span class="badge" data-variant="secondary">Active</span></td><td>Yesterday</td>
+            </tr>
+            <tr>
+              <td><div class="flex items-center gap-3"><span class="avatar" aria-hidden="true"><span>EP</span></span><span><strong class="block font-semibold">Elliot Park</strong><small class="mt-0.5 block text-xs text-muted-foreground">elliot.park@example.com</small></span></div></td>
+              <td>Member</td><td>Engineering</td><td><span class="badge" data-variant="secondary">Active</span></td><td>Oct 4, 2026</td>
+            </tr>
+            <tr>
+              <td><div class="flex items-center gap-3"><span class="avatar" aria-hidden="true"><span>SK</span></span><span><strong class="block font-semibold">Sofia Khan</strong><small class="mt-0.5 block text-xs text-muted-foreground">sofia.khan@example.com</small></span></div></td>
+              <td>Member</td><td>Design</td><td><span class="badge" data-variant="outline">Invited</span></td><td class="text-muted-foreground">Not yet</td>
+            </tr>
+            <tr>
+              <td><div class="flex items-center gap-3"><span class="avatar" aria-hidden="true"><span>NT</span></span><span><strong class="block font-semibold">Noah Torres</strong><small class="mt-0.5 block text-xs text-muted-foreground">noah.torres@example.com</small></span></div></td>
+              <td>Viewer</td><td>Finance</td><td><span class="badge" data-variant="destructive">Suspended</span></td><td>Sep 27, 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <footer class="text-[13px] text-muted-foreground">Showing all 6 example members · 1 suspended account</footer>
+  </section>
+</main>

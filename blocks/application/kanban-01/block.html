@@ -1,0 +1,54 @@
+<main class="min-h-svh bg-muted px-4 pt-6 pb-10 text-foreground sm:px-5 sm:pt-8 sm:pb-12">
+  <header class="mx-auto mb-6 flex max-w-[1280px] flex-wrap items-end justify-between gap-4">
+    <div>
+      <p class="text-[13px] font-semibold tracking-[.09em] text-muted-foreground uppercase">Acme / Projects / Website relaunch</p>
+      <h1 class="mt-1.5 text-[26px] leading-tight font-semibold tracking-tight md:text-[34px]">Sprint 14 board</h1>
+    </div>
+    <div class="flex items-center gap-3">
+      <div class="avatar-group text-[11px] font-medium" aria-label="4 project members">
+        <span class="avatar" aria-hidden="true"><span>MC</span></span>
+        <span class="avatar" aria-hidden="true"><span>JL</span></span>
+        <span class="avatar" aria-hidden="true"><span>AR</span></span>
+        <span class="avatar" aria-hidden="true"><span>SK</span></span>
+      </div>
+      <a class="btn" href="/tasks/new">New task</a>
+    </div>
+  </header>
+
+  <div class="mx-auto max-w-[1280px] overflow-x-auto pb-2" role="region" aria-label="Sprint 14 board" tabindex="0">
+    <ol class="grid list-none grid-cols-[repeat(4,minmax(250px,1fr))] gap-4" role="list">
+      <li class="grid content-start gap-2.5">
+        <header class="flex items-center justify-between gap-2 px-1"><h2 class="flex items-center gap-2 text-sm font-semibold"><span class="size-2 rounded-full bg-muted-foreground" aria-hidden="true"></span>To do <span class="font-medium text-muted-foreground">3</span></h2></header>
+        <ul class="grid list-none gap-2.5" role="list">
+          <li class="grid gap-2.5 rounded-lg border bg-card p-3.5 text-card-foreground shadow-xs"><div class="flex flex-wrap gap-1.5"><span class="badge" data-variant="outline">Content</span></div><h3 class="text-sm/snug font-medium"><a class="hover:underline" href="/tasks/ac-212">Write migration guide for legacy pricing customers</a></h3><div class="flex items-center justify-between gap-2 text-xs text-muted-foreground"><span class="inline-flex items-center gap-2.5 [&>span]:inline-flex [&>span]:items-center [&>span]:gap-1"><time datetime="2026-11-28">Due Nov 28</time></span><span class="avatar size-6 text-[10px]" aria-label="Assigned to Amara Reed"><span>AR</span></span></div></li>
+          <li class="grid gap-2.5 rounded-lg border bg-card p-3.5 text-card-foreground shadow-xs"><div class="flex flex-wrap gap-1.5"><span class="badge" data-variant="outline">Design</span></div><h3 class="text-sm/snug font-medium"><a class="hover:underline" href="/tasks/ac-215">Dark-mode pass on the checkout flow</a></h3><div class="flex items-center justify-between gap-2 text-xs text-muted-foreground"><span class="inline-flex items-center gap-2.5 [&>span]:inline-flex [&>span]:items-center [&>span]:gap-1"><span><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> 2</span></span><span class="avatar size-6 text-[10px]" aria-label="Assigned to Sofia Khan"><span>SK</span></span></div></li>
+          <li class="grid gap-2.5 rounded-lg border bg-card p-3.5 text-card-foreground shadow-xs"><div class="flex flex-wrap gap-1.5"><span class="badge" data-variant="outline">Engineering</span></div><h3 class="text-sm/snug font-medium"><a class="hover:underline" href="/tasks/ac-219">Add rate limiting to the public API</a></h3><div class="flex items-center justify-between gap-2 text-xs text-muted-foreground"><span class="inline-flex items-center gap-2.5 [&>span]:inline-flex [&>span]:items-center [&>span]:gap-1"><time datetime="2026-12-02">Due Dec 2</time></span><span class="avatar size-6 text-[10px]" aria-label="Assigned to Jonah Lee"><span>JL</span></span></div></li>
+        </ul>
+        <a class="btn w-full justify-start text-muted-foreground" data-variant="ghost" data-size="sm" href="/tasks/new?column=todo"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg>Add task</a>
+      </li>
+      <li class="grid content-start gap-2.5">
+        <header class="flex items-center justify-between gap-2 px-1"><h2 class="flex items-center gap-2 text-sm font-semibold"><span class="size-2 rounded-full bg-chart-1" aria-hidden="true"></span>In progress <span class="font-medium text-muted-foreground">2</span></h2></header>
+        <ul class="grid list-none gap-2.5" role="list">
+          <li class="grid gap-2.5 rounded-lg border bg-card p-3.5 text-card-foreground shadow-xs"><div class="flex flex-wrap gap-1.5"><span class="badge">Launch blocker</span><span class="badge" data-variant="outline">Engineering</span></div><h3 class="text-sm/snug font-medium"><a class="hover:underline" href="/tasks/ac-204">Move pricing copy into the CMS</a></h3><div class="progress h-1.5" role="progressbar" aria-label="70% complete" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"><span style="width: 70%"></span></div><div class="flex items-center justify-between gap-2 text-xs text-muted-foreground"><span class="inline-flex items-center gap-2.5 [&>span]:inline-flex [&>span]:items-center [&>span]:gap-1"><span><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> 5</span><span>3 / 4 subtasks</span></span><span class="avatar size-6 text-[10px]" aria-label="Assigned to Jonah Lee"><span>JL</span></span></div></li>
+          <li class="grid gap-2.5 rounded-lg border bg-card p-3.5 text-card-foreground shadow-xs"><div class="flex flex-wrap gap-1.5"><span class="badge" data-variant="outline">Design</span></div><h3 class="text-sm/snug font-medium"><a class="hover:underline" href="/tasks/ac-209">New illustrations for the onboarding emails</a></h3><div class="progress h-1.5" role="progressbar" aria-label="35% complete" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"><span style="width: 35%"></span></div><div class="flex items-center justify-between gap-2 text-xs text-muted-foreground"><span class="inline-flex items-center gap-2.5 [&>span]:inline-flex [&>span]:items-center [&>span]:gap-1"><time datetime="2026-11-25">Due Nov 25</time></span><span class="avatar size-6 text-[10px]" aria-label="Assigned to Sofia Khan"><span>SK</span></span></div></li>
+        </ul>
+        <a class="btn w-full justify-start text-muted-foreground" data-variant="ghost" data-size="sm" href="/tasks/new?column=progress"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg>Add task</a>
+      </li>
+      <li class="grid content-start gap-2.5">
+        <header class="flex items-center justify-between gap-2 px-1"><h2 class="flex items-center gap-2 text-sm font-semibold"><span class="size-2 rounded-full bg-chart-4" aria-hidden="true"></span>In review <span class="font-medium text-muted-foreground">2</span></h2></header>
+        <ul class="grid list-none gap-2.5" role="list">
+          <li class="grid gap-2.5 rounded-lg border bg-card p-3.5 text-card-foreground shadow-xs"><div class="flex flex-wrap gap-1.5"><span class="badge" data-variant="outline">Engineering</span></div><h3 class="text-sm/snug font-medium"><a class="hover:underline" href="/tasks/ac-198">Invoice export for the billing migration</a></h3><div class="flex items-center justify-between gap-2 text-xs text-muted-foreground"><span class="inline-flex items-center gap-2.5 [&>span]:inline-flex [&>span]:items-center [&>span]:gap-1"><span>PR #318</span></span><span class="avatar size-6 text-[10px]" aria-label="Assigned to Maya Chen"><span>MC</span></span></div></li>
+          <li class="grid gap-2.5 rounded-lg border bg-card p-3.5 text-card-foreground shadow-xs"><div class="flex flex-wrap gap-1.5"><span class="badge" data-variant="outline">Content</span></div><h3 class="text-sm/snug font-medium"><a class="hover:underline" href="/tasks/ac-201">Review 4 remaining launch guides</a></h3><div class="flex items-center justify-between gap-2 text-xs text-muted-foreground"><span class="inline-flex items-center gap-2.5 [&>span]:inline-flex [&>span]:items-center [&>span]:gap-1"><time datetime="2026-11-22">Due tomorrow</time></span><span class="avatar size-6 text-[10px]" aria-label="Assigned to Amara Reed"><span>AR</span></span></div></li>
+        </ul>
+      </li>
+      <li class="grid content-start gap-2.5">
+        <header class="flex items-center justify-between gap-2 px-1"><h2 class="flex items-center gap-2 text-sm font-semibold"><span class="size-2 rounded-full bg-chart-2" aria-hidden="true"></span>Done <span class="font-medium text-muted-foreground">12</span></h2></header>
+        <ul class="grid list-none gap-2.5" role="list">
+          <li class="grid gap-2.5 rounded-lg border bg-card p-3.5 text-card-foreground shadow-xs [&_h3]:text-muted-foreground [&_h3]:line-through"><h3 class="text-sm/snug font-medium"><a class="hover:underline" href="/tasks/ac-190">Set up EU on-call rotation</a></h3><div class="flex items-center justify-between gap-2 text-xs text-muted-foreground"><span class="inline-flex items-center gap-2.5 [&>span]:inline-flex [&>span]:items-center [&>span]:gap-1"><span>Closed today</span></span><span class="avatar size-6 text-[10px]" aria-label="Assigned to Jonah Lee"><span>JL</span></span></div></li>
+          <li class="grid gap-2.5 rounded-lg border bg-card p-3.5 text-card-foreground shadow-xs [&_h3]:text-muted-foreground [&_h3]:line-through"><h3 class="text-sm/snug font-medium"><a class="hover:underline" href="/tasks/ac-187">Freeze docs for launch</a></h3><div class="flex items-center justify-between gap-2 text-xs text-muted-foreground"><span class="inline-flex items-center gap-2.5 [&>span]:inline-flex [&>span]:items-center [&>span]:gap-1"><span>Closed yesterday</span></span><span class="avatar size-6 text-[10px]" aria-label="Assigned to Maya Chen"><span>MC</span></span></div></li>
+        </ul>
+        <a class="btn w-full justify-start text-muted-foreground" data-variant="ghost" data-size="sm" href="/tasks?status=done">Show all 12</a>
+      </li>
+    </ol>
+  </div>
+</main>

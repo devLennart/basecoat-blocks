@@ -1,0 +1,81 @@
+<main class="mx-auto max-w-[1080px] px-4 pt-6 pb-12 text-foreground sm:px-5 sm:pt-10">
+  <form class="mb-6" action="/search" method="get" role="search">
+    <div class="input-group h-11 w-full [&_svg]:size-4">
+      <label for="ai-search-01-q" class="sr-only">Search Acme docs</label>
+      <span data-align="inline-start" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+      <input id="ai-search-01-q" type="search" name="q" value="how do I rotate an API key without downtime">
+      <kbd class="kbd" data-align="inline-end">/</kbd>
+    </div>
+  </form>
+
+  <div class="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
+    <div class="grid min-w-0 gap-6">
+      <section class="card gap-4 border-primary/20 bg-linear-to-b from-primary/5 to-card" aria-labelledby="ai-search-01-answer">
+        <header>
+          <h2 id="ai-search-01-answer" class="flex items-center gap-2"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>AI answer</h2>
+          <p>Written from 3 Acme docs pages. Check the sources for details.</p>
+        </header>
+        <section class="grid gap-3 text-[15px]/relaxed [&_sup_a]:ms-0.5 [&_sup_a]:rounded-sm [&_sup_a]:bg-muted [&_sup_a]:px-1 [&_sup_a]:text-[11px] [&_sup_a]:font-medium [&_sup_a]:no-underline [&_sup_a:hover]:bg-accent">
+          <p>Create the new key before you revoke the old one. Both keys work at the same time, so you can roll out the new one gradually.<sup><a href="#ai-search-01-src-1" aria-label="Source 1">1</a></sup></p>
+          <ol class="list-decimal space-y-1 ps-5">
+            <li>Open <strong>Settings → API keys</strong> and choose <strong>Create key</strong> with the same scopes.<sup><a href="#ai-search-01-src-1" aria-label="Source 1">1</a></sup></li>
+            <li>Deploy the new key and watch <em>Last used</em> on the old key drop to zero.<sup><a href="#ai-search-01-src-2" aria-label="Source 2">2</a></sup></li>
+            <li>Revoke the old key. Requests with it fail with <code>401</code> right away.<sup><a href="#ai-search-01-src-3" aria-label="Source 3">3</a></sup></li>
+          </ol>
+          <p>Keys expire automatically only if you set an expiry date when you create them.<sup><a href="#ai-search-01-src-1" aria-label="Source 1">1</a></sup></p>
+        </section>
+        <footer class="flex flex-wrap items-center gap-2 border-t pt-4">
+          <span class="me-1 text-sm text-muted-foreground">Ask next:</span>
+          <a class="btn" data-variant="outline" data-size="sm" href="/search?q=set+an+expiry+date+on+an+API+key">Set an expiry date</a>
+          <a class="btn" data-variant="outline" data-size="sm" href="/search?q=API+key+scopes">Which scopes exist?</a>
+          <span class="ms-auto flex gap-1 [&_svg]:size-4" role="group" aria-label="Rate this answer">
+            <button type="button" class="btn" data-variant="ghost" data-size="icon-sm" aria-label="Helpful"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10v12"/><path d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg></button>
+            <button type="button" class="btn" data-variant="ghost" data-size="icon-sm" aria-label="Not helpful"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 14V2"/><path d="M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"/></svg></button>
+          </span>
+        </footer>
+      </section>
+
+      <section aria-labelledby="ai-search-01-results">
+        <h2 id="ai-search-01-results" class="mb-3 text-sm font-medium text-muted-foreground">24 results</h2>
+        <ol class="grid gap-5" role="list">
+          <li id="ai-search-01-src-1">
+            <p class="text-xs text-muted-foreground">docs.example.com › security › api-keys</p>
+            <h3 class="mt-0.5 text-base font-medium"><a class="underline-offset-4 hover:underline" href="/docs/security/api-keys"><span class="me-1.5 inline-grid size-5 place-items-center rounded-sm bg-muted text-[11px]">1</span>Manage API keys</a></h3>
+            <p class="mt-1 text-sm/relaxed text-muted-foreground">Create, scope and revoke keys. Each workspace can have up to 50 active keys, and old and new keys work side by side…</p>
+          </li>
+          <li id="ai-search-01-src-2">
+            <p class="text-xs text-muted-foreground">docs.example.com › guides › zero-downtime</p>
+            <h3 class="mt-0.5 text-base font-medium"><a class="underline-offset-4 hover:underline" href="/docs/guides/zero-downtime"><span class="me-1.5 inline-grid size-5 place-items-center rounded-sm bg-muted text-[11px]">2</span>Zero-downtime credential rotation</a></h3>
+            <p class="mt-1 text-sm/relaxed text-muted-foreground">Roll out new credentials in stages and watch the <mark class="rounded-sm bg-primary/15 px-0.5 text-foreground">last used</mark> column before you remove anything…</p>
+          </li>
+          <li id="ai-search-01-src-3">
+            <p class="text-xs text-muted-foreground">docs.example.com › reference › errors</p>
+            <h3 class="mt-0.5 text-base font-medium"><a class="underline-offset-4 hover:underline" href="/docs/reference/errors"><span class="me-1.5 inline-grid size-5 place-items-center rounded-sm bg-muted text-[11px]">3</span>Error codes</a></h3>
+            <p class="mt-1 text-sm/relaxed text-muted-foreground"><code>401 invalid_api_key</code>: the key was revoked, expired, or belongs to a different workspace…</p>
+          </li>
+          <li>
+            <p class="text-xs text-muted-foreground">community.example.com › threads</p>
+            <h3 class="mt-0.5 text-base font-medium"><a class="underline-offset-4 hover:underline" href="/community/t/4412">Rotating keys in a CI pipeline</a></h3>
+            <p class="mt-1 text-sm/relaxed text-muted-foreground">We store the key as a CI secret and swap it with a two-step deploy. Here is our script…</p>
+          </li>
+        </ol>
+      </section>
+    </div>
+
+    <aside class="grid gap-5">
+      <section class="card gap-3 py-5" aria-labelledby="ai-search-01-filters">
+        <header><h2 id="ai-search-01-filters">Filter</h2></header>
+        <section>
+          <fieldset class="grid gap-2.5 text-sm">
+            <legend class="sr-only">Source</legend>
+            <label class="flex items-center gap-2.5"><input type="checkbox" class="input" name="source" value="docs" checked form="ai-search-01-filter-form"> Docs <span class="ms-auto text-muted-foreground tabular-nums">16</span></label>
+            <label class="flex items-center gap-2.5"><input type="checkbox" class="input" name="source" value="api" checked form="ai-search-01-filter-form"> API reference <span class="ms-auto text-muted-foreground tabular-nums">5</span></label>
+            <label class="flex items-center gap-2.5"><input type="checkbox" class="input" name="source" value="community" form="ai-search-01-filter-form"> Community <span class="ms-auto text-muted-foreground tabular-nums">3</span></label>
+          </fieldset>
+          <form id="ai-search-01-filter-form" action="/search" method="get" hidden></form>
+        </section>
+      </section>
+      <p class="px-1 text-xs text-muted-foreground">AI answers can be wrong. They use only public Acme docs, never your workspace data.</p>
+    </aside>
+  </div>
+</main>

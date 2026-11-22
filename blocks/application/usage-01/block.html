@@ -1,0 +1,99 @@
+<main class="mx-auto max-w-[1180px] px-4 pt-6 pb-12 text-foreground sm:px-5 sm:pt-10">
+  <header class="mb-6 flex flex-wrap items-end justify-between gap-4">
+    <div>
+      <h1 class="text-2xl font-semibold tracking-tight md:text-3xl">Usage</h1>
+      <p class="mt-1 text-muted-foreground">Tokens and spend across the Acme API for November 2026.</p>
+    </div>
+    <form class="flex flex-wrap items-center gap-2" action="/usage" method="get">
+      <label for="usage-01-range" class="sr-only">Period</label>
+      <select id="usage-01-range" name="period" class="select w-auto">
+        <option value="2026-11" selected>November 2026</option>
+        <option value="2026-10">October 2026</option>
+        <option value="2026-09">September 2026</option>
+      </select>
+      <a class="btn" data-variant="outline" href="/usage/export.csv">Export CSV</a>
+    </form>
+  </header>
+
+  <section aria-label="Totals" class="mb-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="card gap-1.5 py-5"><section><p class="text-sm text-muted-foreground">Spend</p><p class="text-2xl font-semibold tabular-nums">$1,284.60</p><p class="text-xs text-muted-foreground">+18% vs. October</p></section></div>
+    <div class="card gap-1.5 py-5"><section><p class="text-sm text-muted-foreground">Tokens</p><p class="text-2xl font-semibold tabular-nums">412.8M</p><p class="text-xs text-muted-foreground">318M input · 94.8M output</p></section></div>
+    <div class="card gap-1.5 py-5"><section><p class="text-sm text-muted-foreground">Requests</p><p class="text-2xl font-semibold tabular-nums">186,240</p><p class="text-xs text-muted-foreground">0.4% errors</p></section></div>
+    <div class="card gap-1.5 py-5"><section><p class="text-sm text-muted-foreground">Cache hit rate</p><p class="text-2xl font-semibold tabular-nums">61%</p><p class="text-xs text-muted-foreground">Saved $402 this month</p></section></div>
+  </section>
+
+  <div class="mb-5 grid items-start gap-5 lg:grid-cols-[1.8fr_minmax(260px,1fr)]">
+    <section class="card min-w-0" aria-labelledby="usage-01-daily">
+      <header><h2 id="usage-01-daily">Daily spend</h2><p>Stacked by model, in US dollars.</p></header>
+      <section>
+        <ul class="mb-4 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground [&_span]:size-2.5 [&_span]:rounded-sm" role="list" aria-label="Legend">
+          <li class="flex items-center gap-1.5"><span class="bg-chart-1" aria-hidden="true"></span>Acme Pro</li>
+          <li class="flex items-center gap-1.5"><span class="bg-chart-2" aria-hidden="true"></span>Acme Fast</li>
+          <li class="flex items-center gap-1.5"><span class="bg-chart-3" aria-hidden="true"></span>Embeddings</li>
+        </ul>
+        <!-- Static bars for illustration. Render heights from your own data, or swap in Basecoat's Chart helper. -->
+        <ol class="flex h-48 items-end gap-1 sm:gap-1.5" role="list" aria-label="Daily spend, November 1 to 21">
+          <li class="flex h-[38%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 1: $42"><span class="h-[60%] bg-chart-1"></span><span class="h-[28%] bg-chart-2"></span><span class="h-[12%] bg-chart-3"></span></li>
+          <li class="flex h-[42%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 2: $46"><span class="h-[58%] bg-chart-1"></span><span class="h-[30%] bg-chart-2"></span><span class="h-[12%] bg-chart-3"></span></li>
+          <li class="flex h-[24%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 3: $26"><span class="h-[55%] bg-chart-1"></span><span class="h-[30%] bg-chart-2"></span><span class="h-[15%] bg-chart-3"></span></li>
+          <li class="flex h-[22%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 4: $24"><span class="h-[55%] bg-chart-1"></span><span class="h-[30%] bg-chart-2"></span><span class="h-[15%] bg-chart-3"></span></li>
+          <li class="flex h-[50%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 5: $55"><span class="h-[62%] bg-chart-1"></span><span class="h-[26%] bg-chart-2"></span><span class="h-[12%] bg-chart-3"></span></li>
+          <li class="flex h-[56%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 6: $61"><span class="h-[60%] bg-chart-1"></span><span class="h-[28%] bg-chart-2"></span><span class="h-[12%] bg-chart-3"></span></li>
+          <li class="flex h-[52%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 7: $57"><span class="h-[60%] bg-chart-1"></span><span class="h-[28%] bg-chart-2"></span><span class="h-[12%] bg-chart-3"></span></li>
+          <li class="flex h-[58%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 8: $64"><span class="h-[63%] bg-chart-1"></span><span class="h-[25%] bg-chart-2"></span><span class="h-[12%] bg-chart-3"></span></li>
+          <li class="flex h-[61%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 9: $67"><span class="h-[62%] bg-chart-1"></span><span class="h-[26%] bg-chart-2"></span><span class="h-[12%] bg-chart-3"></span></li>
+          <li class="flex h-[30%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 10: $33"><span class="h-[55%] bg-chart-1"></span><span class="h-[30%] bg-chart-2"></span><span class="h-[15%] bg-chart-3"></span></li>
+          <li class="flex h-[28%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 11: $31"><span class="h-[55%] bg-chart-1"></span><span class="h-[30%] bg-chart-2"></span><span class="h-[15%] bg-chart-3"></span></li>
+          <li class="flex h-[64%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 12: $70"><span class="h-[64%] bg-chart-1"></span><span class="h-[25%] bg-chart-2"></span><span class="h-[11%] bg-chart-3"></span></li>
+          <li class="flex h-[70%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 13: $77"><span class="h-[65%] bg-chart-1"></span><span class="h-[24%] bg-chart-2"></span><span class="h-[11%] bg-chart-3"></span></li>
+          <li class="flex h-[66%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 14: $72"><span class="h-[64%] bg-chart-1"></span><span class="h-[25%] bg-chart-2"></span><span class="h-[11%] bg-chart-3"></span></li>
+          <li class="flex h-[74%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 15: $81"><span class="h-[66%] bg-chart-1"></span><span class="h-[23%] bg-chart-2"></span><span class="h-[11%] bg-chart-3"></span></li>
+          <li class="flex h-[36%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 16: $39"><span class="h-[56%] bg-chart-1"></span><span class="h-[30%] bg-chart-2"></span><span class="h-[14%] bg-chart-3"></span></li>
+          <li class="flex h-[33%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 17: $36"><span class="h-[56%] bg-chart-1"></span><span class="h-[30%] bg-chart-2"></span><span class="h-[14%] bg-chart-3"></span></li>
+          <li class="flex h-[80%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 18: $88"><span class="h-[66%] bg-chart-1"></span><span class="h-[23%] bg-chart-2"></span><span class="h-[11%] bg-chart-3"></span></li>
+          <li class="flex h-[86%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 19: $94"><span class="h-[67%] bg-chart-1"></span><span class="h-[22%] bg-chart-2"></span><span class="h-[11%] bg-chart-3"></span></li>
+          <li class="flex h-[92%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm" aria-label="Nov 20: $101"><span class="h-[68%] bg-chart-1"></span><span class="h-[22%] bg-chart-2"></span><span class="h-[10%] bg-chart-3"></span></li>
+          <li class="flex h-[54%] flex-1 flex-col justify-end overflow-hidden rounded-t-sm opacity-60" aria-label="Nov 21, so far: $59"><span class="h-[66%] bg-chart-1"></span><span class="h-[23%] bg-chart-2"></span><span class="h-[11%] bg-chart-3"></span></li>
+        </ol>
+        <div class="mt-2 flex justify-between border-t pt-2 text-xs text-muted-foreground tabular-nums"><span>Nov 1</span><span>Nov 11</span><span>Nov 21</span></div>
+      </section>
+    </section>
+
+    <aside class="grid gap-5">
+      <section class="card" aria-labelledby="usage-01-budget">
+        <header><h2 id="usage-01-budget">Monthly budget</h2><p>Requests pause at 100%.</p></header>
+        <section class="grid gap-3">
+          <p class="flex items-baseline justify-between text-sm"><span class="text-xl font-semibold tabular-nums">$1,284.60</span><span class="text-muted-foreground">of $2,000</span></p>
+          <div class="progress h-2 rounded-full bg-muted" role="progressbar" aria-label="64% of the monthly budget used" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"><span class="rounded-full bg-primary" style="width: 64%"></span></div>
+          <p class="text-sm text-muted-foreground">At this pace you will reach about <strong class="font-medium text-foreground">$1,840</strong> by November 30.</p>
+        </section>
+        <footer><a class="btn w-full" data-variant="outline" href="/settings/limits">Edit limits</a></footer>
+      </section>
+      <section class="card" aria-labelledby="usage-01-models">
+        <header><h2 id="usage-01-models">By model</h2></header>
+        <section>
+          <dl class="grid gap-3.5 text-sm [&_dd]:font-medium [&_dd]:tabular-nums [&>div]:flex [&>div]:items-center [&>div]:gap-2.5 [&_dt]:flex-1 [&_dt]:text-muted-foreground">
+            <div><span class="size-2.5 rounded-sm bg-chart-1" aria-hidden="true"></span><dt>Acme Pro</dt><dd>$812.40</dd></div>
+            <div><span class="size-2.5 rounded-sm bg-chart-2" aria-hidden="true"></span><dt>Acme Fast</dt><dd>$331.70</dd></div>
+            <div><span class="size-2.5 rounded-sm bg-chart-3" aria-hidden="true"></span><dt>Embeddings</dt><dd>$140.50</dd></div>
+          </dl>
+        </section>
+      </section>
+    </aside>
+  </div>
+
+  <section class="card" aria-labelledby="usage-01-keys">
+    <header><h2 id="usage-01-keys">By API key</h2><p>Keys with no traffic this month are hidden.</p></header>
+    <section class="table-container">
+      <table class="table">
+        <thead><tr><th scope="col">Key</th><th scope="col">Project</th><th scope="col" class="text-end">Requests</th><th scope="col" class="text-end">Tokens</th><th scope="col" class="text-end">Spend</th><th scope="col" class="w-[22%]">Share</th></tr></thead>
+        <tbody class="[&_td]:tabular-nums">
+          <tr><td><span class="font-medium">support-bot</span><br><code class="text-xs text-muted-foreground">sk-…f81a</code></td><td>Help center</td><td class="text-end">98,412</td><td class="text-end">201.3M</td><td class="text-end">$604.10</td><td><div class="progress h-1.5 rounded-full bg-muted" role="progressbar" aria-label="47% of spend" aria-valuenow="47" aria-valuemin="0" aria-valuemax="100"><span class="rounded-full bg-chart-1" style="width: 47%"></span></div></td></tr>
+          <tr><td><span class="font-medium">sales-notes</span><br><code class="text-xs text-muted-foreground">sk-…2c07</code></td><td>CRM sync</td><td class="text-end">51,906</td><td class="text-end">128.9M</td><td class="text-end">$398.20</td><td><div class="progress h-1.5 rounded-full bg-muted" role="progressbar" aria-label="31% of spend" aria-valuenow="31" aria-valuemin="0" aria-valuemax="100"><span class="rounded-full bg-chart-1" style="width: 31%"></span></div></td></tr>
+          <tr><td><span class="font-medium">search-index</span><br><code class="text-xs text-muted-foreground">sk-…9de4</code></td><td>Docs search</td><td class="text-end">33,108</td><td class="text-end">79.2M</td><td class="text-end">$246.70</td><td><div class="progress h-1.5 rounded-full bg-muted" role="progressbar" aria-label="19% of spend" aria-valuenow="19" aria-valuemin="0" aria-valuemax="100"><span class="rounded-full bg-chart-1" style="width: 19%"></span></div></td></tr>
+          <tr><td><span class="font-medium">local-dev</span><br><code class="text-xs text-muted-foreground">sk-…44b2</code></td><td>Sandbox</td><td class="text-end">2,814</td><td class="text-end">3.4M</td><td class="text-end">$35.60</td><td><div class="progress h-1.5 rounded-full bg-muted" role="progressbar" aria-label="3% of spend" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100"><span class="rounded-full bg-chart-1" style="width: 3%"></span></div></td></tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+</main>

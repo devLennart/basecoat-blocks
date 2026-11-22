@@ -1,0 +1,52 @@
+<section class="overflow-hidden bg-background text-foreground" aria-labelledby="hero-02-title">
+  <div class="mx-auto max-w-[76rem] px-6 pt-14 pb-16 md:pt-24 lg:pt-28">
+    <div class="mx-auto max-w-[48rem] text-center">
+      <a class="badge gap-1.5" data-variant="outline" href="#hero-02-agents"><span class="size-1.5 rounded-full bg-primary" aria-hidden="true"></span>New: Acme Agents work while you sleep</a>
+      <h1 id="hero-02-title" class="mt-5 mb-6 font-serif text-[3rem] leading-[1.04] font-normal tracking-[-.055em] md:text-[4.5rem] lg:text-[5.4rem]">Ask once. <span class="text-muted-foreground">Get the work done.</span></h1>
+      <p class="mx-auto max-w-[34rem] text-lg/relaxed text-muted-foreground">Acme reads your docs, tickets and data, then drafts the answer, the report or the fix. You stay in charge of what ships.</p>
+    </div>
+
+    <!-- Example endpoint: replace with your sign-up or app route. This preview does not send anything. -->
+    <form class="mx-auto mt-10 max-w-[42rem]" action="/signup" method="get">
+      <div class="input-group w-full bg-card shadow-lg [&_svg]:size-4" data-orientation="vertical">
+        <label for="hero-02-prompt" class="sr-only">What should Acme do?</label>
+        <textarea class="min-h-20 resize-none text-base" id="hero-02-prompt" name="prompt" rows="2" placeholder="Summarise last week's churned accounts and draft a win-back email…"></textarea>
+        <footer class="flex items-center gap-2" data-align="block-end">
+          <span class="flex items-center gap-1.5 text-xs text-muted-foreground"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg>Your data is never used for training</span>
+          <button type="submit" class="btn ms-auto" data-size="sm">Try it free <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+        </footer>
+      </div>
+    </form>
+    <ul class="mx-auto mt-4 flex max-w-[42rem] flex-wrap justify-center gap-2" role="list" aria-label="Example prompts">
+      <li><a class="btn" data-variant="outline" data-size="sm" href="/signup?prompt=Turn+this+call+into+meeting+notes">Turn a call into notes</a></li>
+      <li><a class="btn" data-variant="outline" data-size="sm" href="/signup?prompt=Find+bugs+reported+more+than+3+times">Find repeat bug reports</a></li>
+      <li><a class="btn" data-variant="outline" data-size="sm" href="/signup?prompt=Write+the+monthly+investor+update">Write the investor update</a></li>
+    </ul>
+
+    <div id="hero-02-agents" class="mx-auto mt-16 grid max-w-[60rem] gap-4 md:grid-cols-3" aria-label="What Acme does next">
+      <figure class="card gap-3 py-5">
+        <section class="grid gap-3">
+          <div class="marker"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg><span>Read 48 tickets and 3 docs</span></div>
+          <p class="text-sm/relaxed">"Billing confusion is up 32%. Most tickets mention the new annual toggle."</p>
+        </section>
+        <figcaption class="px-6 text-xs text-muted-foreground">Research · 14 s</figcaption>
+      </figure>
+      <figure class="card gap-3 py-5">
+        <section class="grid gap-3">
+          <div class="marker"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg><span>Drafted a help article</span></div>
+          <p class="text-sm/relaxed">"Monthly or annual? How the billing toggle works, in four steps."</p>
+        </section>
+        <figcaption class="px-6 text-xs text-muted-foreground">Writing · 22 s</figcaption>
+      </figure>
+      <figure class="card gap-3 py-5">
+        <section class="grid gap-3">
+          <p class="marker" role="status"><span class="shimmer">Waiting for your approval…</span></p>
+          <p class="text-sm/relaxed">"Publish the article and reply to 48 open tickets with a link?"</p>
+        </section>
+        <figcaption class="px-6 text-xs text-muted-foreground">Action · needs you</figcaption>
+      </figure>
+    </div>
+
+    <p class="mt-12 text-center text-sm text-muted-foreground">Trusted by 4,000 teams, from two-person startups to public companies.</p>
+  </div>
+</section>

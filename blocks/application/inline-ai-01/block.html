@@ -1,0 +1,53 @@
+<main class="min-h-svh bg-background text-foreground">
+  <header class="flex flex-wrap items-center gap-2 border-b px-4 py-2.5">
+    <a class="text-sm text-muted-foreground hover:text-foreground" href="/docs">Docs</a>
+    <span class="text-sm text-muted-foreground" aria-hidden="true">/</span>
+    <h1 class="text-sm font-medium">Launch announcement</h1>
+    <span class="badge" data-variant="outline">Draft</span>
+    <p class="ms-auto hidden text-xs text-muted-foreground sm:block">Saved 1 min ago</p>
+    <button type="button" class="btn" data-size="sm">Share</button>
+  </header>
+
+  <div class="flex flex-wrap items-center gap-1 border-b px-4 py-1.5 [&_svg]:size-4" role="toolbar" aria-label="Formatting">
+    <button type="button" class="btn" data-variant="ghost" data-size="icon-sm" aria-label="Bold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8"/></svg></button>
+    <button type="button" class="btn" data-variant="ghost" data-size="icon-sm" aria-label="Italic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" x2="10" y1="4" y2="4"/><line x1="14" x2="5" y1="20" y2="20"/><line x1="15" x2="9" y1="4" y2="20"/></svg></button>
+    <button type="button" class="btn" data-variant="ghost" data-size="icon-sm" aria-label="Link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></button>
+    <hr role="separator" class="mx-1 h-5 w-px border-0 bg-border">
+    <button type="button" class="btn" data-variant="secondary" data-size="sm" aria-expanded="true" aria-controls="inline-ai-01-panel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>Ask AI <kbd class="kbd">Ctrl J</kbd></button>
+  </div>
+
+  <article class="mx-auto max-w-[44rem] px-5 py-10 text-[17px]/relaxed">
+    <h2 class="mb-4 text-3xl font-semibold tracking-tight">Acme Agents are here</h2>
+    <p class="mb-4">Today we're launching Acme Agents, a way to hand repetitive work to an assistant that runs on its own and asks before it does anything risky.</p>
+    <p class="mb-3"><mark class="rounded-sm bg-primary/15 text-foreground">Agents are basically like little helpers that you can set up to do a lot of different things for you automatically in the background, and they will also check with you first before they do something that might be dangerous.</mark></p>
+
+    <section id="inline-ai-01-panel" class="mb-6 rounded-xl border bg-popover text-popover-foreground shadow-lg" aria-label="AI writing assistant">
+      <div class="border-b p-3">
+        <p class="mb-2 flex items-center gap-1.5 text-xs font-medium text-muted-foreground"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Suggestion · Make shorter</p>
+        <p class="text-[15px]/relaxed"><del class="text-muted-foreground decoration-destructive/60">Agents are basically like little helpers that you can set up to do a lot of different things for you automatically in the background, and they will also check with you first before they do something that might be dangerous.</del> <ins class="rounded-sm bg-primary/10 no-underline">Agents work in the background on tasks you define, and check with you before anything risky.</ins></p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <button type="button" class="btn" data-size="sm">Accept <kbd class="kbd">Enter</kbd></button>
+          <button type="button" class="btn" data-variant="outline" data-size="sm">Try again</button>
+          <button type="button" class="btn" data-variant="ghost" data-size="sm">Discard <kbd class="kbd">Esc</kbd></button>
+        </div>
+      </div>
+      <!-- Example endpoint: replace with your own route. This preview does not send anything. -->
+      <form class="p-2" action="/docs/launch/ai-edit" method="post">
+        <div class="input-group w-full border-0 shadow-none [&_svg]:size-4 dark:bg-transparent">
+          <label for="inline-ai-01-ask" class="sr-only">Tell AI what to change</label>
+          <input id="inline-ai-01-ask" type="text" name="instruction" placeholder="Tell AI what to change…">
+          <button type="submit" class="btn" data-size="icon-xs" data-align="inline-end" aria-label="Apply"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></button>
+        </div>
+        <ul class="mt-1 grid gap-0.5 sm:grid-cols-2 [&_button]:w-full [&_button]:justify-start [&_svg]:size-4 [&_svg]:text-muted-foreground" role="list" aria-label="Quick actions">
+          <li><button type="submit" class="btn" data-variant="ghost" data-size="sm" name="action" value="improve"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>Improve writing</button></li>
+          <li><button type="submit" class="btn" data-variant="ghost" data-size="sm" name="action" value="grammar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 16 6-12 6 12"/><path d="M8 12h8"/><path d="m16 20 2 2 4-4"/></svg>Fix spelling and grammar</button></li>
+          <li><button type="submit" class="btn" data-variant="ghost" data-size="sm" name="action" value="tone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Change tone</button></li>
+          <li><button type="submit" class="btn" data-variant="ghost" data-size="sm" name="action" value="translate"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>Translate</button></li>
+        </ul>
+      </form>
+    </section>
+
+    <p class="mb-4">You can start with templates for support triage, weekly digests and data cleanup, or describe a new agent in plain language.</p>
+    <p class="text-muted-foreground">Agents are available today on Team and Enterprise plans.</p>
+  </article>
+</main>

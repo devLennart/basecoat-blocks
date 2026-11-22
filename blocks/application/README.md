@@ -22,3 +22,14 @@ Practical product screens built from native HTML and Basecoat components. Provid
 | [settings-02](settings-02/README.md) | Tabbed workspace settings |
 | [kanban-01](kanban-01/README.md) | Sprint board |
 | [error-404-01](error-404-01/README.md) | Not found page |
+| [prompt-input-01](prompt-input-01/README.md) | AI prompt composer |
+| [chat-02](chat-02/README.md) | Chat with history and document panel |
+| [approval-01](approval-01/README.md) | Human-in-the-loop agent approval |
+| [agents-01](agents-01/README.md) | AI agents overview |
+| [assistant-settings-01](assistant-settings-01/README.md) | Custom assistant configuration |
+| [knowledge-base-01](knowledge-base-01/README.md) | RAG knowledge sources |
+| [usage-01](usage-01/README.md) | Token and spend dashboard |
+| [trace-01](trace-01/README.md) | LLM trace waterfall |
+| [evals-01](evals-01/README.md) | Prompt eval comparison |
+| [ai-search-01](ai-search-01/README.md) | Search with AI answer and citations |
+| [inline-ai-01](inline-ai-01/README.md) | Inline AI editing |

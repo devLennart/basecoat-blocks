@@ -1,0 +1,77 @@
+<main class="mx-auto max-w-[1240px] px-4 pt-6 pb-12 text-foreground sm:px-5 sm:pt-10">
+  <header class="mb-6 flex flex-wrap items-end justify-between gap-4">
+    <div class="min-w-0">
+      <p class="text-[13px] font-semibold tracking-[.09em] text-muted-foreground uppercase">Acme / Traces</p>
+      <h1 class="mt-1.5 mb-2 flex flex-wrap items-center gap-2.5 text-2xl font-semibold tracking-tight md:text-3xl">support-triage <code class="text-base font-normal text-muted-foreground">tr_8f21c0</code></h1>
+      <p class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground"><span>Total <strong class="font-medium text-foreground">4.82 s</strong></span><span>Tokens <strong class="font-medium text-foreground">9,412</strong></span><span>Cost <strong class="font-medium text-foreground">$0.031</strong></span><span>Nov 21, 14:02:11</span></p>
+    </div>
+    <div class="flex gap-2">
+      <a class="btn" data-variant="outline" href="/traces/tr_8f21c0.json">Raw JSON</a>
+      <a class="btn" data-variant="outline" href="/evals/new?from=tr_8f21c0">Add to eval set</a>
+    </div>
+  </header>
+
+  <div class="grid items-start gap-5 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
+    <section class="card min-w-0 gap-4" aria-labelledby="trace-01-spans">
+      <header><h2 id="trace-01-spans">Spans</h2><p>Bars show when each step ran within the 4.82 s request.</p></header>
+      <section>
+        <!-- Bar position: margin-inline-start = start / total, width = duration / total. -->
+        <ol class="trace gap-1 text-sm [&_summary]:w-full [&_.trace-line]:w-full [&_.trace-line]:gap-2 [&_.trace-line]:rounded-md [&_.trace-line]:px-2 [&_.trace-line]:py-1.5 [&_.trace-line:hover]:bg-muted [&_time]:w-14 [&_time]:shrink-0 [&_time]:text-end [&_time]:text-xs [&_time]:text-muted-foreground [&_time]:tabular-nums" role="list" aria-label="Trace spans">
+          <li>
+            <details open>
+              <summary class="trace-line"><span class="min-w-0 flex-1 font-medium">agent.run</span><span class="hidden h-2 w-40 rounded-full bg-muted sm:block" aria-hidden="true"><span class="block h-full rounded-full bg-chart-1" style="width: 100%"></span></span><time datetime="PT4.82S">4.82 s</time></summary>
+              <ol class="trace ms-3 mt-1 w-auto gap-1 border-s ps-2" role="list">
+                <li class="trace-line"><span class="min-w-0 flex-1">retrieve · help center</span><span class="badge hidden md:inline-flex" data-variant="outline">tool</span><span class="hidden h-2 w-40 rounded-full bg-muted sm:block" aria-hidden="true"><span class="block h-full rounded-full bg-chart-3" style="width: 9%"></span></span><time datetime="PT0.41S">0.41 s</time></li>
+                <li class="trace-line"><span class="min-w-0 flex-1">crm.lookup_customer</span><span class="badge hidden md:inline-flex" data-variant="outline">tool</span><span class="hidden h-2 w-40 rounded-full bg-muted sm:block" aria-hidden="true"><span class="ms-[9%] block h-full rounded-full bg-chart-3" style="width: 13%"></span></span><time datetime="PT0.62S">0.62 s</time></li>
+                <li>
+                  <details open>
+                    <summary class="trace-line bg-muted"><span class="min-w-0 flex-1 font-medium">llm · classify ticket</span><span class="badge hidden md:inline-flex" data-variant="secondary">Acme Fast</span><span class="hidden h-2 w-40 rounded-full bg-background sm:block" aria-hidden="true"><span class="ms-[22%] block h-full rounded-full bg-chart-2" style="width: 18%"></span></span><time datetime="PT0.88S">0.88 s</time></summary>
+                    <ol class="trace ms-3 mt-1 w-auto gap-1 border-s ps-2" role="list">
+                      <li class="trace-line text-muted-foreground"><span class="min-w-0 flex-1">time to first token</span><time datetime="PT0.31S">0.31 s</time></li>
+                      <li class="trace-line text-muted-foreground"><span class="min-w-0 flex-1">1,204 in · 38 out</span><time>$0.001</time></li>
+                    </ol>
+                  </details>
+                </li>
+                <li class="trace-line text-destructive"><span class="min-w-0 flex-1">kb.search · retry 1</span><span class="badge hidden md:inline-flex" data-variant="destructive">timeout</span><span class="hidden h-2 w-40 rounded-full bg-muted sm:block" aria-hidden="true"><span class="ms-[40%] block h-full rounded-full bg-destructive" style="width: 21%"></span></span><time datetime="PT1S">1.00 s</time></li>
+                <li class="trace-line"><span class="min-w-0 flex-1">kb.search · retry 2</span><span class="badge hidden md:inline-flex" data-variant="outline">tool</span><span class="hidden h-2 w-40 rounded-full bg-muted sm:block" aria-hidden="true"><span class="ms-[61%] block h-full rounded-full bg-chart-3" style="width: 6%"></span></span><time datetime="PT0.29S">0.29 s</time></li>
+                <li class="trace-line"><span class="min-w-0 flex-1">llm · draft reply</span><span class="badge hidden md:inline-flex" data-variant="secondary">Acme Pro</span><span class="hidden h-2 w-40 rounded-full bg-muted sm:block" aria-hidden="true"><span class="ms-[67%] block h-full rounded-full bg-chart-2" style="width: 31%"></span></span><time datetime="PT1.49S">1.49 s</time></li>
+                <li class="trace-line"><span class="min-w-0 flex-1">guardrail · refund promise</span><span class="badge hidden md:inline-flex" data-variant="outline">check</span><span class="hidden h-2 w-40 rounded-full bg-muted sm:block" aria-hidden="true"><span class="ms-[98%] block h-full rounded-full bg-chart-4" style="width: 2%"></span></span><time datetime="PT0.09S">0.09 s</time></li>
+              </ol>
+            </details>
+          </li>
+        </ol>
+      </section>
+    </section>
+
+    <aside class="card min-w-0 gap-4 lg:sticky lg:top-6" aria-labelledby="trace-01-span">
+      <header>
+        <h2 id="trace-01-span">llm · classify ticket</h2><p>Acme Fast · temperature 0 · span sp_19</p>
+        <span class="badge card-action" data-variant="secondary">OK</span>
+      </header>
+      <section class="grid gap-4">
+        <dl class="grid grid-cols-3 gap-3 text-sm [&_dd]:font-medium [&_dd]:tabular-nums [&_dt]:text-xs [&_dt]:text-muted-foreground">
+          <div><dt>Latency</dt><dd>0.88 s</dd></div>
+          <div><dt>Tokens</dt><dd>1,242</dd></div>
+          <div><dt>Cost</dt><dd>$0.001</dd></div>
+        </dl>
+        <div class="grid gap-2">
+          <h3 class="text-sm font-medium">Input</h3>
+          <div class="code-block [&_pre]:max-h-[200px]" data-size="sm"><pre class="scrollbar" tabindex="0" aria-label="Span input" data-wrap><code>system: Classify the ticket as billing, bug, how-to or account. Return JSON.
+user: I was charged twice this month and want my money back.</code></pre></div>
+        </div>
+        <div class="grid gap-2">
+          <h3 class="text-sm font-medium">Output</h3>
+          <div class="code-block" data-size="sm"><pre class="scrollbar" tabindex="0" aria-label="Span output"><code>{
+  "category": "billing",
+  "priority": "P2",
+  "language": "en"
+}</code></pre></div>
+        </div>
+      </section>
+      <footer class="flex flex-wrap gap-2">
+        <a class="btn" data-variant="outline" data-size="sm" href="/playground?span=sp_19">Open in playground</a>
+        <button type="button" class="btn" data-variant="ghost" data-size="sm">Copy span ID</button>
+      </footer>
+    </aside>
+  </div>
+</main>

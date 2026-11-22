@@ -1,0 +1,135 @@
+<!-- Requires Basecoat JavaScript (all.min.js). -->
+<aside id="chat-02-sidebar" class="sidebar" data-side="left">
+  <nav aria-label="Conversations">
+    <header class="grid gap-3">
+      <div class="flex items-center justify-between gap-2">
+        <a class="flex items-center gap-2 font-semibold" href="/assistant">
+          <span class="grid size-7 place-items-center rounded-md bg-primary text-primary-foreground" aria-hidden="true"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 21 20H3Z"/><path d="M8 14.5h8"/></svg></span>
+          Acme Assistant
+        </a>
+        <button type="button" class="btn md:hidden" data-variant="ghost" data-size="icon-sm" onclick="document.getElementById('chat-02-sidebar')?.close()" aria-controls="chat-02-sidebar" aria-label="Close conversations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      </div>
+      <a class="btn w-full justify-start" data-variant="outline" href="/assistant/new"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>New chat</a>
+      <form action="/assistant/search" method="get" role="search">
+        <label for="chat-02-search" class="sr-only">Search chats</label>
+        <input id="chat-02-search" class="input" type="search" name="q" placeholder="Search chats…">
+      </form>
+    </header>
+    <section class="scrollbar scrollbar-thin">
+      <div role="group" aria-labelledby="chat-02-projects">
+        <h3 id="chat-02-projects">Projects</h3>
+        <ul>
+          <li><a href="/assistant/projects/launch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg><span>Q4 launch</span></a></li>
+          <li><a href="/assistant/projects/hiring"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg><span>Hiring</span></a></li>
+        </ul>
+      </div>
+      <div role="group" aria-labelledby="chat-02-today">
+        <h3 id="chat-02-today">Today</h3>
+        <ul>
+          <li><a href="/assistant/c/1042" aria-current="page"><span>Pricing page FAQ</span></a></li>
+          <li><a href="/assistant/c/1041"><span>Standup summary</span></a></li>
+        </ul>
+      </div>
+      <div role="group" aria-labelledby="chat-02-week">
+        <h3 id="chat-02-week">Previous 7 days</h3>
+        <ul>
+          <li><a href="/assistant/c/1038"><span>Churn interview themes</span></a></li>
+          <li><a href="/assistant/c/1035"><span>SQL for weekly actives</span></a></li>
+          <li><a href="/assistant/c/1031"><span>Job post: support lead</span></a></li>
+          <li><a href="/assistant/c/1029"><span>Translate onboarding email</span></a></li>
+        </ul>
+      </div>
+    </section>
+    <footer>
+      <a class="flex items-center gap-2.5 rounded-md p-1 text-sm hover:bg-sidebar-accent" href="/settings">
+        <span class="avatar size-8" aria-hidden="true"><span>MC</span></span>
+        <span class="grid"><span class="font-medium">Maya Chen</span><span class="text-xs text-muted-foreground">Acme Inc. · Team plan</span></span>
+      </a>
+    </footer>
+  </nav>
+</aside>
+
+<main class="grid h-svh min-w-0 grid-rows-[auto_1fr] bg-background text-foreground">
+  <header class="flex items-center gap-2 border-b px-3 py-2.5 sm:px-4">
+    <button type="button" class="btn" data-variant="ghost" data-size="icon-sm" onclick="document.getElementById('chat-02-sidebar')?.toggle()" aria-controls="chat-02-sidebar" aria-label="Toggle conversations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M9 3v18"/></svg></button>
+    <h1 class="min-w-0 truncate text-sm font-medium">Pricing page FAQ</h1>
+    <span class="badge hidden sm:inline-flex" data-variant="outline">Q4 launch</span>
+    <button type="button" class="btn ms-auto" data-variant="outline" data-size="sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="m16 6-4-4-4 4"/><path d="M12 2v13"/></svg>Share</button>
+  </header>
+
+  <div class="grid min-h-0 xl:grid-cols-[minmax(0,1fr)_minmax(0,26rem)]">
+    <div class="grid min-h-0 grid-rows-[1fr_auto]">
+      <section class="scrollbar min-h-0 overflow-y-auto px-4 py-6" aria-label="Conversation">
+        <ol class="mx-auto flex max-w-[42rem] list-none flex-col gap-6" role="list">
+          <li class="message" data-align="end">
+            <div><span class="sr-only">Maya Chen</span><div class="bubble"><p>Write five FAQ entries for the new pricing page. Keep each answer under 40 words.</p></div></div>
+          </li>
+          <li class="message">
+            <span class="avatar" aria-hidden="true"><span>AI</span></span>
+            <div class="grid gap-3 leading-relaxed">
+              <span class="sr-only">Acme Assistant</span>
+              <p>Here's a first pass based on the pricing notes in <strong>Q4 launch</strong>. I kept the tone close to the current marketing site.</p>
+              <button type="button" class="attachment w-full max-w-sm text-start" aria-controls="chat-02-artifact">
+                <figure aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></figure>
+                <section><p>Pricing FAQ</p><p>Document · 5 entries · v2</p></section>
+              </button>
+              <p>Want me to add a question about annual billing or student discounts?</p>
+            </div>
+          </li>
+          <li class="message" data-align="end">
+            <div><span class="sr-only">Maya Chen</span><div class="bubble"><p>Add one about switching plans mid-cycle.</p></div></div>
+          </li>
+          <li class="message">
+            <span class="avatar" aria-hidden="true"><span>AI</span></span>
+            <div class="grid gap-3 leading-relaxed">
+              <span class="sr-only">Acme Assistant</span>
+              <p>Done. I added it as the third entry, since it follows naturally from the upgrade question.</p>
+              <div class="marker"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg><span>Edited Pricing FAQ · v3</span></div>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <div class="mx-auto w-full max-w-[44rem] px-4 pt-2 pb-4">
+        <!-- Example endpoint: replace with your own chat route. This preview does not send messages. -->
+        <form action="/assistant/c/1042/messages" method="post">
+          <div class="input-group w-full [&_svg]:size-4" data-orientation="vertical">
+            <label for="chat-02-prompt" class="sr-only">Message Acme Assistant</label>
+            <textarea class="min-h-12 resize-none" id="chat-02-prompt" name="message" rows="2" placeholder="Reply to Acme Assistant…"></textarea>
+            <footer class="flex items-center gap-2" data-align="block-end">
+              <button type="button" class="btn" data-variant="ghost" data-size="icon-sm" aria-label="Attach a file"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></button>
+              <span class="text-xs text-muted-foreground">Acme Pro</span>
+              <button type="submit" class="btn ms-auto" data-size="icon-sm" aria-label="Send message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></button>
+            </footer>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <section id="chat-02-artifact" class="hidden min-h-0 grid-rows-[auto_1fr] border-s bg-muted/30 xl:grid" aria-labelledby="chat-02-artifact-title">
+      <header class="flex items-center gap-2 border-b px-4 py-2.5">
+        <h2 id="chat-02-artifact-title" class="text-sm font-medium">Pricing FAQ</h2>
+        <span class="badge" data-variant="secondary">v3</span>
+        <div class="ms-auto flex gap-1">
+          <button type="button" class="btn" data-variant="ghost" data-size="sm">Copy</button>
+          <button type="button" class="btn" data-variant="ghost" data-size="icon-sm" aria-label="Close document"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+        </div>
+      </header>
+      <article class="scrollbar min-h-0 overflow-y-auto px-4 py-5 text-sm/relaxed [&_dd]:text-muted-foreground [&_dt]:font-medium [&>dl>div]:mb-2 [&>dl>div]:rounded-md [&>dl>div]:px-2 [&>dl>div]:py-1.5 ">
+        <h3 class="mb-4 px-2 text-lg font-semibold">Pricing questions</h3>
+        <dl>
+          <div><dt>Is there a free plan?</dt>
+          <dd>Yes. The Free plan includes three projects and 100 assistant messages a month, with no card required.</dd></div>
+          <div><dt>How do upgrades work?</dt>
+          <dd>Upgrade from Settings at any time. New limits apply right away and we prorate the first invoice.</dd></div>
+          <div class="bg-primary/10 ring-1 ring-primary/20" aria-label="Changed in v3"><dt>Can I switch plans mid-cycle?</dt>
+          <dd>Yes. Moving up is prorated today. Moving down takes effect at the next renewal, so you keep what you paid for.</dd></div>
+          <div><dt>Do you offer annual billing?</dt>
+          <dd>Annual plans save 20% and are billed once a year by card or invoice.</dd></div>
+          <div><dt>What happens if I cancel?</dt>
+          <dd>Your workspace stays read-only for 30 days, so you can export everything.</dd></div>
+        </dl>
+      </article>
+    </section>
+  </div>
+</main>

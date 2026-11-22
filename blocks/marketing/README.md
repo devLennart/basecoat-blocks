@@ -10,3 +10,5 @@ Original text-first SaaS sections with no image, font, or framework dependencies
 | [faq-01](faq-01/README.md) | FAQ accordion |
 | [testimonials-01](testimonials-01/README.md) | Testimonials carousel |
 | [footer-01](footer-01/README.md) | Footer with call to action |
+| [hero-02](hero-02/README.md) | AI product hero with prompt box |
+| [pricing-02](pricing-02/README.md) | Usage-based credit pricing |

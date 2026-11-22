@@ -1,0 +1,97 @@
+<main class="mx-auto max-w-[1180px] px-4 pt-6 pb-12 text-foreground sm:px-5 sm:pt-10">
+  <header class="mb-6 flex flex-wrap items-end justify-between gap-4">
+    <div class="min-w-0">
+      <p class="text-[13px] font-semibold tracking-[.09em] text-muted-foreground uppercase">Acme / Evals / support-answers</p>
+      <h1 class="mt-1.5 mb-2 flex flex-wrap items-center gap-2.5 text-2xl font-semibold tracking-tight md:text-3xl">Prompt v12 vs. v11 <span class="badge" data-variant="secondary">Completed</span></h1>
+      <p class="text-muted-foreground">120 test cases, graded by rubric and exact checks. Finished 8 minutes ago.</p>
+    </div>
+    <div class="flex flex-wrap gap-2">
+      <a class="btn" data-variant="outline" href="/evals/support-answers/runs/57/export">Export</a>
+      <button type="button" class="btn">Promote v12</button>
+    </div>
+  </header>
+
+  <section aria-label="Summary" class="mb-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="card gap-1.5 py-5"><section><p class="text-sm text-muted-foreground">Pass rate</p><p class="text-2xl font-semibold tabular-nums">87.5%</p><p class="text-xs text-muted-foreground">v11: 80.8% · <strong class="font-medium text-foreground">+6.7 pts</strong></p></section></div>
+    <div class="card gap-1.5 py-5"><section><p class="text-sm text-muted-foreground">Rubric score</p><p class="text-2xl font-semibold tabular-nums">4.3 / 5</p><p class="text-xs text-muted-foreground">v11: 4.0</p></section></div>
+    <div class="card gap-1.5 py-5"><section><p class="text-sm text-muted-foreground">Median latency</p><p class="text-2xl font-semibold tabular-nums">1.9 s</p><p class="text-xs text-muted-foreground">v11: 1.6 s · <strong class="font-medium text-destructive">+0.3 s</strong></p></section></div>
+    <div class="card gap-1.5 py-5"><section><p class="text-sm text-muted-foreground">Regressions</p><p class="text-2xl font-semibold tabular-nums">3</p><p class="text-xs text-muted-foreground">Passed in v11, fail in v12</p></section></div>
+  </section>
+
+  <section class="card mb-5" aria-labelledby="evals-01-cases">
+    <header>
+      <h2 id="evals-01-cases">Test cases</h2><p>Regressions first, then new failures.</p>
+      <form class="card-action" action="/evals/support-answers/runs/57" method="get">
+        <label for="evals-01-filter" class="sr-only">Show</label>
+        <select id="evals-01-filter" name="show" class="select h-8">
+          <option value="changed" selected>Changed only (11)</option>
+          <option value="failed">All failures (15)</option>
+          <option value="all">All cases (120)</option>
+        </select>
+      </form>
+    </header>
+    <section class="table-container">
+      <table class="table">
+        <thead><tr><th scope="col">Case</th><th scope="col">Check</th><th scope="col">v11</th><th scope="col">v12</th><th scope="col" class="text-end">Score</th></tr></thead>
+        <tbody class="[&_td]:align-top">
+          <tr>
+            <td class="max-w-[22rem]"><p class="font-medium">#014 Refund after 45 days</p><p class="truncate text-sm text-muted-foreground">"I bought the annual plan 6 weeks ago, can I still get…"</p></td>
+            <td class="text-muted-foreground">Mentions pro-rata policy</td>
+            <td><span class="badge" data-variant="secondary">Pass</span></td>
+            <td><span class="badge" data-variant="destructive">Fail</span></td>
+            <td class="text-end tabular-nums">2 → 1</td>
+          </tr>
+          <tr>
+            <td class="max-w-[22rem]"><p class="font-medium">#063 German, angry tone</p><p class="truncate text-sm text-muted-foreground">"Das ist jetzt das dritte Mal, dass die Rechnung falsch…"</p></td>
+            <td class="text-muted-foreground">Replies in German</td>
+            <td><span class="badge" data-variant="secondary">Pass</span></td>
+            <td><span class="badge" data-variant="destructive">Fail</span></td>
+            <td class="text-end tabular-nums">5 → 2</td>
+          </tr>
+          <tr>
+            <td class="max-w-[22rem]"><p class="font-medium">#088 SSO setup for Okta</p><p class="truncate text-sm text-muted-foreground">"Where do I paste the metadata URL for single sign-on?"</p></td>
+            <td class="text-muted-foreground">Links the SSO guide</td>
+            <td><span class="badge" data-variant="secondary">Pass</span></td>
+            <td><span class="badge" data-variant="destructive">Fail</span></td>
+            <td class="text-end tabular-nums">4 → 3</td>
+          </tr>
+          <tr>
+            <td class="max-w-[22rem]"><p class="font-medium">#031 Outage report</p><p class="truncate text-sm text-muted-foreground">"Nothing loads since 10 minutes, is Acme down?"</p></td>
+            <td class="text-muted-foreground">Priority set to P1</td>
+            <td><span class="badge" data-variant="destructive">Fail</span></td>
+            <td><span class="badge" data-variant="secondary">Pass</span></td>
+            <td class="text-end tabular-nums">2 → 5</td>
+          </tr>
+          <tr>
+            <td class="max-w-[22rem]"><p class="font-medium">#102 Delete my account</p><p class="truncate text-sm text-muted-foreground">"Please remove all my data, I'm leaving."</p></td>
+            <td class="text-muted-foreground">Hands off to a human</td>
+            <td><span class="badge" data-variant="destructive">Fail</span></td>
+            <td><span class="badge" data-variant="secondary">Pass</span></td>
+            <td class="text-end tabular-nums">1 → 5</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </section>
+
+  <section class="card" aria-labelledby="evals-01-detail">
+    <header>
+      <h2 id="evals-01-detail">#063 German, angry tone</h2><p>Grader: replies must use the customer's language.</p>
+      <span class="badge card-action" data-variant="destructive">Regression</span>
+    </header>
+    <section class="grid gap-4 md:grid-cols-2">
+      <figure class="grid gap-2">
+        <figcaption class="flex items-center justify-between text-sm font-medium">v11 <span class="badge" data-variant="secondary">Pass · 5</span></figcaption>
+        <blockquote class="rounded-lg border bg-muted/40 p-4 text-sm/relaxed">Das tut mir leid. Ich habe die doppelte Abbuchung vom 3. November gefunden und an unser Billing-Team weitergegeben.</blockquote>
+      </figure>
+      <figure class="grid gap-2">
+        <figcaption class="flex items-center justify-between text-sm font-medium">v12 <span class="badge" data-variant="destructive">Fail · 2</span></figcaption>
+        <blockquote class="rounded-lg border border-destructive/40 bg-destructive/5 p-4 text-sm/relaxed">Sorry about that. I found the duplicate charge from November 3 and passed it to our billing team.</blockquote>
+      </figure>
+    </section>
+    <footer class="flex flex-wrap items-center justify-between gap-3">
+      <p class="text-sm text-muted-foreground">Likely cause: v12 removed "Draft a first reply in the customer's language."</p>
+      <a class="btn" data-variant="outline" data-size="sm" href="/evals/support-answers/diff/11..12">Compare prompts</a>
+    </footer>
+  </section>
+</main>

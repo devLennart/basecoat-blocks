@@ -1,0 +1,89 @@
+<main class="mx-auto max-w-[1080px] px-4 pt-6 pb-12 text-foreground sm:px-5 sm:pt-10">
+  <header class="mb-6 flex flex-wrap items-start justify-between gap-4">
+    <div class="min-w-0">
+      <p class="text-[13px] font-semibold tracking-[.09em] text-muted-foreground uppercase">Acme / Agents / Data steward</p>
+      <h1 class="mt-1.5 mb-2 flex flex-wrap items-center gap-2.5 text-2xl leading-tight font-semibold tracking-tight md:text-3xl">Approve database migration <span class="badge" data-variant="outline">Waiting for you</span></h1>
+      <p class="text-muted-foreground">Data steward paused run #318 before a step that changes production data.</p>
+    </div>
+    <p class="flex items-center gap-1.5 text-sm text-muted-foreground"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Request expires in <time datetime="PT47M">47 min</time></p>
+  </header>
+
+  <div class="grid items-start gap-5 lg:grid-cols-[1.7fr_minmax(260px,1fr)]">
+    <div class="grid min-w-0 gap-5">
+      <div class="alert">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+        <h2>Why this needs approval</h2>
+        <section>The workspace policy asks for a human review before any agent deletes rows or changes a schema in production.</section>
+      </div>
+
+      <section class="card">
+        <header><h2>What the agent wants to do</h2><p>Merge duplicate customer records found by the nightly check.</p></header>
+        <section class="grid gap-4">
+          <ol role="list" aria-label="Planned steps" class="trace gap-2 text-sm [&_small]:ms-2 [&_small]:text-muted-foreground">
+            <li class="trace-line text-muted-foreground"><svg class="me-2 size-4 text-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Found 214 duplicate customers by email</span><small>done</small></li>
+            <li class="trace-line text-muted-foreground"><svg class="me-2 size-4 text-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Created backup snapshot <code>customers_2026_11_21</code></span><small>done</small></li>
+            <li class="trace-line font-medium"><svg class="me-2 size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M10 15V9"/><path d="M14 15V9"/></svg><span>Merge records and delete 214 duplicates</span><small>needs approval</small></li>
+            <li class="trace-line text-muted-foreground"><svg class="me-2 size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/></svg><span>Post a summary to #data-quality</span></li>
+          </ol>
+          <div class="code-block [&_pre]:max-h-[280px]">
+            <header>
+              <span>migration_318.sql</span>
+              <div><button type="button" class="btn" data-variant="ghost" data-size="xs" data-copy>Copy</button></div>
+            </header>
+            <pre class="scrollbar" tabindex="0" aria-label="Proposed SQL" data-line-numbers><code><span>BEGIN;</span>
+<span>UPDATE orders o SET customer_id = d.keep_id</span>
+<span>  FROM duplicate_customers d</span>
+<span>  WHERE o.customer_id = d.drop_id;</span>
+<span>DELETE FROM customers</span>
+<span>  WHERE id IN (SELECT drop_id FROM duplicate_customers);</span>
+<span>-- expected: 1,904 orders updated, 214 customers deleted</span>
+<span>COMMIT;</span></code></pre>
+          </div>
+        </section>
+      </section>
+
+      <!-- Example endpoint: replace with your own approval route. This preview does not submit. -->
+      <form class="card" action="/agents/runs/318/approval" method="post">
+        <header><h2>Your decision</h2><p>The agent continues, stops, or re-plans based on your answer.</p></header>
+        <section class="grid gap-4">
+          <div role="group" class="field">
+            <label for="approval-01-note">Note to the agent <span class="font-normal text-muted-foreground">(optional)</span></label>
+            <textarea id="approval-01-note" class="textarea" name="note" rows="3" placeholder="For example: skip customers created in the last 7 days."></textarea>
+            <p>Required if you ask for changes.</p>
+          </div>
+          <label class="flex items-start gap-2.5 text-sm"><input type="checkbox" class="input mt-0.5" name="remember" value="1"> <span>Allow this agent to merge duplicates without asking for the next 7 days</span></label>
+        </section>
+        <footer class="flex flex-wrap justify-end gap-2">
+          <button type="submit" class="btn" data-variant="outline" name="decision" value="reject">Reject</button>
+          <button type="submit" class="btn" data-variant="outline" name="decision" value="revise">Ask for changes</button>
+          <button type="submit" class="btn" name="decision" value="approve">Approve and run</button>
+        </footer>
+      </form>
+    </div>
+
+    <aside class="grid gap-5">
+      <section class="card">
+        <header><h2>Impact</h2><p>Estimated from a dry run.</p></header>
+        <section>
+          <dl class="grid gap-3.5 text-sm [&_dd]:text-end [&_dd]:font-medium [&_div]:flex [&_div]:justify-between [&_div]:gap-3 [&_dt]:text-muted-foreground">
+            <div><dt>Rows deleted</dt><dd>214</dd></div>
+            <div><dt>Rows updated</dt><dd>1,904</dd></div>
+            <div><dt>Tables</dt><dd>customers, orders</dd></div>
+            <div><dt>Environment</dt><dd><span class="badge" data-variant="destructive">Production</span></dd></div>
+            <div><dt>Rollback</dt><dd>Snapshot, 30 days</dd></div>
+          </dl>
+        </section>
+      </section>
+      <section class="card">
+        <header><h2>Requested by</h2></header>
+        <section class="grid gap-3 text-sm">
+          <div class="flex items-center gap-3">
+            <span class="grid size-9 flex-none place-items-center rounded-lg bg-muted" aria-hidden="true"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>
+            <div><p class="font-medium">Data steward</p><p class="text-muted-foreground">Scheduled nightly at 02:00</p></div>
+          </div>
+          <p class="text-muted-foreground">Owner: <a class="font-medium text-foreground underline-offset-4 hover:underline" href="#approval-01-owner">Priya Patel</a></p>
+        </section>
+      </section>
+    </aside>
+  </div>
+</main>

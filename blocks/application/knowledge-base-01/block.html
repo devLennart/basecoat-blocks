@@ -1,0 +1,120 @@
+<main class="mx-auto max-w-[1180px] px-4 pt-6 pb-12 text-foreground sm:px-5 sm:pt-10">
+  <header class="mb-6 flex flex-wrap items-end justify-between gap-4">
+    <div>
+      <p class="text-[13px] font-semibold tracking-[.09em] text-muted-foreground uppercase">Acme / Knowledge</p>
+      <h1 class="mt-1.5 text-2xl font-semibold tracking-tight md:text-3xl">Support docs</h1>
+      <p class="mt-1 text-muted-foreground">Used by 3 assistants. 1,284 sources, 18,906 chunks indexed.</p>
+    </div>
+    <div class="flex flex-wrap gap-2">
+      <a class="btn" data-variant="outline" href="/knowledge/support-docs/settings">Index settings</a>
+      <a class="btn" href="/knowledge/support-docs/connect">Connect source</a>
+    </div>
+  </header>
+
+  <div class="grid items-start gap-5 lg:grid-cols-[1.8fr_minmax(280px,1fr)]">
+    <div class="grid min-w-0 gap-5">
+      <!-- Example endpoint: replace with your own upload route. This preview does not upload. -->
+      <form action="/knowledge/support-docs/files" method="post" enctype="multipart/form-data">
+        <label for="knowledge-base-01-files" class="flex cursor-pointer flex-col items-center gap-2 rounded-xl border border-dashed bg-muted/30 px-6 py-8 text-center hover:bg-muted/60 has-focus-visible:ring-[3px] has-focus-visible:ring-ring/50">
+          <span class="grid size-10 place-items-center rounded-full bg-background shadow-xs" aria-hidden="true"><svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg></span>
+          <span class="text-sm font-medium">Drop files here or browse</span>
+          <span class="text-sm text-muted-foreground">PDF, Markdown, DOCX, HTML or CSV, up to 50 MB each</span>
+          <input id="knowledge-base-01-files" class="sr-only" type="file" name="files[]" multiple accept=".pdf,.md,.docx,.html,.csv">
+        </label>
+      </form>
+
+      <section class="card" aria-labelledby="knowledge-base-01-sources">
+        <header>
+          <h2 id="knowledge-base-01-sources">Sources</h2><p>Recently changed first.</p>
+          <form class="card-action" action="/knowledge/support-docs" method="get" role="search">
+            <label for="knowledge-base-01-filter" class="sr-only">Filter sources</label>
+            <input id="knowledge-base-01-filter" class="input h-8 w-36 sm:w-48" type="search" name="q" placeholder="Filter sources…">
+          </form>
+        </header>
+        <section class="table-container">
+          <table class="table">
+            <thead><tr><th scope="col">Name</th><th scope="col">Status</th><th scope="col" class="text-end">Chunks</th><th scope="col">Updated</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead>
+            <tbody class="[&_td]:align-middle">
+              <tr>
+                <td><div class="flex items-center gap-2.5"><svg class="size-4 flex-none text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/></svg><span class="font-medium">security-whitepaper.pdf</span></div></td>
+                <td><div class="grid w-32 gap-1.5"><span class="text-xs text-muted-foreground">Embedding · 62%</span><div class="progress h-1.5 rounded-full bg-muted" role="progressbar" aria-label="Indexing security-whitepaper.pdf, 62%" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100"><span class="rounded-full bg-primary" style="width: 62%"></span></div></div></td>
+                <td class="text-end text-muted-foreground tabular-nums">–</td>
+                <td class="text-muted-foreground">Just now</td>
+                <td class="text-end"><button type="button" class="btn" data-variant="ghost" data-size="sm">Cancel</button></td>
+              </tr>
+              <tr>
+                <td><div class="flex items-center gap-2.5"><svg class="size-4 flex-none text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/></svg><span class="font-medium">sla-2026.docx</span></div></td>
+                <td><span class="badge" data-variant="destructive">Failed</span><p class="mt-1 text-xs text-muted-foreground">File is password-protected</p></td>
+                <td class="text-end text-muted-foreground tabular-nums">–</td>
+                <td class="text-muted-foreground">12 min ago</td>
+                <td class="text-end"><button type="button" class="btn" data-variant="outline" data-size="sm">Retry</button></td>
+              </tr>
+              <tr>
+                <td><div class="flex items-center gap-2.5"><svg class="size-4 flex-none text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg><span class="font-medium">help.example.com</span></div></td>
+                <td><span class="badge" data-variant="secondary">Indexed</span></td>
+                <td class="text-end tabular-nums">14,210</td>
+                <td class="text-muted-foreground">2 hours ago</td>
+                <td class="text-end"><button type="button" class="btn" data-variant="ghost" data-size="sm">Resync</button></td>
+              </tr>
+              <tr>
+                <td><div class="flex items-center gap-2.5"><svg class="size-4 flex-none text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/></svg><span class="font-medium">refund-policy-2026.pdf</span></div></td>
+                <td><span class="badge" data-variant="secondary">Indexed</span></td>
+                <td class="text-end tabular-nums">86</td>
+                <td class="text-muted-foreground">Yesterday</td>
+                <td class="text-end"><button type="button" class="btn" data-variant="ghost" data-size="sm">Remove</button></td>
+              </tr>
+              <tr>
+                <td><div class="flex items-center gap-2.5"><svg class="size-4 flex-none text-muted-foreground" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/></svg><span class="font-medium">plan-limits.csv</span></div></td>
+                <td><span class="badge" data-variant="outline">Outdated</span></td>
+                <td class="text-end tabular-nums">42</td>
+                <td class="text-muted-foreground">Oct 2</td>
+                <td class="text-end"><button type="button" class="btn" data-variant="ghost" data-size="sm">Replace</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <footer class="text-sm text-muted-foreground">Showing 5 of 1,284 sources · <a class="font-medium text-foreground underline-offset-4 hover:underline" href="/knowledge/support-docs?page=2">Next page</a></footer>
+      </section>
+    </div>
+
+    <aside class="grid gap-5">
+      <section class="card" aria-labelledby="knowledge-base-01-test">
+        <header><h2 id="knowledge-base-01-test">Test retrieval</h2><p>See which chunks an assistant would get.</p></header>
+        <section class="grid gap-4">
+          <form action="/knowledge/support-docs/query" method="post">
+            <div class="input-group w-full [&_svg]:size-4">
+              <label for="knowledge-base-01-query" class="sr-only">Test question</label>
+              <span data-align="inline-start" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></span>
+              <input id="knowledge-base-01-query" type="text" name="q" value="Can I get a refund after 30 days?">
+            </div>
+          </form>
+          <ol class="grid gap-3 text-sm" role="list" aria-label="Top matches">
+            <li class="rounded-lg border p-3">
+              <p class="mb-1 flex items-center justify-between gap-2 text-xs text-muted-foreground"><span class="truncate">refund-policy-2026.pdf · p. 2</span><span class="tabular-nums">0.91</span></p>
+              <p class="line-clamp-3">Refunds are available within 30 days of purchase. After 30 days, annual plans may be refunded pro rata on request…</p>
+            </li>
+            <li class="rounded-lg border p-3">
+              <p class="mb-1 flex items-center justify-between gap-2 text-xs text-muted-foreground"><span class="truncate">help.example.com/billing/refunds</span><span class="tabular-nums">0.84</span></p>
+              <p class="line-clamp-3">To request a refund, open Settings → Billing and choose the invoice. Our team replies within one business day…</p>
+            </li>
+            <li class="rounded-lg border p-3 opacity-70">
+              <p class="mb-1 flex items-center justify-between gap-2 text-xs text-muted-foreground"><span class="truncate">plan-limits.csv · row 14</span><span class="tabular-nums">0.52</span></p>
+              <p class="line-clamp-3">Team plan, annual, refundable: yes (pro rata)</p>
+            </li>
+          </ol>
+        </section>
+      </section>
+      <section class="card" aria-labelledby="knowledge-base-01-index">
+        <header><h2 id="knowledge-base-01-index">Index</h2></header>
+        <section>
+          <dl class="grid gap-3 text-sm [&_dd]:text-end [&_dd]:font-medium [&_div]:flex [&_div]:justify-between [&_div]:gap-3 [&_dt]:text-muted-foreground">
+            <div><dt>Embedding model</dt><dd>acme-embed-3</dd></div>
+            <div><dt>Chunk size</dt><dd>800 tokens</dd></div>
+            <div><dt>Auto-sync</dt><dd>Every 6 hours</dd></div>
+            <div><dt>Storage</dt><dd>2.1 GB of 10 GB</dd></div>
+          </dl>
+        </section>
+      </section>
+    </aside>
+  </div>
+</main>

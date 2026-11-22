@@ -1,0 +1,67 @@
+<main class="grid min-h-svh place-items-center bg-background px-4 py-10 text-foreground sm:px-6">
+  <div class="w-full max-w-[44rem]">
+    <header class="mb-6 text-center">
+      <span class="mx-auto mb-4 grid size-10 place-items-center rounded-xl bg-primary text-primary-foreground" aria-hidden="true"><svg viewBox="0 0 24 24" width="1.25em" height="1.25em" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 21 20H3Z"/><path d="M8 14.5h8"/></svg></span>
+      <h1 class="text-2xl font-semibold tracking-tight sm:text-3xl">What should we work on, Maya?</h1>
+      <p class="mt-2 text-sm text-muted-foreground">Acme Assistant can read your workspace, search the web and draft documents.</p>
+    </header>
+
+    <!-- Example endpoint: replace with your own route. This preview does not send anything. -->
+    <form action="/assistant/conversations" method="post">
+      <div class="input-group w-full shadow-xs [&_svg]:size-4" data-orientation="vertical">
+        <header class="w-full" data-align="block-start">
+          <ul class="attachment-group w-full" role="list" aria-label="Attached files">
+            <li class="attachment">
+              <figure aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M14 2v5a1 1 0 0 0 1 1h5"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></figure>
+              <section><p dir="auto">q4-roadmap.pdf</p><p>PDF · 1.2 MB</p></section>
+              <div><button type="button" class="btn" data-variant="ghost" data-size="icon-xs" aria-label="Remove q4-roadmap.pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button></div>
+            </li>
+            <li class="attachment">
+              <figure aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/></svg></figure>
+              <section><p dir="auto">pipeline-export.csv</p><p>CSV · 84 KB</p></section>
+              <div><button type="button" class="btn" data-variant="ghost" data-size="icon-xs" aria-label="Remove pipeline-export.csv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button></div>
+            </li>
+          </ul>
+        </header>
+        <label for="prompt-input-01-message" class="sr-only">Message Acme Assistant</label>
+        <textarea class="min-h-24 resize-none" id="prompt-input-01-message" name="message" rows="3" aria-describedby="prompt-input-01-hint" placeholder="Ask anything, or type / for commands…">Compare the roadmap with the pipeline export and flag deals that depend on features we moved to Q1.</textarea>
+        <footer class="flex flex-wrap items-center gap-1.5" data-align="block-end">
+          <button type="button" class="btn" data-variant="ghost" data-size="icon-sm" aria-label="Attach files"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg></button>
+          <button type="button" class="btn" data-variant="secondary" data-size="sm" aria-pressed="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>Web search</button>
+          <label for="prompt-input-01-model" class="sr-only">Model</label>
+          <select id="prompt-input-01-model" name="model" class="select h-8 w-auto border-0 bg-transparent text-sm shadow-none dark:bg-transparent">
+            <option value="acme-pro" selected>Acme Pro</option>
+            <option value="acme-fast">Acme Fast</option>
+            <option value="acme-reasoning">Acme Reasoning</option>
+          </select>
+          <span class="ms-auto text-xs text-muted-foreground tabular-nums" id="prompt-input-01-hint">112 / 8,000</span>
+          <button type="submit" class="btn" data-size="icon-sm" aria-label="Send message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></button>
+        </footer>
+      </div>
+    </form>
+
+    <ul class="mt-4 flex flex-wrap justify-center gap-2" role="list" aria-label="Suggested prompts">
+      <li><button type="button" class="btn" data-variant="outline" data-size="sm">Summarise this week's standups</button></li>
+      <li><button type="button" class="btn" data-variant="outline" data-size="sm">Draft a release note</button></li>
+      <li><button type="button" class="btn" data-variant="outline" data-size="sm">Find open customer escalations</button></li>
+    </ul>
+
+    <section class="mt-10 border-t pt-6" aria-labelledby="prompt-input-01-states">
+      <h2 id="prompt-input-01-states" class="mb-3 text-sm font-medium text-muted-foreground">While a reply streams</h2>
+      <div class="input-group w-full [&_svg]:size-4" data-orientation="vertical">
+        <label for="prompt-input-01-followup" class="sr-only">Follow-up message</label>
+        <textarea class="min-h-12 resize-none" id="prompt-input-01-followup" rows="1" placeholder="Queue a follow-up…"></textarea>
+        <footer class="flex items-center gap-2" data-align="block-end">
+          <p class="text-sm text-muted-foreground" role="status"><span class="shimmer">Reading pipeline-export.csv…</span></p>
+          <button type="button" class="btn ms-auto" data-variant="secondary" data-size="sm"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="1.5"/></svg>Stop</button>
+        </footer>
+      </div>
+    </section>
+
+    <p class="mt-4 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
+      <span><kbd class="kbd">Enter</kbd> to send</span>
+      <span><kbd class="kbd">Shift</kbd> + <kbd class="kbd">Enter</kbd> for a new line</span>
+      <span><kbd class="kbd">/</kbd> for commands</span>
+    </p>
+  </div>
+</main>

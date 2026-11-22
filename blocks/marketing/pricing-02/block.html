@@ -1,0 +1,83 @@
+<section id="pricing-02" class="bg-background text-foreground" aria-labelledby="pricing-02-title">
+  <div class="mx-auto max-w-[76rem] px-6 py-14 md:py-20 lg:py-28">
+    <header class="mx-auto mb-12 max-w-[40rem] text-center">
+      <span class="badge" data-variant="outline">Acme pricing · pay for what you use</span>
+      <h2 id="pricing-02-title" class="my-4 font-serif text-[2.75rem] leading-[1.08] font-normal tracking-[-.05em] md:text-6xl">Credits that grow with you.</h2>
+      <p class="leading-relaxed text-muted-foreground">Every plan includes monthly credits. A short answer uses about 1 credit, a long report about 20. Unused credits roll over for one month.</p>
+    </header>
+
+    <div class="mx-auto grid max-w-[33rem] items-stretch gap-4 md:max-w-none md:grid-cols-3">
+      <article class="card h-full min-w-0" aria-labelledby="pricing-02-free-title">
+        <header>
+          <h3 class="text-xl tracking-tight" id="pricing-02-free-title">Free</h3>
+          <p>Try Acme on real work.</p>
+        </header>
+        <section>
+          <p class="mb-1 flex items-baseline gap-1.5"><strong class="text-[2.75rem] leading-none font-semibold tracking-[-.06em]">$0</strong></p>
+          <p class="text-[.8rem] text-muted-foreground">200 credits / month</p>
+          <ul class="mt-6 grid list-none gap-3.5 border-t pt-6 text-sm [&>li]:flex [&>li]:items-start [&>li]:gap-3 [&>li]:before:flex-none [&>li]:before:font-bold [&>li]:before:content-['✓']">
+            <li>Acme Fast model</li>
+            <li>1 workspace, 3 members</li>
+            <li>Upload up to 50 files</li>
+          </ul>
+        </section>
+        <footer class="mt-auto"><a class="btn w-full" data-variant="outline" href="/signup">Start free</a></footer>
+      </article>
+
+      <article class="card h-full min-w-0 ring-2 ring-primary" aria-labelledby="pricing-02-pro-title">
+        <header>
+          <h3 class="text-xl tracking-tight" id="pricing-02-pro-title">Pro</h3>
+          <p>For teams that use AI every day.</p>
+          <span class="badge card-action">Most popular</span>
+        </header>
+        <section>
+          <p class="mb-1 flex items-baseline gap-1.5"><strong class="text-[2.75rem] leading-none font-semibold tracking-[-.06em]">$30</strong><span class="text-sm text-muted-foreground">/ member / month</span></p>
+          <p class="text-[.8rem] text-muted-foreground">3,000 credits per member, pooled</p>
+          <ul class="mt-6 grid list-none gap-3.5 border-t pt-6 text-sm [&>li]:flex [&>li]:items-start [&>li]:gap-3 [&>li]:before:flex-none [&>li]:before:font-bold [&>li]:before:content-['✓']">
+            <li>All models, incl. Acme Reasoning</li>
+            <li>Agents with approval steps</li>
+            <li>Unlimited knowledge sources</li>
+            <li>Extra credits at $8 per 1,000</li>
+          </ul>
+        </section>
+        <footer class="mt-auto"><a class="btn w-full" href="/signup?plan=pro">Start 14-day trial</a></footer>
+      </article>
+
+      <article class="card h-full min-w-0" aria-labelledby="pricing-02-scale-title">
+        <header>
+          <h3 class="text-xl tracking-tight" id="pricing-02-scale-title">Scale</h3>
+          <p>Volume pricing and controls.</p>
+        </header>
+        <section>
+          <p class="mb-1 flex items-baseline gap-1.5"><strong class="text-[2.75rem] leading-none font-semibold tracking-[-.06em]">Custom</strong></p>
+          <p class="text-[.8rem] text-muted-foreground">Committed credits, billed yearly</p>
+          <ul class="mt-6 grid list-none gap-3.5 border-t pt-6 text-sm [&>li]:flex [&>li]:items-start [&>li]:gap-3 [&>li]:before:flex-none [&>li]:before:font-bold [&>li]:before:content-['✓']">
+            <li>Everything in Pro</li>
+            <li>SSO, audit log, data residency</li>
+            <li>Per-team budgets and limits</li>
+          </ul>
+        </section>
+        <footer class="mt-auto"><a class="btn w-full" data-variant="outline" href="/contact/sales">Talk to sales</a></footer>
+      </article>
+    </div>
+
+    <div class="mx-auto mt-10 grid max-w-[60rem] items-start gap-6 rounded-2xl border bg-muted/30 p-6 md:grid-cols-[1.1fr_1fr] md:p-8">
+      <div>
+        <h3 class="text-lg font-semibold tracking-tight">Estimate your bill</h3>
+        <p class="mt-1 text-sm text-muted-foreground">Pro plan, 10 members. Move the slider to the number of credits your team needs.</p>
+        <div role="group" class="field mt-6">
+          <div class="flex items-center justify-between gap-3"><label for="pricing-02-credits">Credits per month</label><output id="pricing-02-credits-out" for="pricing-02-credits" class="text-sm font-medium tabular-nums">40,000</output></div>
+          <input id="pricing-02-credits" type="range" class="input" min="10000" max="100000" step="5000" value="40000" style="--slider-value: 33.33%" oninput="const extra=Math.max(0,this.value-30000);document.getElementById('pricing-02-credits-out').value=Number(this.value).toLocaleString('en-US');document.getElementById('pricing-02-total').value='$'+(300+extra/1000*8).toLocaleString('en-US');this.style.setProperty('--slider-value',((this.value-this.min)/(this.max-this.min)*100)+'%')">
+          <p class="flex justify-between"><span>10k</span><span>100k</span></p>
+        </div>
+      </div>
+      <dl class="grid gap-3 rounded-xl border bg-card p-5 text-sm text-card-foreground [&_dd]:text-end [&_dd]:tabular-nums [&>div]:flex [&>div]:justify-between [&>div]:gap-3 [&_dt]:text-muted-foreground">
+        <div><dt>10 members × $30</dt><dd>$300</dd></div>
+        <div><dt>Included credits</dt><dd>30,000</dd></div>
+        <div><dt>Extra credits at $8 / 1,000</dt><dd>billed as used</dd></div>
+        <div class="border-t pt-3"><dt class="font-medium text-foreground">Estimated monthly total</dt><dd><output id="pricing-02-total" class="text-xl font-semibold" aria-live="polite">$380</output></dd></div>
+      </dl>
+    </div>
+    <p class="mt-6 text-center text-xs text-muted-foreground">Prices, credits and plan limits are illustrative. Replace them with your own offering.</p>
+  </div>
+</section>

@@ -1,0 +1,120 @@
+<main class="mx-auto max-w-[1180px] px-4 pt-6 pb-12 text-foreground sm:px-5 sm:pt-10">
+  <header class="mb-6 flex flex-wrap items-end justify-between gap-4">
+    <div>
+      <h1 class="text-2xl font-semibold tracking-tight md:text-3xl">Agents</h1>
+      <p class="mt-1 text-muted-foreground">Automations that run on a schedule or when something happens in Acme.</p>
+    </div>
+    <a class="btn" href="/agents/new"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg>New agent</a>
+  </header>
+
+  <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
+    <nav class="button-group" aria-label="Filter agents">
+      <a class="btn" data-variant="secondary" data-size="sm" href="/agents" aria-current="page">All <span class="text-muted-foreground">6</span></a>
+      <a class="btn" data-variant="outline" data-size="sm" href="/agents?status=active">Active</a>
+      <a class="btn" data-variant="outline" data-size="sm" href="/agents?status=attention">Needs attention</a>
+      <a class="btn" data-variant="outline" data-size="sm" href="/agents?status=paused">Paused</a>
+    </nav>
+    <form action="/agents" method="get" role="search">
+      <label for="agents-01-search" class="sr-only">Search agents</label>
+      <input id="agents-01-search" class="input h-8 w-56" type="search" name="q" placeholder="Search agents…">
+    </form>
+  </div>
+
+  <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3" role="list">
+    <li class="card gap-4 py-5">
+      <header>
+        <h2 class="flex items-center gap-2.5"><span class="grid size-7 flex-none place-items-center rounded-md bg-muted" aria-hidden="true"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span><a class="underline-offset-4 hover:underline" href="/agents/support-triage">Support triage</a></h2>
+        <p>Labels and drafts replies for new tickets.</p>
+        <span class="badge card-action" data-variant="secondary">Active</span>
+      </header>
+      <section class="grid gap-3 text-sm">
+        <dl class="grid grid-cols-2 gap-2 [&_dt]:text-xs [&_dt]:text-muted-foreground">
+          <div><dt>Trigger</dt><dd>New ticket</dd></div>
+          <div><dt>Last run</dt><dd>2 min ago</dd></div>
+        </dl>
+        <div class="grid gap-1.5"><p class="flex justify-between text-xs text-muted-foreground"><span>Success, last 7 days</span><span class="tabular-nums">98%</span></p><div class="progress h-1.5 rounded-full bg-muted" role="progressbar" aria-label="98% successful runs" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"><span class="rounded-full bg-primary" style="width: 98%"></span></div></div>
+      </section>
+      <footer class="flex gap-2"><a class="btn" data-variant="outline" data-size="sm" href="/agents/support-triage/runs">Runs</a><button type="button" class="btn" data-variant="ghost" data-size="sm">Pause</button></footer>
+    </li>
+
+    <li class="card gap-4 py-5 ring-1 ring-destructive/30">
+      <header>
+        <h2 class="flex items-center gap-2.5"><span class="grid size-7 flex-none place-items-center rounded-md bg-muted" aria-hidden="true"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg></span><a class="underline-offset-4 hover:underline" href="/agents/data-steward">Data steward</a></h2>
+        <p>Finds and merges duplicate customer records.</p>
+        <span class="badge card-action" data-variant="destructive">Waiting</span>
+      </header>
+      <section class="grid gap-3 text-sm">
+        <dl class="grid grid-cols-2 gap-2 [&_dt]:text-xs [&_dt]:text-muted-foreground">
+          <div><dt>Trigger</dt><dd>Daily, 02:00</dd></div>
+          <div><dt>Last run</dt><dd>Paused 47 min</dd></div>
+        </dl>
+        <p class="rounded-md bg-muted px-3 py-2 text-xs">Run #318 needs approval to delete 214 rows.</p>
+      </section>
+      <footer class="flex gap-2"><a class="btn" data-size="sm" href="/agents/runs/318/approval">Review</a><a class="btn" data-variant="ghost" data-size="sm" href="/agents/data-steward/runs">Runs</a></footer>
+    </li>
+
+    <li class="card gap-4 py-5">
+      <header>
+        <h2 class="flex items-center gap-2.5"><span class="grid size-7 flex-none place-items-center rounded-md bg-muted" aria-hidden="true"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><a class="underline-offset-4 hover:underline" href="/agents/weekly-digest">Weekly digest</a></h2>
+        <p>Emails each team lead a summary of their week.</p>
+        <span class="badge card-action" data-variant="secondary">Active</span>
+      </header>
+      <section class="grid gap-3 text-sm">
+        <dl class="grid grid-cols-2 gap-2 [&_dt]:text-xs [&_dt]:text-muted-foreground">
+          <div><dt>Trigger</dt><dd>Fridays, 16:00</dd></div>
+          <div><dt>Last run</dt><dd>6 days ago</dd></div>
+        </dl>
+        <div class="grid gap-1.5"><p class="flex justify-between text-xs text-muted-foreground"><span>Success, last 7 days</span><span class="tabular-nums">100%</span></p><div class="progress h-1.5 rounded-full bg-muted" role="progressbar" aria-label="100% successful runs" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><span class="rounded-full bg-primary" style="width: 100%"></span></div></div>
+      </section>
+      <footer class="flex gap-2"><a class="btn" data-variant="outline" data-size="sm" href="/agents/weekly-digest/runs">Runs</a><button type="button" class="btn" data-variant="ghost" data-size="sm">Pause</button></footer>
+    </li>
+
+    <li class="card gap-4 py-5">
+      <header>
+        <h2 class="flex items-center gap-2.5"><span class="grid size-7 flex-none place-items-center rounded-md bg-muted" aria-hidden="true"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></span><a class="underline-offset-4 hover:underline" href="/agents/incident-scribe">Incident scribe</a></h2>
+        <p>Writes the timeline when an alert fires.</p>
+        <span class="badge card-action" data-variant="outline">Errors</span>
+      </header>
+      <section class="grid gap-3 text-sm">
+        <dl class="grid grid-cols-2 gap-2 [&_dt]:text-xs [&_dt]:text-muted-foreground">
+          <div><dt>Trigger</dt><dd>Alert webhook</dd></div>
+          <div><dt>Last run</dt><dd>Yesterday</dd></div>
+        </dl>
+        <div class="grid gap-1.5"><p class="flex justify-between text-xs text-muted-foreground"><span>Success, last 7 days</span><span class="tabular-nums">71%</span></p><div class="progress h-1.5 rounded-full bg-muted" role="progressbar" aria-label="71% successful runs" aria-valuenow="71" aria-valuemin="0" aria-valuemax="100"><span class="rounded-full bg-destructive" style="width: 71%"></span></div></div>
+      </section>
+      <footer class="flex gap-2"><a class="btn" data-variant="outline" data-size="sm" href="/agents/incident-scribe/runs?status=failed">View 2 failures</a></footer>
+    </li>
+
+    <li class="card gap-4 py-5">
+      <header>
+        <h2 class="flex items-center gap-2.5"><span class="grid size-7 flex-none place-items-center rounded-md bg-muted" aria-hidden="true"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg></span><a class="underline-offset-4 hover:underline" href="/agents/docs-translator">Docs translator</a></h2>
+        <p>Translates new help articles into 6 languages.</p>
+        <span class="badge card-action" data-variant="secondary">Active</span>
+      </header>
+      <section class="grid gap-3 text-sm">
+        <dl class="grid grid-cols-2 gap-2 [&_dt]:text-xs [&_dt]:text-muted-foreground">
+          <div><dt>Trigger</dt><dd>Article published</dd></div>
+          <div><dt>Last run</dt><dd>3 hours ago</dd></div>
+        </dl>
+        <div class="grid gap-1.5"><p class="flex justify-between text-xs text-muted-foreground"><span>Success, last 7 days</span><span class="tabular-nums">95%</span></p><div class="progress h-1.5 rounded-full bg-muted" role="progressbar" aria-label="95% successful runs" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"><span class="rounded-full bg-primary" style="width: 95%"></span></div></div>
+      </section>
+      <footer class="flex gap-2"><a class="btn" data-variant="outline" data-size="sm" href="/agents/docs-translator/runs">Runs</a><button type="button" class="btn" data-variant="ghost" data-size="sm">Pause</button></footer>
+    </li>
+
+    <li class="card gap-4 py-5 text-muted-foreground">
+      <header>
+        <h2 class="flex items-center gap-2.5 text-foreground"><span class="grid size-7 flex-none place-items-center rounded-md bg-muted" aria-hidden="true"><svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></span><a class="underline-offset-4 hover:underline" href="/agents/lead-enricher">Lead enricher</a></h2>
+        <p>Adds company size and industry to new leads.</p>
+        <span class="badge card-action" data-variant="outline">Paused</span>
+      </header>
+      <section class="grid gap-3 text-sm">
+        <dl class="grid grid-cols-2 gap-2 [&_dt]:text-xs">
+          <div><dt>Trigger</dt><dd>New lead</dd></div>
+          <div><dt>Paused by</dt><dd>Jonah Lee</dd></div>
+        </dl>
+        <p class="text-xs">Paused on Nov 14 while the CRM fields change.</p>
+      </section>
+      <footer class="flex gap-2"><button type="button" class="btn" data-variant="outline" data-size="sm">Resume</button></footer>
+    </li>
+  </ul>
+</main>

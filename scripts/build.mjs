@@ -50,17 +50,13 @@ const picture = (b) =>
   `<a href="${b.dir}/block.html"><picture><source media="(prefers-color-scheme: dark)" srcset="${b.dir}/preview-dark.png"><img src="${b.dir}/preview.png" alt="${b.title} preview"></picture></a>`;
 
 function catalogSection({ category, heading, blocks }) {
-  const rows = [];
-  for (let i = 0; i < blocks.length; i += 2) {
-    const pair = blocks.slice(i, i + 2);
-    rows.push(
-      `| ${pair.map((b) => `${b.title} · \`${b.name}\``).join(' | ')} |`,
-      `| ${pair.map(() => '---').join(' | ')} |`,
-      `| ${pair.map(picture).join(' | ')} |`,
-      `| ${pair.map((b) => `<sub>${b.components.join(' · ')}${b.js ? ' · <b>needs Basecoat JS</b>' : ''}</sub><br>[Code](${b.dir}/block.html) · [Notes](${b.dir}/README.md)`).join(' | ')} |`,
-      '',
-    );
-  }
+  const rows = blocks.flatMap((b) => [
+    `| ${b.title} · \`${b.name}\` |`,
+    '| --- |',
+    `| ${picture(b)} |`,
+    `| <sub>${b.components.join(' · ')}${b.js ? ' · <b>needs Basecoat JS</b>' : ''}</sub><br>[Code](${b.dir}/block.html) · [Notes](${b.dir}/README.md) |`,
+    '',
+  ]);
   return `### ${heading}\n\n${blocks.length} ${blocks.length === 1 ? 'block' : 'blocks'} · [category notes](blocks/${category}/README.md) · [back to top](#basecoat-blocks)\n\n${rows.join('\n')}`;
 }
 

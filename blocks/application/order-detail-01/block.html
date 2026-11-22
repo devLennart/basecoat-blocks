@@ -1,0 +1,122 @@
+<!-- Requires Basecoat JavaScript (all.min.js). -->
+<main class="mx-auto max-w-[1120px] px-4 pt-6 pb-12 sm:px-5 sm:pt-10 sm:pb-18">
+  <nav class="breadcrumb mb-4" aria-label="Breadcrumb">
+    <ol>
+      <li><a href="/orders">Orders</a></li>
+      <li aria-hidden="true"><svg data-rtl-flip viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
+      <li><span aria-current="page">#4821</span></li>
+    </ol>
+  </nav>
+
+  <header class="mb-7 flex flex-wrap items-start justify-between gap-4">
+    <div>
+      <div class="flex flex-wrap items-center gap-2">
+        <h1 class="text-3xl leading-tight font-semibold tracking-tight md:text-[38px]">Order #4821</h1>
+        <button type="button" class="btn" data-variant="ghost" data-size="icon-sm" aria-label="Copy order ID" data-tooltip="Copy order ID" data-side="bottom" onclick="navigator.clipboard.writeText('4821').then(() => document.getElementById('toaster').toast({ category: 'success', title: 'Order ID copied', description: '#4821 is on your clipboard.' }))"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg></button>
+        <span class="badge" data-variant="secondary">Paid</span>
+      </div>
+      <p class="mt-2 text-muted-foreground">Placed <time datetime="2026-11-21T14:32">Nov 21, 2026 at 2:32 PM</time> through the Acme store. Illustrative data.</p>
+    </div>
+    <div class="flex gap-2">
+      <button type="button" class="btn" data-variant="outline" onclick="document.getElementById('bc-order-refund').showModal()">Refund</button>
+      <div id="bc-order-more" class="dropdown-menu">
+        <button type="button" id="bc-order-more-trigger" class="btn" data-variant="outline" data-size="icon" aria-haspopup="menu" aria-controls="bc-order-more-menu" aria-expanded="false" aria-label="More order actions"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></button>
+        <div id="bc-order-more-popover" data-popover aria-hidden="true" data-align="end" class="w-52">
+          <div role="menu" id="bc-order-more-menu" aria-labelledby="bc-order-more-trigger">
+            <a role="menuitem" href="/orders/4821/invoice.pdf">Download invoice</a>
+            <button type="submit" role="menuitem" form="bc-order-receipt">Resend receipt</button>
+            <a role="menuitem" href="/orders/new?duplicate=4821">Duplicate order</a>
+            <hr role="separator">
+            <div role="menuitem" aria-disabled="true">Cancel order <span class="ms-auto text-xs text-muted-foreground">Shipped</span></div>
+          </div>
+        </div>
+      </div>
+      <form id="bc-order-receipt" action="/replace-with-your-receipt-route" method="post" hidden><input type="hidden" name="order_id" value="4821"></form>
+    </div>
+  </header>
+
+  <div class="grid items-start gap-5 lg:grid-cols-[1.7fr_minmax(300px,1fr)]">
+    <section class="card" aria-labelledby="bc-order-items">
+      <header><h2 id="bc-order-items">Items</h2><p>3 products, shipped in one package</p></header>
+      <section>
+        <ul class="divide-y">
+          <li class="flex items-center justify-between gap-4 py-3 first:pt-0"><div><p class="font-medium">Acme Desk Lamp</p><p class="text-[13px] text-muted-foreground">Matte black · Qty 2</p></div><span class="tabular-nums">$240.00</span></li>
+          <li class="flex items-center justify-between gap-4 py-3"><div><p class="font-medium">Acme Standing Desk</p><p class="text-[13px] text-muted-foreground">Oak, 140 cm · Qty 1</p></div><span class="tabular-nums">$890.00</span></li>
+          <li class="flex items-center justify-between gap-4 py-3"><div><p class="font-medium">Cable Tray</p><p class="text-[13px] text-muted-foreground">Steel · Qty 1</p></div><span class="tabular-nums">$45.00</span></li>
+        </ul>
+        <dl class="mt-2 grid grid-cols-[1fr_auto] gap-x-4 gap-y-2 border-t pt-4 text-sm tabular-nums">
+          <dt class="text-muted-foreground">Subtotal</dt><dd class="text-end">$1,175.00</dd>
+          <dt class="text-muted-foreground">Shipping</dt><dd class="text-end">$25.00</dd>
+          <dt class="text-muted-foreground">Tax</dt><dd class="text-end">$40.00</dd>
+          <dt class="font-semibold">Total</dt><dd class="text-end font-semibold">$1,240.00</dd>
+        </dl>
+      </section>
+    </section>
+
+    <aside class="grid gap-5" aria-label="Customer and delivery">
+      <section class="card" aria-labelledby="bc-order-customer">
+        <header><h2 id="bc-order-customer">Customer</h2></header>
+        <section class="flex items-center gap-3">
+          <span class="avatar" aria-hidden="true"><span>IB</span></span>
+          <div class="min-w-0"><p class="font-medium">Imani Brooks</p><p class="truncate text-[13px] text-muted-foreground">imani.brooks@example.com</p></div>
+        </section>
+      </section>
+
+      <section class="card" aria-labelledby="bc-order-shipping">
+        <header><h2 id="bc-order-shipping">Shipping address</h2><p>UPS Ground · tracking 1Z 999 AA1 0123 4567 84</p></header>
+        <section>
+          <address class="text-sm/relaxed not-italic">Imani Brooks<br>214 Harbor Street, Apt 5<br>Portland, OR 97204<br>United States</address>
+        </section>
+        <footer><button type="button" class="btn w-full" data-variant="outline" onclick="document.getElementById('bc-order-address').showModal()">Edit address</button></footer>
+      </section>
+    </aside>
+  </div>
+
+  <dialog id="bc-order-refund" class="alert-dialog" aria-labelledby="bc-order-refund-title" aria-describedby="bc-order-refund-description">
+    <form action="/replace-with-your-refund-route" method="post">
+      <input type="hidden" name="order_id" value="4821">
+      <header>
+        <h2 id="bc-order-refund-title">Refund $1,240.00?</h2>
+        <p id="bc-order-refund-description">Imani Brooks gets the full amount back on their original payment method within 5–10 business days. This cannot be undone.</p>
+      </header>
+      <footer>
+        <button type="button" class="btn" data-variant="outline" onclick="this.closest('dialog').close()">Cancel</button>
+        <button type="submit" class="btn" data-variant="destructive">Refund order</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <dialog id="bc-order-address" class="sheet" aria-labelledby="bc-order-address-title" aria-describedby="bc-order-address-description" onclick="if (event.target === this) this.close()">
+    <form action="/replace-with-your-shipping-address-route" method="post">
+      <input type="hidden" name="order_id" value="4821">
+      <header>
+        <h2 id="bc-order-address-title">Edit shipping address</h2>
+        <p id="bc-order-address-description">Changes apply to this order only, before the next carrier scan.</p>
+      </header>
+      <section class="grid content-start gap-4">
+        <div class="field" role="group"><label for="bc-order-address-name">Full name</label><input class="input" id="bc-order-address-name" name="name" type="text" value="Imani Brooks" autocomplete="shipping name" required></div>
+        <div class="field" role="group"><label for="bc-order-address-line1">Street address</label><input class="input" id="bc-order-address-line1" name="line1" type="text" value="214 Harbor Street, Apt 5" autocomplete="shipping address-line1" required></div>
+        <div class="grid grid-cols-[1fr_96px] gap-3">
+          <div class="field" role="group"><label for="bc-order-address-city">City</label><input class="input" id="bc-order-address-city" name="city" type="text" value="Portland" autocomplete="shipping address-level2" required></div>
+          <div class="field" role="group"><label for="bc-order-address-zip">ZIP</label><input class="input" id="bc-order-address-zip" name="postal_code" type="text" value="97204" autocomplete="shipping postal-code" required></div>
+        </div>
+        <div class="field" role="group">
+          <label for="bc-order-address-country">Country</label>
+          <select class="select w-full" id="bc-order-address-country" name="country" autocomplete="shipping country">
+            <option value="US" selected>United States</option>
+            <option value="CA">Canada</option>
+            <option value="MX">Mexico</option>
+          </select>
+        </div>
+      </section>
+      <footer>
+        <button type="submit" class="btn">Save address</button>
+        <button type="button" class="btn" data-variant="outline" onclick="this.closest('dialog').close()">Cancel</button>
+      </footer>
+      <button type="button" class="btn" data-variant="ghost" data-size="icon-sm" aria-label="Close" onclick="this.closest('dialog').close()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    </form>
+  </dialog>
+
+  <!-- One toaster per page: drop this if your layout already renders #toaster. -->
+  <div id="toaster" class="toaster"></div>
+</main>

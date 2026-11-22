@@ -1,0 +1,50 @@
+<main class="mx-auto max-w-[1120px] px-4 pt-6 pb-12 sm:px-5 sm:pt-10 sm:pb-18">
+  <header class="mb-6 flex flex-wrap items-end justify-between gap-4">
+    <div>
+      <p class="text-[13px] font-semibold tracking-[.09em] text-muted-foreground uppercase">Acme / Commerce</p>
+      <h1 class="mt-1 mb-2 text-3xl leading-tight font-semibold tracking-tight md:text-[38px]">Store overview</h1>
+      <p class="text-muted-foreground">Placeholder shapes hold the layout while data loads, so nothing jumps when it arrives.</p>
+    </div>
+    <button type="button" class="btn" data-variant="outline" disabled><svg class="animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>Refreshing…</button>
+  </header>
+
+  <article class="item mb-5 border-transparent bg-muted/50" aria-live="polite">
+    <figure><svg role="status" aria-label="Loading" class="animate-spin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg></figure>
+    <section><h2>Syncing orders from your storefront</h2><p>1,284 of 3,900 imported. You can keep working; this page updates when it finishes.</p></section>
+    <aside class="text-sm tabular-nums">33%</aside>
+  </article>
+
+  <div aria-busy="true" aria-describedby="bc-loading-note">
+    <p id="bc-loading-note" class="sr-only">Loading store metrics and recent orders.</p>
+    <section class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" aria-hidden="true">
+      <article class="card"><section class="grid gap-3"><div class="skeleton h-4 w-2/3"></div><div class="skeleton h-8 w-1/2"></div><div class="skeleton h-3 w-3/4"></div></section></article>
+      <article class="card"><section class="grid gap-3"><div class="skeleton h-4 w-2/3"></div><div class="skeleton h-8 w-1/2"></div><div class="skeleton h-3 w-3/4"></div></section></article>
+      <article class="card"><section class="grid gap-3"><div class="skeleton h-4 w-2/3"></div><div class="skeleton h-8 w-1/2"></div><div class="skeleton h-3 w-3/4"></div></section></article>
+      <article class="card"><section class="grid gap-3"><div class="skeleton h-4 w-2/3"></div><div class="skeleton h-8 w-1/2"></div><div class="skeleton h-3 w-3/4"></div></section></article>
+    </section>
+
+    <div class="mt-4 grid items-start gap-4 lg:grid-cols-[3fr_2fr]" aria-hidden="true">
+      <section class="card">
+        <header><div class="skeleton h-5 w-36"></div><div class="skeleton mt-1 h-4 w-52"></div></header>
+        <section>
+          <ul class="divide-y">
+          <li class="flex items-center gap-3 py-3"><div class="skeleton size-9 shrink-0 rounded-full"></div><div class="grid flex-1 gap-2"><div class="skeleton h-4 w-2/5"></div><div class="skeleton h-3 w-3/5"></div></div><div class="skeleton hidden h-5 w-16 rounded-full sm:block"></div><div class="skeleton h-4 w-14"></div></li>
+          <li class="flex items-center gap-3 py-3"><div class="skeleton size-9 shrink-0 rounded-full"></div><div class="grid flex-1 gap-2"><div class="skeleton h-4 w-1/3"></div><div class="skeleton h-3 w-1/2"></div></div><div class="skeleton hidden h-5 w-16 rounded-full sm:block"></div><div class="skeleton h-4 w-14"></div></li>
+          <li class="flex items-center gap-3 py-3"><div class="skeleton size-9 shrink-0 rounded-full"></div><div class="grid flex-1 gap-2"><div class="skeleton h-4 w-1/2"></div><div class="skeleton h-3 w-2/5"></div></div><div class="skeleton hidden h-5 w-16 rounded-full sm:block"></div><div class="skeleton h-4 w-14"></div></li>
+          <li class="flex items-center gap-3 py-3"><div class="skeleton size-9 shrink-0 rounded-full"></div><div class="grid flex-1 gap-2"><div class="skeleton h-4 w-2/5"></div><div class="skeleton h-3 w-1/2"></div></div><div class="skeleton hidden h-5 w-16 rounded-full sm:block"></div><div class="skeleton h-4 w-14"></div></li>
+          <li class="flex items-center gap-3 py-3"><div class="skeleton size-9 shrink-0 rounded-full"></div><div class="grid flex-1 gap-2"><div class="skeleton h-4 w-1/4"></div><div class="skeleton h-3 w-2/5"></div></div><div class="skeleton hidden h-5 w-16 rounded-full sm:block"></div><div class="skeleton h-4 w-14"></div></li>
+          </ul>
+        </section>
+      </section>
+      <section class="card">
+        <header><div class="skeleton h-5 w-28"></div><div class="skeleton mt-1 h-4 w-44"></div></header>
+        <section class="grid gap-3">
+          <div class="skeleton h-40 w-full"></div>
+          <div class="skeleton h-4 w-full"></div>
+          <div class="skeleton h-4 w-5/6"></div>
+          <div class="skeleton h-4 w-2/3"></div>
+        </section>
+      </section>
+    </div>
+  </div>
+</main>

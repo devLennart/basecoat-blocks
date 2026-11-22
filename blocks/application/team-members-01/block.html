@@ -1,3 +1,4 @@
+<!-- Requires Basecoat JavaScript (all.min.js). -->
 <main class="mx-auto max-w-[1120px] px-4 pt-6 pb-12 sm:px-5 sm:pt-10 sm:pb-18">
   <header>
     <p class="text-[13px] font-semibold tracking-[.09em] text-muted-foreground uppercase">Acme / Workspace access</p>
@@ -61,12 +62,39 @@
           </article>
         </section>
       </section>
-      <section class="card" aria-labelledby="bc-team-pending-title">
+      <section class="card overflow-visible" aria-labelledby="bc-team-pending-title">
         <header><h2 id="bc-team-pending-title">Pending invitations <span class="badge" data-variant="outline">1</span></h2><p>Invitation recipients do not have access until they accept.</p></header>
         <section>
           <article class="flex flex-wrap items-start justify-between gap-3.5 border-t py-4 first:border-t-0 first:pt-0" aria-labelledby="bc-team-nico-name">
             <div class="flex items-center gap-3"><span class="avatar" aria-hidden="true"><span>NS</span></span><div><h3 class="text-[15px] font-semibold" id="bc-team-nico-name">Nico Shah</h3><p class="text-[13px] break-all text-muted-foreground">nico.shah@example.com</p></div></div>
-            <div class="grid w-full justify-items-start gap-2 sm:w-auto sm:justify-items-end"><span class="badge" data-variant="outline">Pending</span><span class="text-[13px] text-muted-foreground">Viewer · Invited <time datetime="2026-10-21">Oct 21, 2026</time></span></div>
+            <div class="flex w-full items-start justify-between gap-2 sm:w-auto sm:justify-end">
+              <div class="grid justify-items-start gap-2 sm:justify-items-end"><span class="badge" data-variant="outline">Pending</span><span class="text-[13px] text-muted-foreground">Viewer · Invited <time datetime="2026-10-21">Oct 21, 2026</time></span></div>
+              <div id="bc-team-nico-actions" class="dropdown-menu">
+                <button type="button" id="bc-team-nico-actions-trigger" class="btn" data-variant="ghost" data-size="icon-sm" aria-haspopup="menu" aria-controls="bc-team-nico-actions-menu" aria-expanded="false" aria-label="Actions for Nico Shah's invitation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg></button>
+                <div id="bc-team-nico-actions-popover" data-popover aria-hidden="true" data-align="end" class="w-48">
+                  <div role="menu" id="bc-team-nico-actions-menu" aria-labelledby="bc-team-nico-actions-trigger">
+                    <button type="submit" role="menuitem" form="bc-team-nico-resend">Resend invitation</button>
+                    <a role="menuitem" href="/replace-with-your-invitation-route/example-invite-nico">View invitation</a>
+                    <hr role="separator">
+                    <button type="button" role="menuitem" data-variant="destructive" onclick="document.getElementById('bc-team-nico-revoke').showModal()">Revoke invitation</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <form id="bc-team-nico-resend" action="/replace-with-your-invite-resend-route" method="post" hidden><input type="hidden" name="invitation_id" value="example-invite-nico"></form>
+            <dialog id="bc-team-nico-revoke" class="alert-dialog" aria-labelledby="bc-team-nico-revoke-title" aria-describedby="bc-team-nico-revoke-description">
+              <form action="/replace-with-your-invite-revoke-route" method="post">
+                <input type="hidden" name="invitation_id" value="example-invite-nico">
+                <header>
+                  <h2 id="bc-team-nico-revoke-title">Revoke Nico Shah's invitation?</h2>
+                  <p id="bc-team-nico-revoke-description">The link sent to nico.shah@example.com stops working right away. You can invite them again later.</p>
+                </header>
+                <footer>
+                  <button type="button" class="btn" data-variant="outline" onclick="this.closest('dialog').close()">Cancel</button>
+                  <button type="submit" class="btn" data-variant="destructive">Revoke invitation</button>
+                </footer>
+              </form>
+            </dialog>
           </article>
         </section>
       </section>

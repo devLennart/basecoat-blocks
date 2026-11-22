@@ -1,0 +1,100 @@
+<!-- Requires Basecoat JavaScript (all.min.js). -->
+<main class="mx-auto max-w-[780px] px-4 pt-6 pb-12 sm:px-5 sm:pt-10 sm:pb-18">
+  <header class="mb-6">
+    <p class="text-[13px] font-semibold tracking-[.09em] text-muted-foreground uppercase">Acme / Web app</p>
+    <h1 class="mt-1 mb-2 text-3xl leading-tight font-semibold tracking-tight md:text-[38px]">New issue</h1>
+    <p class="text-muted-foreground">Describe the problem, then route it to the right person. Example form only; connect it to your own issue tracker.</p>
+  </header>
+
+  <!-- Example endpoint: replace with your own route and CSRF protection before use. -->
+  <form class="card overflow-visible" action="/replace-with-your-issues-route" method="post">
+    <section class="grid gap-5">
+      <div class="field" role="group">
+        <label for="bc-issue-title">Title</label>
+        <input class="input" id="bc-issue-title" name="title" type="text" placeholder="Checkout button stays disabled after coupon is removed" required>
+      </div>
+      <div class="field" role="group">
+        <label for="bc-issue-description">Description</label>
+        <textarea class="textarea min-h-32" id="bc-issue-description" name="description" placeholder="Steps to reproduce, what you expected, and what happened instead." aria-describedby="bc-issue-description-hint"></textarea>
+        <p id="bc-issue-description-hint">Markdown is supported.</p>
+      </div>
+
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div class="field" role="group">
+          <label for="bc-issue-assignee-input">Assignee</label>
+          <div id="bc-issue-assignee" class="combobox w-full">
+            <input id="bc-issue-assignee-input" type="text" role="combobox" placeholder="Search teammates" autocomplete="off" autocorrect="off" spellcheck="false" aria-autocomplete="list" aria-expanded="false" aria-controls="bc-issue-assignee-listbox"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="combobox-trigger-icon"><path d="m6 9 6 6 6-6"/></svg>
+            <div id="bc-issue-assignee-popover" data-popover aria-hidden="true">
+              <div role="listbox" id="bc-issue-assignee-listbox" aria-orientation="vertical" data-empty="No teammates found.">
+                <div role="option" data-value="maya-chen">Maya Chen</div>
+                <div role="option" data-value="owen-price">Owen Price</div>
+                <div role="option" data-value="leila-morgan">Leila Morgan</div>
+                <div role="option" data-value="iris-bell">Iris Bell</div>
+                <div role="option" data-value="nico-shah">Nico Shah</div>
+              </div>
+            </div>
+            <input type="hidden" name="assignee" value="">
+          </div>
+        </div>
+
+        <div class="field" role="group">
+          <span class="label" id="bc-issue-priority-label">Priority</span>
+          <div id="bc-issue-priority" class="select w-full">
+            <button type="button" class="w-full" id="bc-issue-priority-trigger" aria-haspopup="listbox" aria-expanded="false" aria-controls="bc-issue-priority-listbox" aria-labelledby="bc-issue-priority-label bc-issue-priority-trigger">
+              <span class="truncate">Medium</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-muted-foreground opacity-50" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div id="bc-issue-priority-popover" data-popover aria-hidden="true">
+              <div role="listbox" id="bc-issue-priority-listbox" aria-orientation="vertical" aria-labelledby="bc-issue-priority-label">
+                <div role="option" data-value="urgent">Urgent</div>
+                <div role="option" data-value="high">High</div>
+                <div role="option" data-value="medium" aria-selected="true">Medium</div>
+                <div role="option" data-value="low">Low</div>
+                <div role="option" data-value="none">No priority</div>
+              </div>
+            </div>
+            <input type="hidden" name="priority" value="medium">
+          </div>
+        </div>
+
+        <div class="field" role="group">
+          <span class="label" id="bc-issue-labels-label">Labels</span>
+          <div id="bc-issue-labels" class="popover">
+            <button type="button" id="bc-issue-labels-trigger" class="btn w-full justify-between font-normal" data-variant="outline" aria-expanded="false" aria-controls="bc-issue-labels-popover" aria-labelledby="bc-issue-labels-label bc-issue-labels-summary">
+              <span id="bc-issue-labels-summary">2 selected</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-muted-foreground opacity-50" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div id="bc-issue-labels-popover" data-popover aria-hidden="true" class="w-64">
+              <fieldset class="grid gap-3" onchange="document.getElementById('bc-issue-labels-summary').textContent = this.querySelectorAll(':checked').length + ' selected'">
+                <legend class="mb-1 text-sm font-medium">Apply labels</legend>
+                <label class="label gap-3 font-normal"><input type="checkbox" class="input" name="labels" value="bug" checked>Bug</label>
+                <label class="label gap-3 font-normal"><input type="checkbox" class="input" name="labels" value="frontend" checked>Frontend</label>
+                <label class="label gap-3 font-normal"><input type="checkbox" class="input" name="labels" value="checkout">Checkout</label>
+                <label class="label gap-3 font-normal"><input type="checkbox" class="input" name="labels" value="regression">Regression</label>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+
+        <div class="field" role="group">
+          <label for="bc-issue-due">Due date</label>
+          <input class="input" id="bc-issue-due" name="due_date" type="date">
+        </div>
+      </div>
+    </section>
+
+    <footer class="flex flex-wrap items-center justify-between gap-3 border-t">
+      <div class="flex items-center gap-3">
+        <label class="btn cursor-pointer" data-variant="ghost" data-size="icon" data-tooltip="Attach files" data-side="top">
+          <input type="file" name="attachments" multiple class="sr-only" aria-label="Attach files">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 6-8.414 8.586a2 2 0 0 0 2.829 2.829l8.414-8.586a4 4 0 1 0-5.657-5.657l-8.379 8.551a6 6 0 1 0 8.485 8.485l8.379-8.551"/></svg>
+        </label>
+        <label class="label gap-2 font-normal" for="bc-issue-more"><input id="bc-issue-more" name="create_more" type="checkbox" role="switch" class="input">Create more</label>
+      </div>
+      <div class="flex items-center gap-2">
+        <a class="btn" data-variant="ghost" href="/issues">Cancel</a>
+        <button type="submit" class="btn">Create issue</button>
+      </div>
+    </footer>
+  </form>
+</main>

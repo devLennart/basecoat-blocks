@@ -1,8 +1,43 @@
+<!-- Requires Basecoat JavaScript (all.min.js). -->
 <main class="mx-auto max-w-[1160px] px-4 pt-6 pb-12 sm:px-5 sm:pt-8 sm:pb-16">
+  <div class="mb-6 flex items-center justify-between gap-3 border-b pb-4">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="/">Acme</a></li>
+        <li aria-hidden="true"><svg data-rtl-flip viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li><a href="/reports">Reports</a></li>
+        <li aria-hidden="true"><svg data-rtl-flip viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></li>
+        <li><span aria-current="page">Overview</span></li>
+      </ol>
+    </nav>
+    <div class="flex items-center gap-2">
+      <button type="button" class="btn" data-variant="outline" data-size="icon" aria-label="Toggle dark mode" data-tooltip="Toggle dark mode" data-side="bottom" onclick="window.basecoat.theme.toggle()">
+        <span class="hidden dark:block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></span>
+        <span class="block dark:hidden"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg></span>
+      </button>
+      <div id="dashboard-01-account" class="dropdown-menu">
+        <button type="button" id="dashboard-01-account-trigger" class="btn rounded-full" data-variant="ghost" data-size="icon" aria-haspopup="menu" aria-controls="dashboard-01-account-menu" aria-expanded="false" aria-label="Account menu for Maya Chen">
+          <span class="avatar" aria-hidden="true"><span>MC</span></span>
+        </button>
+        <div id="dashboard-01-account-popover" data-popover aria-hidden="true" data-align="end" class="w-56">
+          <div role="menu" id="dashboard-01-account-menu" aria-labelledby="dashboard-01-account-trigger">
+            <div role="group" aria-labelledby="dashboard-01-account-heading">
+              <div role="heading" id="dashboard-01-account-heading" class="grid"><span class="block text-foreground">Maya Chen</span><span class="block font-normal text-muted-foreground">maya.chen@example.com</span></div>
+              <a role="menuitem" href="/settings/account">Account settings</a>
+              <a role="menuitem" href="/settings/billing">Billing</a>
+              <a role="menuitem" href="/settings/team">Team</a>
+            </div>
+            <hr role="separator">
+            <a role="menuitem" href="/logout">Log out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <header class="mb-7 flex flex-wrap items-end justify-between gap-4">
     <div>
-      <p class="text-[13px] font-semibold tracking-[.09em] text-muted-foreground uppercase">Acme / Overview</p>
-      <h1 class="mt-1 text-3xl leading-tight font-semibold tracking-tight md:text-[38px]">Revenue at a glance</h1>
+      <h1 class="text-3xl leading-tight font-semibold tracking-tight md:text-[38px]">Revenue at a glance</h1>
       <p class="mt-2 text-muted-foreground">A clear picture of your subscription business.</p>
     </div>
     <span class="badge" data-variant="outline">October 2026 snapshot</span>

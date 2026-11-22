@@ -1,0 +1,70 @@
+<!-- Requires Basecoat JavaScript (all.min.js). -->
+<main class="mx-auto max-w-[1120px] px-4 pt-6 pb-12 sm:px-5 sm:pt-10 sm:pb-18">
+  <header class="mb-6">
+    <p class="text-[13px] font-semibold tracking-[.09em] text-muted-foreground uppercase">Acme / Store</p>
+    <h1 class="mt-1 mb-2 text-3xl leading-tight font-semibold tracking-tight md:text-[38px]">Office furniture</h1>
+    <p class="text-muted-foreground">Desks, seating and accessories for focused work. Illustrative catalog.</p>
+  </header>
+
+  <div class="mb-5 flex flex-wrap items-center justify-between gap-3 border-b pb-4">
+    <div class="flex flex-wrap items-center gap-2">
+      <button type="button" class="btn" data-variant="outline" aria-haspopup="dialog" onclick="document.getElementById('bc-filters-drawer').showModal()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 5H3"/><path d="M12 19H3"/><path d="M14 3v4"/><path d="M16 17v4"/><path d="M21 12h-9"/><path d="M21 19h-5"/><path d="M21 5h-7"/><path d="M8 10v4"/><path d="M8 12H3"/></svg>
+        Filters <span class="badge" data-variant="secondary">2</span>
+      </button>
+      <span class="badge" data-variant="outline">Desks</span>
+      <span class="badge" data-variant="outline">In stock</span>
+    </div>
+    <p class="text-sm text-muted-foreground" role="status">Showing 6 of 24 products</p>
+  </div>
+
+  <ul class="grid grid-cols-2 gap-x-4 gap-y-7 md:grid-cols-3" aria-label="Products">
+      <li><a class="group grid gap-2.5" href="/products/acme-desk-lamp"><div class="grid aspect-square place-items-center rounded-lg bg-muted"><svg class="size-8 text-muted-foreground/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></div><div class="flex items-start justify-between gap-2"><div><p class="text-sm font-medium group-hover:underline">Acme Desk Lamp</p><p class="text-[13px] text-muted-foreground">Lighting</p></div><span class="text-sm tabular-nums">$120</span></div></a></li>
+      <li><a class="group grid gap-2.5" href="/products/acme-standing-desk"><div class="grid aspect-square place-items-center rounded-lg bg-muted"><svg class="size-8 text-muted-foreground/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></div><div class="flex items-start justify-between gap-2"><div><p class="text-sm font-medium group-hover:underline">Acme Standing Desk</p><p class="text-[13px] text-muted-foreground">Desks</p></div><span class="text-sm tabular-nums">$890</span></div></a></li>
+      <li><a class="group grid gap-2.5" href="/products/task-chair"><div class="grid aspect-square place-items-center rounded-lg bg-muted"><svg class="size-8 text-muted-foreground/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></div><div class="flex items-start justify-between gap-2"><div><p class="text-sm font-medium group-hover:underline">Task Chair</p><p class="text-[13px] text-muted-foreground">Seating</p></div><span class="text-sm tabular-nums">$420</span></div></a></li>
+      <li><a class="group grid gap-2.5" href="/products/cable-tray"><div class="grid aspect-square place-items-center rounded-lg bg-muted"><svg class="size-8 text-muted-foreground/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></div><div class="flex items-start justify-between gap-2"><div><p class="text-sm font-medium group-hover:underline">Cable Tray</p><p class="text-[13px] text-muted-foreground">Accessories</p></div><span class="text-sm tabular-nums">$45</span></div></a></li>
+      <li><a class="group grid gap-2.5" href="/products/monitor-arm"><div class="grid aspect-square place-items-center rounded-lg bg-muted"><svg class="size-8 text-muted-foreground/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></div><div class="flex items-start justify-between gap-2"><div><p class="text-sm font-medium group-hover:underline">Monitor Arm</p><p class="text-[13px] text-muted-foreground">Accessories</p></div><span class="text-sm tabular-nums">$160</span></div></a></li>
+      <li><a class="group grid gap-2.5" href="/products/oak-side-table"><div class="grid aspect-square place-items-center rounded-lg bg-muted"><svg class="size-8 text-muted-foreground/60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg></div><div class="flex items-start justify-between gap-2"><div><p class="text-sm font-medium group-hover:underline">Oak Side Table</p><p class="text-[13px] text-muted-foreground">Desks</p></div><span class="text-sm tabular-nums">$310</span></div></a></li>
+  </ul>
+
+  <dialog id="bc-filters-drawer" class="drawer" aria-labelledby="bc-filters-title" aria-describedby="bc-filters-description">
+    <!-- Filters submit as GET query parameters; render the filtered list on your server. -->
+    <form action="/products" method="get">
+      <header class="mx-auto w-full max-w-md">
+        <h2 id="bc-filters-title">Filter products</h2>
+        <p id="bc-filters-description">Narrow the catalog, then show the results.</p>
+      </header>
+      <section class="px-4">
+        <div class="mx-auto grid w-full max-w-md gap-6 pb-2">
+          <fieldset class="grid gap-3">
+            <legend class="mb-1 text-sm font-medium">Category</legend>
+            <div class="grid grid-cols-2 gap-3">
+              <label class="label gap-3 font-normal"><input type="checkbox" class="input" name="category" value="desks" checked>Desks</label>
+              <label class="label gap-3 font-normal"><input type="checkbox" class="input" name="category" value="seating">Seating</label>
+              <label class="label gap-3 font-normal"><input type="checkbox" class="input" name="category" value="lighting">Lighting</label>
+              <label class="label gap-3 font-normal"><input type="checkbox" class="input" name="category" value="accessories">Accessories</label>
+            </div>
+          </fieldset>
+          <div class="field" role="group">
+            <div class="flex items-center justify-between gap-3"><label for="bc-filters-price">Maximum price</label><output id="bc-filters-price-value" for="bc-filters-price" class="text-sm tabular-nums">$600</output></div>
+            <input class="input w-full" id="bc-filters-price" name="max_price" type="range" min="50" max="1000" step="50" value="600" oninput="document.getElementById('bc-filters-price-value').value = '$' + this.value">
+          </div>
+          <fieldset class="grid gap-3">
+            <legend class="mb-1 text-sm font-medium">Sort by</legend>
+            <label class="label gap-3 font-normal"><input type="radio" class="input" name="sort" value="featured" checked>Featured</label>
+            <label class="label gap-3 font-normal"><input type="radio" class="input" name="sort" value="price-asc">Price, low to high</label>
+            <label class="label gap-3 font-normal"><input type="radio" class="input" name="sort" value="newest">Newest</label>
+          </fieldset>
+          <div class="flex items-center justify-between gap-4 border-t pt-4">
+            <div><label class="block text-sm font-medium" for="bc-filters-stock">In stock only</label><p id="bc-filters-stock-hint" class="text-[13px] text-muted-foreground">Hide items that ship later.</p></div>
+            <input id="bc-filters-stock" name="in_stock" value="1" type="checkbox" role="switch" class="input" aria-describedby="bc-filters-stock-hint" checked>
+          </div>
+        </div>
+      </section>
+      <footer class="mx-auto w-full max-w-md">
+        <button type="submit" class="btn">Show results</button>
+        <a class="btn" data-variant="outline" href="/products">Reset filters</a>
+      </footer>
+    </form>
+  </dialog>
+</main>

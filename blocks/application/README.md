@@ -33,3 +33,7 @@ Practical product screens built from native HTML and Basecoat components. Provid
 | [evals-01](evals-01/README.md) | Prompt eval comparison |
 | [ai-search-01](ai-search-01/README.md) | Search with AI answer and citations |
 | [inline-ai-01](inline-ai-01/README.md) | Inline AI editing |
+| [issue-form-01](issue-form-01/README.md) | Issue composer with pickers |
+| [order-detail-01](order-detail-01/README.md) | Order detail with actions |
+| [loading-01](loading-01/README.md) | Loading skeletons |
+| [filters-01](filters-01/README.md) | Product filters in a drawer |

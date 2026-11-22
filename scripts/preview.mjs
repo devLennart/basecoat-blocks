@@ -48,8 +48,10 @@ ${fragment}
 
 async function buildCss() {
   const input = join(outDir, 'input.css');
-  // Same two imports a Basecoat + Tailwind project uses; @source makes Tailwind scan every block.
-  await writeFile(input, `@import "tailwindcss";\n@import "basecoat-css";\n@source "${relative(outDir, join(root, 'blocks'))}";\n`);
+  // Same two imports a Basecoat + Tailwind project uses; @source makes Tailwind scan every block
+  // (and the gallery page template, which uses the same stylesheet).
+  const sources = [join(root, 'blocks'), join(root, 'scripts', 'gallery.mjs')].map((p) => `@source "${relative(outDir, p)}";`).join('\n');
+  await writeFile(input, `@import "tailwindcss";\n@import "basecoat-css";\n${sources}\n`);
   await promisify(execFile)(join(root, 'node_modules', '.bin', 'tailwindcss'), ['-i', input, '-o', join(outDir, 'styles.css'), '--minify'], { cwd: root });
 }
 

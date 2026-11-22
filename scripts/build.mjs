@@ -14,7 +14,7 @@ import { fileURLToPath } from 'node:url';
 
 export const BASECOAT_VERSION = '1.2.1';
 const JS_MARKER = '<!-- Requires Basecoat JavaScript';
-const CATEGORIES = ['authentication', 'sidebar', 'dashboard', 'application', 'marketing'];
+export const CATEGORIES = ['authentication', 'sidebar', 'dashboard', 'application', 'marketing'];
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const read = (...p) => readFile(join(root, ...p), 'utf8');
@@ -28,7 +28,7 @@ function parseComponents(notes) {
 
 const anchor = (heading) => heading.toLowerCase().replace(/[^a-z0-9 -]/g, '').trim().replace(/ /g, '-');
 
-async function loadCategory(category) {
+export async function loadCategory(category) {
   const readme = await read('blocks', category, 'README.md');
   const heading = readme.match(/^# (.+)$/m)[1];
   const names = [...readme.matchAll(/^\| \[([a-z0-9-]+)\]\(\1\/README\.md\)/gm)].map((m) => m[1]);
@@ -90,13 +90,15 @@ function replaceRegion(text, name, content) {
   return text.replace(new RegExp(`${start}[\\s\\S]*${end}`), `${start}\n${content}\n${end}`);
 }
 
-const categories = await Promise.all(CATEGORIES.map(loadCategory));
-const count = categories.reduce((n, c) => n + c.blocks.length, 0);
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  const categories = await Promise.all(CATEGORIES.map(loadCategory));
+  const count = categories.reduce((n, c) => n + c.blocks.length, 0);
 
-const readmePath = join(root, 'README.md');
-let readme = await readFile(readmePath, 'utf8');
-readme = replaceRegion(readme, 'overview', overview(categories, count));
-readme = replaceRegion(readme, 'catalog', categories.map(catalogSection).join('\n'));
-readme = replaceRegion(readme, 'components', componentIndex(categories));
-await writeFile(readmePath, readme);
-console.log(`Rebuilt the README catalog: ${count} blocks (Basecoat ${BASECOAT_VERSION}).`);
+  const readmePath = join(root, 'README.md');
+  let readme = await readFile(readmePath, 'utf8');
+  readme = replaceRegion(readme, 'overview', overview(categories, count));
+  readme = replaceRegion(readme, 'catalog', categories.map(catalogSection).join('\n'));
+  readme = replaceRegion(readme, 'components', componentIndex(categories));
+  await writeFile(readmePath, readme);
+  console.log(`Rebuilt the README catalog: ${count} blocks (Basecoat ${BASECOAT_VERSION}).`);
+}

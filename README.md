@@ -250,7 +250,7 @@ Looking for a working example of one Basecoat component? Every block that uses i
 - **`block.html` is the only file per block.** It is a fragment: no document shell, no asset imports, no framework code. A few blocks carry a small inline `<script>` for their local interaction.
 - **Colors come from Basecoat's theme.** Blocks use semantic utilities such as `bg-muted`, `text-muted-foreground` and `border`, so they follow your Basecoat theme and dark mode (`class="dark"` on `<html>`).
 - **Another Basecoat version or style?** The blocks are built and screenshotted against Basecoat 1.2.1 with its default style. Check the component docs and rendering before pasting into another setup.
-- **See a block live without hosting:** clone the repo, run `npm install` and `npm run preview -- <block-name>`, then open the printed `.cache/preview/<block-name>.html` in your browser.
+- **See the blocks live without hosting:** clone the repo, run `npm install` and `npm run gallery`, then open http://localhost:4321 to click through every block in light and dark, at desktop, tablet and mobile width, and copy its code. For a single standalone page, `npm run preview -- <block-name>` prints `.cache/preview/<block-name>.html`.
 
 ## Contribute
 

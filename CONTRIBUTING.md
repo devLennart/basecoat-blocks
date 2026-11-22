@@ -18,7 +18,7 @@ Add a row to the category README table (its order is the catalog order), then ru
 
 Use documented Basecoat classes and `data-variant` / `data-size` attributes for components, and Tailwind CSS 4 utilities for layout, spacing and type, like the examples in the Basecoat docs. Do not add `<style>` blocks or custom class names. Prefer Basecoat's semantic color utilities (`bg-muted`, `text-muted-foreground`, `border`, `bg-primary` …) over raw colors so blocks follow the theme and dark mode; Basecoat's dark variant is `html.dark`, so avoid `dark:` overrides unless a token cannot express the change. Avoid restyling Basecoat components, nonessential JavaScript, remote images, framework adapters, and external icon libraries. Use semantic landmarks, associated labels, native controls, visible focus, sensible heading order, and a usable narrow layout. Do not imply a static demo has a working backend: document where to provide routes, form actions, and data. Mark the current page with `aria-current="page"` in navigation examples.
 
-Before submitting, open each preview (`npm run preview -- <name>`) at desktop and mobile widths, check keyboard navigation, inspect browser console and network failures, and run `npm run screenshots -- <name>` until it reports the block clean. Ensure the fragment works when pasted into a page that already loads the same Basecoat version. Keep every prose string in English.
+Before submitting, open each preview (`npm run preview -- <name>`, or `npm run gallery`) at desktop and mobile widths, check keyboard navigation, inspect browser console and network failures, and run `npm run screenshots -- <name>` until it reports the block clean. Ensure the fragment works when pasted into a page that already loads the same Basecoat version. Keep every prose string in English.
 
 ## Build and screenshots
 
@@ -28,11 +28,14 @@ Before submitting, open each preview (`npm run preview -- <name>`) at desktop an
 npm install
 npm run screenshots:install       # one-time Chromium download
 npm run preview -- login-02       # standalone pages in .cache/preview/
+npm run gallery                   # click through every block at http://localhost:4321
 npm run build                     # README catalog
 npm run screenshots               # every block → preview.png + preview-dark.png
 npm run screenshots -- login-02   # only blocks whose name matches
 npm run screenshots -- --check    # run the checks without writing PNGs
 ```
+
+`npm run gallery` builds the same preview pages plus a gallery page and serves them locally: pick a block in the sidebar (catalog order, searchable by name or component), switch between desktop, tablet (768 px) and mobile (390 px) width and light or dark, show or copy the block code, or open the standalone preview. Keys: `j` / `k` next / previous, `c` code / preview, `/` search. Rerun it after editing a block; `-- --port 5000` picks another port, `-- --no-serve` only writes `.cache/preview/index.html`.
 
 Each preview is captured at 1440 × 900 (1.25× device scale) in light and dark (`class="dark"` on `<html>`). The run also fails a block on console errors, failed requests, or page-level horizontal overflow at 390 px. The npm install is dev tooling only; using a block still needs no install.
 
